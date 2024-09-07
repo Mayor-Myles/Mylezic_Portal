@@ -1,0 +1,66 @@
+import React from 'react';
+import { Box, Button, Flex, Heading, Text, Image, Stack, IconButton } from "@chakra-ui/react";
+import { FaFacebook, FaWhatsapp, FaInstagram, FaFacebookMessenger, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import NavbarTop from "../components/topNavbar";
+import NavbarBottom from "../components/bottomNavbar";
+
+
+
+const Hire = () => {
+  const referralCode = "eats-qwicx";
+  
+
+  return (
+
+    <>
+      <NavbarTop/>
+
+
+    <Flex align="center" justify="center" flexDirection="column"
+      w={{ base: "90%", md: "400px" }}
+      p={5}
+      mx="auto"
+      my={10}
+      borderRadius="lg"
+      
+      
+    >
+      <Flex justifyContent="center" alignItems="center" mb={4}>
+        <Image 
+          src="avatar.jpeg" 
+          alt="Illustration" 
+          boxSize="150px"
+          objectFit="cover"
+        />
+      </Flex>
+      <Heading size="md" textAlign="center" mb={2}>
+        Invite your friends to Earn!
+      </Heading>
+      <Text textAlign="center" mb={6}>
+        Share your code with your friends and get exciting bonus points
+      </Text>
+      <Button colorScheme="teal" variant="outline" width="100%" mb={4}>
+        Invite
+      </Button>
+      <Text textAlign="center" mb={4}>or</Text>
+      <Text textAlign="center" mb={4}>Share</Text>
+      <Stack direction="row" spacing={4} justify="center">
+        <IconButton icon={<FaFacebook />} aria-label="Share on Facebook" colorScheme="facebook" />
+        <IconButton icon={<FaWhatsapp />} aria-label="Share on WhatsApp" colorScheme="whatsapp" />
+        <IconButton icon={<FaInstagram />} aria-label="Share on Instagram" colorScheme="pink" />
+        <IconButton icon={<FaFacebookMessenger />} aria-label="Share on Messenger" colorScheme="messenger" />
+        <IconButton icon={<FaEnvelope />} aria-label="Share via Email" colorScheme="red" />
+        <IconButton icon={<FaTwitter />} aria-label="Share on Twitter" colorScheme="twitter" />
+      </Stack>
+      
+    </Flex>
+  
+      
+
+      
+      <NavbarBottom/>
+    </>
+  );
+};
+
+export default Hire;
