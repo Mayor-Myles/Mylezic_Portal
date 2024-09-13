@@ -180,7 +180,7 @@ fetch(url)
 
     
     
-  },[])
+  })
   
   return null;
 }
