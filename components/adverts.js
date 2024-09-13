@@ -31,7 +31,7 @@ setSrc(adverts[i])
 
      
     
-  },[])
+  })
   
 return(
 
