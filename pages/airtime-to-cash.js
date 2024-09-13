@@ -29,6 +29,13 @@ const [network,setNetwork] = useState("");
 const toReceive = Math.floor(amount * rate[network]);
   
 const [csrf,setCsrf] = useRecoilState(csrfState);
+
+
+const [btnLoading,setBtnLoading] =  useState(false);
+
+
+const toast = useToast();
+  
   
 if(!rate){
 
@@ -43,11 +50,7 @@ if(!rate){
 }
 
 
-  const [btnLoading,setBtnLoading] =  useState(false);
-
-
-const toast = useToast();
-
+  
   
   const submitForm = () => {
 
