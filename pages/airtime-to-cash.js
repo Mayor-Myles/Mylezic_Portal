@@ -28,7 +28,8 @@ const [network,setNetwork] = useState("");
 
 const toReceive = Math.floor(amount * rate[network]);
   
-
+const [csrf,setCsrf] = useRecoilState(csrfState);
+  
 if(!rate){
 
   return(
@@ -41,7 +42,6 @@ if(!rate){
   )
 }
 
-const [csrf,setCsrf] = useRecoilState(csrfState);
 
   const [btnLoading,setBtnLoading] =  useState(false);
 
@@ -80,7 +80,7 @@ const data = {
 
       return;
     }
-    console.log(data);
+    
 
     const url = "https://cbrbakery.com.ng/api?action=a2c";
     
