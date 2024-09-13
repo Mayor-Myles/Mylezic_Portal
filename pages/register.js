@@ -173,7 +173,7 @@ title:"Congrats 🎉 ",
 
 
 
-  },[csrf])
+  })
 
 
 
