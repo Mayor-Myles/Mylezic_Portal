@@ -87,7 +87,6 @@ const LoginForm = () => {
             status: 'error',
             duration: 5000,
             isClosable: true,
-            position:'top',
           });
         }
       })
@@ -114,10 +113,133 @@ const LoginForm = () => {
 
   return (
     <>
-      {/* Your existing code for the form */}
+      <Head>
+        <title>Login to Your Mylezic Account | Secure Access</title>
+        <meta
+          name="description"
+          content="Login to your Mylezic account to access all our services. Enjoy secure and easy access to your dashboard for managing your transactions and profile."
+        />
+        <meta name="keywords" content="login, Mylezic login, account access, secure login, Mylezic account" />
+        <link rel="canonical" href="https://mylezic.com.ng/login" />
+        <meta property="og:title" content="Login to Your Mylezic Account | Secure Access" />
+        <meta
+          property="og:description"
+          content="Access your Mylezic account securely. Manage your transactions, view your profile, and explore our services by logging in."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mylezic.com.ng/login" />
+        <meta property="og:image" content="/logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Login to Your Mylezic Account | Secure Access" />
+        <meta
+          name="twitter:description"
+          content="Log in securely to your Mylezic account and take control of your profile and transactions."
+        />
+        <meta name="twitter:image" content="/logo.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Mylezic" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:site_name" content="Mylezic" />
+        <meta name="theme-color" content="teal" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <meta name="application-name" content="Mylezic Login Portal" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "WebPage",
+              "name": "Login Page",
+              "description": "Secure login to access your Mylezic account. Manage your profile, view transactions, and access all our services.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Mylezic",
+                "url": "https://mylezic.com.ng"
+              },
+              "image": "https://mylezic.com.ng/logo.png",
+              "url": "https://mylezic.com.ng/login"
+            },
+            "sameAs": [
+              "https://x.com/Mylezic?t=rZ-XsKl0de9aDIJL_1LREA&s=09",
+              "https://www.facebook.com/profile.php?id=61564236574047",
+              "https://www.instagram.com/mylezic",
+              "https://linkedin.com/mylezic"
+            ]
+          `}
+        </script>
+      </Head>
+
+      <Flex
+        minH={'100vh'}
+        align={'center'}
+        justify={'center'}
+        flexFlow="column wrap"
+        p="1em"
+        maxW={{
+          sm: '27em',
+          base: '35em',
+          md: '27em',
+          lg: '25em',
+          xl: '28em',
+          '2xl': '30em',
+        }}
+        mx={{ base: '2em', sm: 'auto', md: 'auto' }}
+      >
+        <Flex justify="center" align="center" flexFlow="column">
+          <Text fontSize="1.2em" fontWeight="bold">Login to your account</Text>
+          <Text mt="0">
+            Have no account? <Link color="teal" onClick={() => router.push('/register')}>Register</Link>
+          </Text>
+        </Flex>
+
+        <Flex align="center" justify="center" flexDirection="column" mt="3em" w="full">
+          <InputGroup mb="1.3em">
+            <Input
+              onChange={(e) => setFormData((prev) => ({ ...prev, ['user']: e.target.value }))}
+              type="number"
+              placeholder="Phone number"
+              outline="none"
+              bg="#F5F5F5"
+              p="1.2em"
+              border="0px"
+              borderRadius="0.5em"
+              size="lg"
+              w="full"
+              fontSize="14px"
+              value={formData.user}
+            />
+          </InputGroup>
+
+          <InputGroup mb="1.3em">
+            <Input
+              onChange={(e) => setFormData((prev) => ({ ...prev, ['password']: e.target.value }))}
+              type={!passwordVisible ? 'password' : 'text'}
+              placeholder="Password"
+              outline="none"
+              bg="#F5F5F5"
+              p="1.2em"
+              border="0px"
+              borderRadius="0.5em"
+              size="lg"
+              w="full"
+              fontSize="14px"
+            />
+            <InputRightElement onClick={toggleVisibility}>
+              {passwordVisible ? <FaEye color="grey" /> : <FaEyeSlash color="grey" />}
+            </InputRightElement>
+          </InputGroup>
+        </Flex>
+
+        <Flex w="full" mt="1em">
+          <Button isLoading={loading} onClick={submitForm} size="md" colorScheme="teal" bgg="teal" w="full">
+            Continue
+          </Button>
+        </Flex>
+      </Flex>
     </>
   );
 };
 
 export default LoginForm;
-      
+    
