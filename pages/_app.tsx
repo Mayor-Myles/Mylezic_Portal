@@ -171,13 +171,13 @@ fetch(url)
 
     
     //Fetch data plan from db
-    getDataPlans();
+   // getDataPlans();
 
     //getCsrf
     getToken();
 
     //fetch user Data
-    getUserData();
+  //  getUserData();
 
     
     
