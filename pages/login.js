@@ -18,7 +18,7 @@ import { userData, csrfState } from '../states/recoil';
 import { useRecoilState } from 'recoil';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import $ from 'jquery'; // Import jQuery
+import axios from 'axios'; // Import axios
 
 const LoginForm = () => {
   const [csrf, setCsrf] = useRecoilState(csrfState);
@@ -36,7 +36,7 @@ const LoginForm = () => {
   // Update formData when csrf token changes
   useEffect(() => {
     setFormData((prev) => ({ ...prev, ['csrf']: csrf }));
-  }, [csrf]);
+  }, [setCsrf]);
 
   const toggleVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -59,39 +59,36 @@ const LoginForm = () => {
     const url = 'https://cbrbakery.com.ng/api/login';
     toast.closeAll();
 
-    $.ajax({
-      url: url,
-      type: 'POST',
-      data: JSON.stringify(formData),
-      contentType: 'application/json',
-      success: (response) => {
-        setCsrf(response.token); // Update CSRF token
+    axios
+      .post(url, formData)
+      .then((response) => {
+        setCsrf(response.data.token); // Update CSRF token
         setLoading(false);
-        if (response.status === 'success') {
-          setUserData(response.userData);
+        if (response.data.status === 'success') {
+          setUserData(response.data.userData);
           router.push('/dashboard');
         } else {
           toast({
             title: 'Error',
-            description: response.message,
+            description: response.data.message,
             status: 'error',
             duration: 5000,
             isClosable: true,
+            position: 'top',
           });
         }
-      },
-      error: (jqXHR, textStatus, errorThrown) => {
+      })
+      .catch((error) => {
         toast({
           title: 'Error',
-          description: 'Your request could not be processed. ' + errorThrown,
+          description: 'Your request could not be processed. ' + error.message,
           status: 'error',
           duration: 5000,
           isClosable: true,
           position: 'top',
         });
         setLoading(false);
-      },
-    });
+      });
   };
 
   if (!csrf) {
@@ -181,4 +178,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-      
+  
