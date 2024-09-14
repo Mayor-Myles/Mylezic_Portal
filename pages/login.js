@@ -56,7 +56,7 @@ const LoginForm = () => {
     }
 
     setLoading(true);
-    const url = 'https://cbrbakery.com.ng/api?action=login';
+    const url = 'https://cbrbakery.com.ng/api/login';
     toast.closeAll();
 
     $.ajax({
