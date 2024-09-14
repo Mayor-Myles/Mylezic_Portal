@@ -20,6 +20,7 @@ import { userData, csrfState } from '../states/recoil';
 import { useRecoilState } from 'recoil';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const LoginForm = () => {
   const [csrf, setCsrf] = useRecoilState(csrfState);
@@ -60,21 +61,14 @@ const LoginForm = () => {
     const url = 'https://cbrbakery.com.ng/api?action=login';
     toast.closeAll();
 
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          setLoading(false);
-          throw new Error(res.statusText);
-        }
-        return res.json();
+    axios
+      .post(url, formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
-      .then((data) => {
+      .then((response) => {
+        const data = response.data;
         setCsrf(data.token); // Update CSRF token
         setLoading(false);
         if (data.status === 'success') {
