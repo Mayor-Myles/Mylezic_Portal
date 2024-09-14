@@ -25,7 +25,7 @@ function InitializeState() {
 
   useEffect(() => {
     const getToken = async () => {
-      const url = "https://cbrbakery.com.ng/api?action=welcome";
+      const url = "https://cbrbakery.com.ng/api/welcome";
 
       try {
         const response = await axios.get(url);
