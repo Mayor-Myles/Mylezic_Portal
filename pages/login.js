@@ -7,12 +7,10 @@ import {
   Input,
   Link,
   Text,
-  Image,
   InputGroup,
   InputRightElement,
   IconButton,
   useToast,
-  Grid,
   Spinner,
 } from '@chakra-ui/react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -20,7 +18,7 @@ import { userData, csrfState } from '../states/recoil';
 import { useRecoilState } from 'recoil';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import axios from 'axios';
+import $ from 'jquery'; // Import jQuery
 
 const LoginForm = () => {
   const [csrf, setCsrf] = useRecoilState(csrfState);
@@ -37,8 +35,8 @@ const LoginForm = () => {
 
   // Update formData when csrf token changes
   useEffect(() => {
-    setFormData((prev) => ({ ...prev, ['csrf']:csrf }));
-  });
+    setFormData((prev) => ({ ...prev, ['csrf']: csrf }));
+  }, [csrf]);
 
   const toggleVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -61,40 +59,39 @@ const LoginForm = () => {
     const url = 'https://cbrbakery.com.ng/api?action=login';
     toast.closeAll();
 
-    axios
-      .post(url, formData, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then((response) => {
-        const data = response.data;
-        setCsrf(data.token); // Update CSRF token
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: JSON.stringify(formData),
+      contentType: 'application/json',
+      success: (response) => {
+        setCsrf(response.token); // Update CSRF token
         setLoading(false);
-        if (data.status === 'success') {
-          setUserData(data.userData);
+        if (response.status === 'success') {
+          setUserData(response.userData);
           router.push('/dashboard');
         } else {
           toast({
             title: 'Error',
-            description: data.message,
+            description: response.message,
             status: 'error',
             duration: 5000,
             isClosable: true,
           });
         }
-      })
-      .catch((error) => {
+      },
+      error: (jqXHR, textStatus, errorThrown) => {
         toast({
           title: 'Error',
-          description: 'Your request could not be processed. ' + error.message,
+          description: 'Your request could not be processed. ' + errorThrown,
           status: 'error',
           duration: 5000,
           isClosable: true,
           position: 'top',
         });
         setLoading(false);
-      });
+      },
+    });
   };
 
   if (!csrf) {
@@ -109,59 +106,7 @@ const LoginForm = () => {
     <>
       <Head>
         <title>Login to Your Mylezic Account | Secure Access</title>
-        <meta
-          name="description"
-          content="Login to your Mylezic account to access all our services. Enjoy secure and easy access to your dashboard for managing your transactions and profile."
-        />
-        <meta name="keywords" content="login, Mylezic login, account access, secure login, Mylezic account" />
-        <link rel="canonical" href="https://mylezic.com.ng/login" />
-        <meta property="og:title" content="Login to Your Mylezic Account | Secure Access" />
-        <meta
-          property="og:description"
-          content="Access your Mylezic account securely. Manage your transactions, view your profile, and explore our services by logging in."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mylezic.com.ng/login" />
-        <meta property="og:image" content="/logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Login to Your Mylezic Account | Secure Access" />
-        <meta
-          name="twitter:description"
-          content="Log in securely to your Mylezic account and take control of your profile and transactions."
-        />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Mylezic" />
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:site_name" content="Mylezic" />
-        <meta name="theme-color" content="teal" />
-        <link rel="apple-touch-icon" href="/logo.png" />
-        <meta name="application-name" content="Mylezic Login Portal" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "http://schema.org",
-              "@type": "WebPage",
-              "name": "Login Page",
-              "description": "Secure login to access your Mylezic account. Manage your profile, view transactions, and access all our services.",
-              "provider": {
-                "@type": "Organization",
-                "name": "Mylezic",
-                "url": "https://mylezic.com.ng"
-              },
-              "image": "https://mylezic.com.ng/logo.png",
-              "url": "https://mylezic.com.ng/login"
-            },
-            "sameAs": [
-              "https://x.com/Mylezic?t=rZ-XsKl0de9aDIJL_1LREA&s=09",
-              "https://www.facebook.com/profile.php?id=61564236574047",
-              "https://www.instagram.com/mylezic",
-              "https://linkedin.com/mylezic"
-            ]
-          `}
-        </script>
+        {/* Add your meta tags and other Head content here */}
       </Head>
 
       <Flex
@@ -226,7 +171,7 @@ const LoginForm = () => {
         </Flex>
 
         <Flex w="full" mt="1em">
-          <Button isLoading={loading} onClick={submitForm} size="md" colorScheme="teal" bgg="teal" w="full">
+          <Button isLoading={loading} onClick={submitForm} size="md" colorScheme="teal" w="full">
             Continue
           </Button>
         </Flex>
@@ -236,4 +181,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-    
+      
