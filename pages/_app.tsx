@@ -34,7 +34,7 @@ const [user,setUser] = useRecoilState(userData);
   
   useEffect(() => {
 
-const getDataPlans = async () => {
+/*const getDataPlans = async () => {
 
 const url = "https://cbrbakery.com.ng/api?action=getDataPlans";
   
@@ -71,12 +71,12 @@ const url = "https://cbrbakery.com.ng/api?action=getDataPlans";
       });
     
   
-}
+}*/
 
 
 const getToken = async () => {
 
-const url = "https://cbrbakery.com.ng/action=welcome";
+const url = "https://cbrbakery.com.ng/api?action=welcome";
 
   const response = await 
   
@@ -94,7 +94,8 @@ fetch(url)
         if(data) {
        
    setCsrf(data.token);
-          
+   setUser(data.userData && data.userData);     
+  setPlan(data.dataPlans && data.dataPlans);
         } else {
           toast({
             title: "Error",
@@ -123,10 +124,10 @@ fetch(url)
   
 }
 
-
+/*
     const getUserData = async () =>{
 
-        const url = "https://cbrbakery.com.ng/api? action=getUserData";
+        const url = "https://cbrbakery.com.ng/api?action=getUserData";
 
         const response = await
         fetch(url)
@@ -166,7 +167,7 @@ fetch(url)
 
         });
 
-      }
+      }*/
 
     
     //Fetch data plan from db
