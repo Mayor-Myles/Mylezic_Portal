@@ -92,7 +92,7 @@ fetch(url)
       .then(data => {
         
         if(data) {
-       
+       console.log(data)
    setCsrf(data.token);
    setUser(data.userData && data.userData);     
   setPlan(data.dataPlans && data.dataPlans);
