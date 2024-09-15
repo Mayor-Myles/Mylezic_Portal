@@ -204,7 +204,7 @@ const LoginForm = () => {
         mx={{ base: '2em', sm: 'auto', md: 'auto' }}
      
       >
-        <Flex justify="center" align="center" flexFlow="column">
+        <Flex userSelect="none" justify="center" align="center" flexFlow="column">
           <Text fontSize="1.2em" fontWeight="bold">Login to your account</Text>
       Have no account?    <Box as="a" mt="0">
             <Link color="teal" onClick={() => router.push('/register')}>Register</Link>
