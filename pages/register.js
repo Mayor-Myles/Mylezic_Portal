@@ -243,7 +243,7 @@ useEffect(() => {
           <Text mt="0">
             Have account?{' '}
             <Link onClick={() => router.push('/login')} color="teal">
-              <Box as="span" color="teal">Login</Box>
+              <Box as="a" color="teal">Login</Box>
             </Link>
           </Text>
         </Flex>
