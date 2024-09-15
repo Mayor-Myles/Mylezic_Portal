@@ -355,7 +355,7 @@ useEffect(() => {
           </Button>
         </Flex>
 
-        <Grid mt="1.3em" align="center">
+        {/*  <Grid mt="1.3em" align="center">
           <Text>Sign up using social media</Text>
         </Grid>
 
@@ -366,7 +366,7 @@ useEffect(() => {
           <Button size="lg" colorScheme="red" w="full">
             Google
           </Button>
-        </Flex>
+        </Flex>*/}
       </Flex>
     </>
   );
