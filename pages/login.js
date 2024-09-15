@@ -192,7 +192,7 @@ const LoginForm = () => {
         align="center"
         flexFlow="column wrap"
         p="1em"
-        w="full"
+        
           maxW={{
           sm: '27em',
           base: '35em',
