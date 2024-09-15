@@ -143,7 +143,7 @@ const submitForm = () => {
         
 <Text fontSize="1.2em" fontWeight="bold">Recover your account</Text>
 
-        <Text mt="0">Have  account? <Link href="/login" color="teal">Login</Link></Text>
+        <Text mt="0">Have  account? <Link href="/login" color="teal"><Box color="teal" as="span">Login</Box></Link></Text>
       </Flex>
 
 
