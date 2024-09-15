@@ -193,12 +193,22 @@ const LoginForm = () => {
         flexFlow="column wrap"
         p="1em"
         w="full"
+          maxW={{
+          sm: '27em',
+          base: '35em',
+          md: '27em',
+          lg: '25em',
+          xl: '28em',
+          '2xl': '30em',
+        }}
+        mx={{ base: '2em', sm: 'auto', md: 'auto' }}
+     
       >
         <Flex justify="center" align="center" flexFlow="column">
           <Text fontSize="1.2em" fontWeight="bold">Login to your account</Text>
-          <Text mt="0">
-            Have no account? <Link color="teal" onClick={() => router.push('/register')}>Register</Link>
-          </Text>
+      Have no account?    <Box as="a" mt="0">
+            <Link color="teal" onClick={() => router.push('/register')}>Register</Link>
+          </Box>
         </Flex>
 
         <Flex align="center" justify="center" flexDirection="column" mt="3em" w="full">
