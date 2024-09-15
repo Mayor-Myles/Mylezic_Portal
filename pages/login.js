@@ -263,5 +263,5 @@ const LoginForm = () => {
   );
 };
 
-export default
-      
+export default LoginForm;
+    
