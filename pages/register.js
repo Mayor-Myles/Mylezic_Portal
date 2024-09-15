@@ -333,7 +333,7 @@ useEffect(() => {
                 setFormData((prev) => ({ ...prev, ['refferal']: e.target.value }))
               }
               type="text"
-              placeholder="Refferal code (optional)"
+              placeholder="Referred By (optional)"
               outline="none"
               bg="#F5F5F5"
               p="1.2em"
