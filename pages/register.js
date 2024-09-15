@@ -42,11 +42,13 @@ const Register = () => {
   };
 
 
-  useEffect(()=>{
+  
 
+useEffect(() => {
+    setFormData((prev) => ({ ...prev, ['csrf']: csrf }));
+  }, [setCsrf]);
 
-
-  },[setCsrf]);
+  
   
   const submitForm = () => {
     if (
