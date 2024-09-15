@@ -58,7 +58,7 @@ const submitForm = () => {
 
     setLoading(true);
 
-    const url = "https://cbrbakery.com.ng/api?action=resetPassword";
+    const url = "https://cbrbakery.com.ng/api/resetPassword";
 
     toast.closeAll();
 
@@ -77,19 +77,27 @@ const submitForm = () => {
         return res.json();
       })
       .then(data => {
-        setCsrf(data.token);
+        
         setLoading(false);
         if (data.status === "success") {
        
-   setUserData(data.userData);
-          router.push("/dashboard");
+  toast({
+            title: "Error",
+            description: data.message,
+            status: "success",
+            duration: 7000,
+            isClosable: true,
+            position:'top',
+          });
+        
         } else {
           toast({
             title: "Error",
             description: data.message,
             status: "error",
-            duration: 5000,
+            duration: 7000,
             isClosable: true,
+            position:'top',
           });
         }
       })
@@ -98,7 +106,7 @@ const submitForm = () => {
           title: "Error",
           description: "Your request could not be processed. " + error.message,
           status: "error",
-          duration: 5000,
+          duration: 7000,
           isClosable: true,
           position: "top",
         });
