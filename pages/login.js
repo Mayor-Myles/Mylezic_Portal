@@ -187,20 +187,12 @@ const LoginForm = () => {
       </Head>
 
       <Flex
-        minH={'100vh'}
-        align={'center'}
-        justify={'center'}
+        minH="100vh"
+        justify="center"
+        align="center"
         flexFlow="column wrap"
         p="1em"
-        maxW={{
-          sm: '27em',
-          base: '35em',
-          md: '27em',
-          lg: '25em',
-          xl: '28em',
-          '2xl': '30em',
-        }}
-        mx={{ base: '2em', sm: 'auto', md: 'auto' }}
+        w="full"
       >
         <Flex justify="center" align="center" flexFlow="column">
           <Text fontSize="1.2em" fontWeight="bold">Login to your account</Text>
