@@ -102,9 +102,90 @@ const LoginForm = () => {
   return (
     <>
       <Head>
+        {/* Title */}
         <title>Login to Your Mylezic Account | Secure Access</title>
-        {/* Add your meta tags and other Head content here */}
+
+        {/* Meta Description */}
+        <meta 
+          name="description" 
+          content="Login to your Mylezic account to access all our services. Enjoy secure and easy access to your dashboard for managing your transactions and profile." 
+        />
+
+        {/* Keywords */}
+        <meta 
+          name="keywords" 
+          content="login, Mylezic login, account access, secure login, Mylezic account" 
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://mylezic.com.ng/login" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Login to Your Mylezic Account | Secure Access" />
+        <meta 
+          property="og:description" 
+          content="Access your Mylezic account securely. Manage your transactions, view your profile, and explore our services by logging in." 
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mylezic.com.ng/login" />
+        <meta property="og:image" content="/logo.png" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Login to Your Mylezic Account | Secure Access" />
+        <meta 
+          name="twitter:description" 
+          content="Log in securely to your Mylezic account and take control of your profile and transactions." 
+        />
+        <meta name="twitter:image" content="/logo.png" />
+
+        {/* Robots Tag (Allow all crawling) */}
+        <meta name="robots" content="index, follow" />
+
+        {/* Author */}
+        <meta name="author" content="Mylezic" />
+
+        {/* Charset */}
+        <meta charSet="UTF-8" />
+
+        {/* Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Additional SEO Tags */}
+        <meta property="og:site_name" content="Mylezic" />
+        <meta name="theme-color" content="teal" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <meta name="application-name" content="Mylezic Login Portal" />
+
+        {/* Structured Data for Search Engines */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "WebPage",
+              "name": "Login Page",
+              "description": "Secure login to access your Mylezic account. Manage your profile, view transactions, and access all our services.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Mylezic",
+                "url": "https://mylezic.com.ng"
+              },
+              "image": "https://mylezic.com.ng/logo.png",
+              "url": "https://mylezic.com.ng/login"
+            },
+            "sameAs": [
+              "https://x.com/Mylezic?t=rZ-XsKl0de9aDIJL_1LREA&s=09",
+              "https://www.facebook.com/profile.php?id=61564236574047",
+              "https://www.instagram.com/mylezic",
+              "https://linkedin.com/mylezic"
+            ]
+          `}
+        </script>
       </Head>
+
 
       <Flex
         minH={'100vh'}
