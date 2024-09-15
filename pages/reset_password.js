@@ -147,7 +147,7 @@ const submitForm = () => {
       
     >
 
-      <Flex userSelect="none" userSelect="none" justify="center" align="center" flexFlow="column">
+      <Flex userSelect="none" justify="center" align="center" flexFlow="column">
         
 <Text fontSize="1.2em" fontWeight="bold">Recover your account</Text>
 
