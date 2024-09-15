@@ -32,7 +32,7 @@ const Register = () => {
     password: '',
     phoneNumber: '',
     refferal: '',
-    csrf: csrf,
+    csrf: '',
   });
 
   const router = useRouter();
@@ -46,7 +46,7 @@ const Register = () => {
 
 useEffect(() => {
     setFormData((prev) => ({ ...prev, ['csrf']: csrf }));
-  }, [setCsrf]);
+  }, [csrf,setCsrf]);
 
   
   
@@ -86,8 +86,8 @@ useEffect(() => {
         setCsrf(data.token);
 
         if (data.status === 'success') {
-          // Assuming setUserData is for setting the user data in your application state
-          setUserData(data.userData);
+          
+          
 
           toast({
             title: 'Congrats 🎉 ',
@@ -104,6 +104,7 @@ useEffect(() => {
             status: 'error',
             duration: 5000,
             isClosable: true,
+            position:'top',
           });
         }
       })
