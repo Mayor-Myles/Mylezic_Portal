@@ -55,14 +55,15 @@ useEffect(() => {
       formData.fullname === '' ||
       formData.password === '' ||
       formData.email === '' ||
-      formData.phoneNumber === ''
+      formData.phoneNumber === '' ,
+      formData.password.length < 6
     ) {
       toast({
         position: 'top',
         title: 'Warning',
-        description: 'Please fill in the important fields!!! Refferal is not compulsory.',
+        description: 'Please fill in the important fields!!! Refferal is not compulsory. Password cant be less than six(6) characters',
         status: 'warning',
-        duration: 5000,
+        duration: 7000,
         isClosable: true,
       });
       return;
@@ -83,7 +84,7 @@ useEffect(() => {
       .then((response) => {
         setLoading(false);
         const data = response.data;
-        setCsrf(data.token);
+        
 
         if (data.status === 'success') {
           
@@ -96,13 +97,14 @@ useEffect(() => {
             duration: 7000,
             position: 'top',
             isClosable: true,
+            status:'success',
           });
         } else {
           toast({
             title: 'Error',
             description: data.message,
             status: 'error',
-            duration: 5000,
+            duration: 7000,
             isClosable: true,
             position:'top',
           });
