@@ -186,7 +186,6 @@ const LoginForm = () => {
         </script>
       </Head>
 
-
       <Flex
         minH={'100vh'}
         align={'center'}
@@ -248,6 +247,12 @@ const LoginForm = () => {
           </InputGroup>
         </Flex>
 
+        <Flex w="full" justify="space-between" mb="1em">
+          <Link color="teal" onClick={() => router.push('/reset_password')}>
+            Forgot password?
+          </Link>
+        </Flex>
+
         <Flex w="full" mt="1em">
           <Button isLoading={loading} onClick={submitForm} size="md" colorScheme="teal" w="full">
             Continue
@@ -258,5 +263,5 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
-  
+export default
+      
