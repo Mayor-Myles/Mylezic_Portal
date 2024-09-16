@@ -144,7 +144,7 @@ const testimonials = [
     <Box>
       
       {/* Header Section */}
-      <Flex shadow="sm" position ="fixed" zIndex="999" top="0" bg="white" w="full" as="header" align="center" justify="space-between" py={4} px={2}>
+      <Flex shadow="sm" position ="fixed" zIndex="999" top="0" bg="whitee" w="full" as="header" align="center" justify="space-between" py={4} px={2}>
         <Heading as="h1" size="sm">Mylezic</Heading>
         <IconButton
           display={{ base: "block", md: "none" }}
@@ -191,7 +191,7 @@ const testimonials = [
       </Drawer>
 
       {/* Hero Section */}
-      <Box mt="5em" as="section" py={15} px={8} bgg="gray.50">
+      <Box mt="5em" as="section" py={15} px={8} bg="grayyy.50">
         <Flex direction={{ base: "column", md: "row" }} align="center">
           <VStack align="start" spacing={6} flex={1}>
             <Text color="teal.600" fontWeight="bold">Telecommunications & IT Solutions</Text>
@@ -212,7 +212,7 @@ const testimonials = [
       </Box>
 
       {/* About Us Section */}
-      <Box mx={[1,10]} as="section" py={20} px={8} bgg="white">
+      <Box mx={[1,10]} as="section" py={20} px={8} bg="whitee">
         <Flex direction={{ base: "column", md: "row" }} align="center">
           <Image
             src="avatar.jpeg"
@@ -245,7 +245,7 @@ const testimonials = [
       </Box>
 
       {/* Services Section */}
-      <Box as="section" py={20} px={8} bgg="gray.900">
+      <Box as="section" py={20} px={8} bg="grayyy.900">
         <Heading as="h3" size="lg" color="white" textAlign="center" mb={10}>
           What we do
         </Heading>
