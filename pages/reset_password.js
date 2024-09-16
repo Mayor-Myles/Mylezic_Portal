@@ -17,7 +17,7 @@ import {FaEye,FaEyeSlash } from 'react-icons/fa';
 import {csrfState} from "../states/recoil";
 import Head from "next/head";
 import Link from "next/link";
-
+import {useRecoilState} from "recoil";
 
 const ResetPassword = () => {
 
