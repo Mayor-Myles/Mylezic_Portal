@@ -14,7 +14,7 @@ InputRightElement,
   Grid
 } from '@chakra-ui/react';
 import {FaEye,FaEyeSlash } from 'react-icons/fa';
-
+import {csrfState} from "../states/recoil";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -29,10 +29,11 @@ const [passwordVisible,setPasswordVisible] = useState(false);
   }
 
 const [phoneNumber,setPhoneNumber] = useState("");
-
+const [csrf, setCsrf] = useRecoilState(csrfState);
   const data = {
 
-"phoneNumber": phoneNumber
+"phoneNumber": phoneNumber,
+    "csrf" : "",
     
   }
 
@@ -40,6 +41,10 @@ const [phoneNumber,setPhoneNumber] = useState("");
 
 
   const toast = useToast();
+
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, ['csrf']: csrf }));
+  }, [setCsrf]);
   
 const submitForm = () => {
     
