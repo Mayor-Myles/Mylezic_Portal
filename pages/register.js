@@ -367,6 +367,10 @@ useEffect(() => {
             Google
           </Button>
         </Flex>*/}
+
+        <Flex mt="3em" align="center" justify="center" >
+<Text fontWeight="bold">Mylezic</Text>
+      </Flex>
       </Flex>
     </>
   );
