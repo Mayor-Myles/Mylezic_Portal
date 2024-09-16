@@ -165,7 +165,7 @@ const submitForm = () => {
       
       <InputGroup mb="1.3em">
       
-      <Input onChange={(e)=>setPhoneNumber(e.target.value)} type="number" placeholder="Phone number" outline="none" bg="#F5F5F5" p="1.2em" border="0px" borderRadius="0.5em" size="lg" w="full" fontSize="14px"/>
+      <Input value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)} type="number" placeholder="Phone number" outline="none" bg="#F5F5F5" p="1.2em" border="0px" borderRadius="0.5em" size="lg" w="full" fontSize="14px"/>
       
       
       </InputGroup>
