@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
       }),
     },
-   Box: {
+   Card: {
       baseStyle: (props) => ({
         bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
         color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
