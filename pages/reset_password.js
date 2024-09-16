@@ -28,7 +28,7 @@ const [passwordVisible,setPasswordVisible] = useState(false);
     setPasswordVisible(!passwordVisible);
   }
 
-const [phoneNumber,setPhoneNumber] = useState("");
+const [phoneNumber,setPhoneNumber] = useState(null);
 const [csrf, setCsrf] = useRecoilState(csrfState);
 const [formData,setFormData] = useState({
 
