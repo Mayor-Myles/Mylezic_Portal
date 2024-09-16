@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, useToast, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, useToast, extendTheme, ColorModeScript } from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { csrfState, userData, dataPlansState } from "../states/recoil";
 import { useEffect } from "react";
@@ -8,50 +8,36 @@ import axios from 'axios';
 import { mode } from '@chakra-ui/theme-tools';
 
 function MyApp({ Component, pageProps }: AppProps) {
- 
-  const theme = extendTheme({
-
-   config: {
-    initialColorMode: 'dark',  // Set default theme to dark
-    useSystemColorMode: false, // Prevents system color mode preference
-  },
-   
-  /*components: {
-    Flex: {
-      baseStyle: (props) => ({
-        bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
-        color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
-      }),
-    },
-   Box: {
-      baseStyle: (props) => ({
-        bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
-        color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
-      }),
-    },
-    
-  },*/
-   styles: {
-    global: (props) => ({
-      body: {
-        bg: mode('white', 'gray.900')(props),
-        color: mode('black', 'teal')(props),
-      },
-    }),
-  },
-});
-
   
+  // Theme configuration
+  const theme = extendTheme({
+    config: {
+      initialColorMode: 'dark', // Set default to dark mode
+      useSystemColorMode: false, // Disable system color mode preference
+    },
+    styles: {
+      global: (props) => ({
+        body: {
+          bg: mode('white', 'gray.900')(props), // Light mode: white, Dark mode: gray.900
+          color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
+        },
+      }),
+    },
+  });
+
   return (
     <RecoilRoot>
       <ChakraProvider theme={theme}>
+        {/* This ensures color mode is persistent */}
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <InitializeState />
         <Component {...pageProps} />
       </ChakraProvider>
     </RecoilRoot>
-  )
+  );
 }
 
+// Initializes state with CSRF token, user data, etc.
 function InitializeState() {
   const [user, setUser] = useRecoilState(userData);
   const [csrf, setCsrf] = useRecoilState(csrfState);
@@ -89,7 +75,7 @@ function InitializeState() {
           position: "top",
         });
       }
-    }
+    };
 
     getToken();
   }, [setCsrf, setUser, setPlan, toast]);
@@ -98,4 +84,3 @@ function InitializeState() {
 }
 
 export default MyApp;
-              
