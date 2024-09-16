@@ -43,8 +43,8 @@ const [formData,setFormData] = useState({
   const toast = useToast();
 
   useEffect(() => {
-    setFormData((prev) => ({ ...prev, ['csrf']: csrf }));
-  }, [setCsrf]);
+    setFormData((prev) => ({ ...prev, ['csrf']: csrf, ['phoneNumber']:phoneNumber }));
+  }, [setCsrf,setPhoneNumber]);
   
 const submitForm = () => {
     
