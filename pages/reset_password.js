@@ -47,7 +47,8 @@ const [formData,setFormData] = useState({
   }, [setCsrf,setPhoneNumber]);
   
 const submitForm = () => {
-    
+
+  console.log(formData);
     if (!formData.phoneNumber) {
       
       toast({
