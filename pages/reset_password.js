@@ -30,12 +30,12 @@ const [passwordVisible,setPasswordVisible] = useState(false);
 
 const [phoneNumber,setPhoneNumber] = useState("");
 const [csrf, setCsrf] = useRecoilState(csrfState);
-  const data = {
+const [formData,setFormData] = useState({
 
 "phoneNumber": phoneNumber,
     "csrf" : "",
     
-  }
+  });
 
   const [loading,setLoading] = useState(false)
 
@@ -48,7 +48,7 @@ const [csrf, setCsrf] = useRecoilState(csrfState);
   
 const submitForm = () => {
     
-    if (!data.phoneNumber) {
+    if (!formData.phoneNumber) {
       
       toast({
         position: "top",
