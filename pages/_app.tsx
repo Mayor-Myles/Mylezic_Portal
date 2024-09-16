@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     useSystemColorMode: false, // Prevents system color mode preference
   },
    
-  components: {
+  /*components: {
     Flex: {
       baseStyle: (props) => ({
         bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
@@ -30,11 +30,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       }),
     },
     
-  },
+  },*/
    styles: {
     global: (props) => ({
       body: {
-        bg: mode('gray.100', 'gray.900')(props),
+        bg: mode('white', 'gray.900')(props),
         color: mode('black', 'teal')(props),
       },
     }),
