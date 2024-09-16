@@ -11,13 +11,24 @@ function MyApp({ Component, pageProps }: AppProps) {
  
   const theme = extendTheme({
   components: {
-    Box: {
+    Flex: {
       baseStyle: (props) => ({
         bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
         color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
       }),
     },
-    
+   Box: {
+      baseStyle: (props) => ({
+        bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
+        color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
+      }),
+    },
+    Text: {
+      baseStyle: (props) => ({
+        bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
+        color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
+      }),
+    },
   },
 });
 
