@@ -32,7 +32,7 @@ const [phoneNumber,setPhoneNumber] = useState(null);
 const [csrf, setCsrf] = useRecoilState(csrfState);
 const [formData,setFormData] = useState({
 
-"phoneNumber": phoneNumber,
+"phoneNumber": '',
     "csrf" : "",
     
   });
