@@ -10,13 +10,14 @@ import { mode } from '@chakra-ui/theme-tools';
 function MyApp({ Component, pageProps }: AppProps) {
  
   const theme = extendTheme({
-  styles: {
-    global: (props) => ({
-      body: {
-        bg: mode('gray.100', 'gray.900')(props),
-        color: mode('black', 'white')(props),
-      },
-    }),
+  components: {
+    Box: {
+      baseStyle: (props) => ({
+        bg: mode('white', 'gray.800')(props), // Light mode: white, Dark mode: gray.800
+        color: mode('black', 'white')(props), // Light mode: black, Dark mode: white
+      }),
+    },
+    
   },
 });
 
