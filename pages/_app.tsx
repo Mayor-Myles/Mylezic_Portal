@@ -10,11 +10,16 @@ import { mode } from '@chakra-ui/theme-tools';
 function MyApp({ Component, pageProps }: AppProps) {
  
   const theme = extendTheme({
-  config: {
-    initialColorMode: 'dark',  // Set default theme to dark
-    useSystemColorMode: false, // Prevents system color mode preference
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: mode('gray.100', 'gray.900')(props),
+        color: mode('black', 'white')(props),
+      },
+    }),
   },
 });
+
   
   return (
     <RecoilRoot>
