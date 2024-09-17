@@ -14,14 +14,14 @@ import {useRecoilState} from "recoil";
 
 
 const TransactionItem = ({ icon, name, type, amount ,color,date}) => (
-  <HStack justify="space-between" w="full" py={2}>
-    <HStack >
+  <HStack gap="6" justify="space-between" w="full" py={2}>
+    
       <Icon color="seagreen" as={icon} boxSize={4} mr="3" />
       <VStack mr={3} align="start" spacing={0}>
         <Text fontWeight="bold">{name}</Text>
         <Text fontSize="sm" color="gray.500">{type}</Text>
       </VStack>
-    </HStack>
+    
     <Text color={color} fontWeight="bold">₦{amount}</Text>
     <Text ml={2} color="gray 400">{date}</Text>
   </HStack>
