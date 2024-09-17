@@ -16,16 +16,7 @@ import {useRecoilState} from "recoil";
 const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
   <HStack gap="5" justify="space-between" w="fulll" py={2}>
     
-      <HStack gap="5">
-  <Text fontWeight="bold">Service <Icon color="seagreen" as={icon} boxSize={4} ml="2" />
-     </Text>
-  <Text fontWeight="bold">Description</Text>
   
-  <Text fontWeight="bold">Reference</Text>
-  <Text fontWeight="bold">Amount</Text>
-  <Text fontWeight="bold">Date</Text>
-  
-  </Hstack>
   <Text fontSize="sm" color="gray.500">{name}</Text>
  <Text fontSize="sm" color="gray.500">{type}</Text>
  <Text fontSize="13px" ml={2} color="gray.400">{tid}</Text>
@@ -64,9 +55,20 @@ const icons = {
     <Box display="flex" flexFlow="column" justify="center" align="center" p={2} mb="5em" mt="1em" w="full" gap="7">
       
       
-        <Text fontSize="1em" fontWeight="bold" mb={3}>
-          Transaction
+        <Text fontSize="1em" fontWeight="bold" mb={1}>
+          Transactions History 
         </Text>
+
+
+    <HStack gap="5" mb="1">
+  <Text fontWeight="bold">Service <Icon color="seagreen" as={icon} boxSize={4} ml="2" />
+     </Text>
+  <Text fontWeight="bold">Description</Text>
+  <Text fontWeight="bold">Reference</Text>
+  <Text fontWeight="bold">Amount</Text>
+  <Text fontWeight="bold">Date</Text>
+  </Hstack>
+    
         <VStack spacing={4} align="center">
 
           {user.transactions ? user.transactions.map((transaction,index) => (
