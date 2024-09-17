@@ -21,10 +21,23 @@ const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
         <Text fontWeight="bold">{name}</Text>
         <Text fontSize="sm" color="gray.500">{type}</Text>
       </VStack>
+  <VStack mr={3} align="start" spacing={0}>
+        <Text fontWeight="bold">Reference</Text>
   <Text fontSize="13px" ml={2} color="gray.400">{tid}</Text>
-  
-    <Text color={color} fontWeight="bold">₦{amount}</Text>
+  </VStack>
+
+  <VStack mr={3} align="start" spacing={0}>
+        <Text fontWeight="bold">Amount</Text>
+
+    <Text color={color} fontSize="14px">₦{amount}</Text>
+  </VStack>
+
+  <VStack mr={3} align="start" spacing={0}>
+        <Text fontWeight="bold">Date</Text>
+
     <Text fontSize="13px" ml={2} color="gray.400">{date}</Text>
+      </VStack>
+  
   </HStack>
 );
 
