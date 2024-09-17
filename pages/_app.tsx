@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, useToast, extendTheme, ColorModeScript, useColorMode} from "@chakra-ui/react";
+import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager} from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { csrfState, userData, dataPlansState } from "../states/recoil";
 import { useEffect } from "react";
@@ -9,13 +9,14 @@ import { mode } from '@chakra-ui/theme-tools';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-  const userColorMode = localStorage.getItem('mode');
   // Theme configuration
   const theme = extendTheme({
-    config: {
-     initialColorMode: userColorMode, 
-      useSystemColorMode: false, // Disable system color mode preference
-    },
+  config: {
+    initialColorMode: localStorageManager.get() || "light", // Check local storage or fallback to light
+    useSystemColorMode: false,
+  },
+
+
     styles: {
       global: (props) => ({
         body: {
