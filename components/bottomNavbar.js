@@ -6,6 +6,7 @@ import { AiOutlineCustomerService } from 'react-icons/ai';
 import {useRouter} from "next/router";
 import{userData} from "../states/recoil";
 import{useRecoilState} from "recoil";
+import { CiLight,CiDark } from "react-icons/ci";
 
 
 const NavbarBottom = () => {
@@ -31,14 +32,14 @@ const router = useRouter();
     visibility={{lg:"hidden"}}
     >
 
-      <Box onClick={()=>toggleColorMode}>
+      <Box onClick={toggleColorMode}>
       <IconButton
         aria-label="receipt"
-        icon={<Icon as={CiReceipt} size="md"/>}
+        icon={colorMode === "light" ? (<Icon as={CiDark} size="md"/>) : (<Icon as={CiLight} size="md"/>)}
         fontSize="1.8rem"
         variant="ghost"
       />
-<Text color="grey" fontSize="12px">Receipts</Text>
+<Text color="grey" fontSize="12px">{colorMode==="light" ? "Dark Mode" : "Light Mode"}</Text>
       </Box>
 
       <Box onClick={()=>window.location.href=whatsappLink}>
