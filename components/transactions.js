@@ -17,8 +17,8 @@ const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
   <HStack gap="4" justify="space-between" w="fulll" py={2}>
     
   
-  <Text fontSize="sm" color="gray.500">{name} <Icon color="seagreen" as={icon} boxSize={4} ml="2" /></Text>
- <Text fontSize="sm" color="gray.500">{type}</Text>
+  <Text fontSize="sm" color="gray.500"> <Icon color="seagreen" as={icon} boxSize={4} ml="2" /></Text>
+ <Text fontSize="sm" color="gray.500">{name} - {type}</Text>
  <Text fontSize="13px" ml={2} color="gray.400">{tid}</Text>
   <Text color={color} fontSize="14px">₦{amount}</Text>
   <Text fontSize="13px" ml={2} color="gray.400">{date}</Text>
