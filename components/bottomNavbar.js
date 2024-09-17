@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, IconButton, Icon ,Text,Link} from '@chakra-ui/react';
+import { Box, Flex, IconButton, Icon ,Text,Link,useColorMode} from '@chakra-ui/react';
 import { GoHome } from 'react-icons/go';
 import { CiReceipt,CiUser,CiMoneyCheck1} from 'react-icons/ci';
 import { AiOutlineCustomerService } from 'react-icons/ai';
@@ -10,6 +10,7 @@ import {useRouter} from "next/router";
 const NavbarBottom = () => {
 
 const whatsappLink = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.%20My%20email%20is%20ab%40gmail.com";
+const { colorMode, toggleColorMode } = useColorMode();
   
   const router = useRouter();
   
@@ -20,7 +21,7 @@ const whatsappLink = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C
       position="fixed"
       bottom="0"
       width="100%"
-      bg="white"
+      bg={colorMode === "light" && "white"}
       boxShadow="0 -1px 4px rgba(0, 0, 0, 0.1)"
       justifyContent="space-around"
       alignItems="center"
