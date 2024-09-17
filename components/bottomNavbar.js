@@ -28,11 +28,10 @@ const router = useRouter();
       justifyContent="space-around"
       alignItems="center"
       paddingY="0.2em"
-
-      visibility={{lg:"hidden"}}
+    visibility={{lg:"hidden"}}
     >
 
-      <Box onClick={()=>window.location.href="#trans"}>
+      <Box onClick={()=>toggleColorMode}>
       <IconButton
         aria-label="receipt"
         icon={<Icon as={CiReceipt} size="md"/>}
