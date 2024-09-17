@@ -19,7 +19,7 @@ const { colorMode, toggleColorMode } = useColorMode();
       position="fixed"
       top="0"
       width="100%"
-      bg={colorMode === "light" ? "white" : "grey.900"}
+      bg={colorMode === "light" ? "white" : "black"}
       mb="1em"
       zIndex="999"
       p="2"
