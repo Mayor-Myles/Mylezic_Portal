@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Avatar, Text, useColorModeValue, IconButton ,Grid,Badge} from '@chakra-ui/react';
+import { Box, Flex, Avatar, Text, useColorModeValue, IconButton ,Grid,Badge,useColorMode} from '@chakra-ui/react';
 import {GoBell} from 'react-icons/go';
 import {userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
@@ -11,6 +11,7 @@ import {useRecoilState} from "recoil";
 const NavbarTop = () => {
 
 const [user,setUser] = useRecoilState(userData);
+const { colorMode, toggleColorMode } = useColorMode();
 
   
   return (
@@ -18,7 +19,7 @@ const [user,setUser] = useRecoilState(userData);
       position="fixed"
       top="0"
       width="100%"
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={colorMode === "light" && "white"}
       mb="1em"
       zIndex="999"
       p="2"
