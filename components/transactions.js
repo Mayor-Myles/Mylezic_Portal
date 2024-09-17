@@ -23,7 +23,7 @@ const TransactionItem = ({ icon, name, type, amount ,color,date}) => (
       </VStack>
     
     <Text color={color} fontWeight="bold">₦{amount}</Text>
-    <Text ml={2} color="gray 400">{date}</Text>
+    <Text fontSize="13px" ml={2} color="gray 400">{date}</Text>
   </HStack>
 );
 
