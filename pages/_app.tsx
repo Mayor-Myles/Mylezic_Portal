@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, useToast, extendTheme, ColorModeScript, ColorMode} from "@chakra-ui/react";
+import { ChakraProvider, useToast, extendTheme, ColorModeScript, useColorMode} from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { csrfState, userData, dataPlansState } from "../states/recoil";
 import { useEffect } from "react";
@@ -8,11 +8,12 @@ import axios from 'axios';
 import { mode } from '@chakra-ui/theme-tools';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  
+
+  const{colorMode,toggleColorMode} = useColorMode();
   // Theme configuration
   const theme = extendTheme({
     config: {
-     initialColorMode: ColorMode, // Set default to dark mode
+     initialColorMode: colorMode, // Set default to dark mode
       useSystemColorMode: true, // Disable system color mode preference
     },
     styles: {
