@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Theme configuration
   const theme = extendTheme({
     config: {
-     // initialColorMode: colorMode, // Set default to dark mode
+     initialColorMode: colorMode, // Set default to dark mode
       useSystemColorMode: true, // Disable system color mode preference
     },
     styles: {
