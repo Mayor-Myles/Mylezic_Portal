@@ -67,7 +67,7 @@ const icons = {
   <Text fontWeight="bold">Reference</Text>
   <Text fontWeight="bold">Amount</Text>
   <Text fontWeight="bold">Date</Text>
-  </Hstack>
+  </HStack>
     
         <VStack spacing={4} align="center">
 
