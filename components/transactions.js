@@ -54,7 +54,7 @@ const icons = {
     
     <Box display="flex" flexFlow="column" justify="center" align="center" p={2} mb="5em" mt="1em" w="full" gap="7">
       
-      <Box bg="white" borderRadius="xl" p={2}>
+      <Box p={2}>
         <Text fontSize="1em" fontWeight="bold" mb={3}>
           Transaction
         </Text>
