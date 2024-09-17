@@ -16,27 +16,22 @@ import {useRecoilState} from "recoil";
 const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
   <HStack gap="5" justify="space-between" w="fulll" py={2}>
     
-      <Icon color="seagreen" as={icon} boxSize={4} mr="3" />
-      <VStack mrr={3} align="" spacing={0}>
-        <Text fontWeight="bold">{name}</Text>
-        <Text fontSize="sm" color="gray.500">{type}</Text>
-      </VStack>
-  <VStack mrr={3} align="" spacing={0}>
-        <Text fontWeight="bold">Reference</Text>
-  <Text fontSize="13px" ml={2} color="gray.400">{tid}</Text>
-  </VStack>
-
-  <VStack mrr={3} align="" spacing={0}>
-        <Text fontWeight="bold">Amount</Text>
-
-    <Text color={color} fontSize="14px">₦{amount}</Text>
-  </VStack>
-
-  <VStack mrr={3} align="" spacing={0}>
-        <Text fontWeight="bold">Date</Text>
-
-    <Text fontSize="13px" ml={2} color="gray.400">{date}</Text>
-      </VStack>
+      <HStack gap="5">
+  <Text fontWeight="bold">Service <Icon color="seagreen" as={icon} boxSize={4} ml="2" />
+     </Text>
+  <Text fontWeight="bold">Description</Text>
+  
+  <Text fontWeight="bold">Reference</Text>
+  <Text fontWeight="bold">Amount</Text>
+  <Text fontWeight="bold">Date</Text>
+  
+  </Hstack>
+  <Text fontSize="sm" color="gray.500">{name}</Text>
+ <Text fontSize="sm" color="gray.500">{type}</Text>
+ <Text fontSize="13px" ml={2} color="gray.400">{tid}</Text>
+  <Text color={color} fontSize="14px">₦{amount}</Text>
+  <Text fontSize="13px" ml={2} color="gray.400">{date}</Text>
+      
   
   </HStack>
 );
