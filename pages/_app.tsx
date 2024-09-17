@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <RecoilRoot>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider theme={theme} colorModeManager={localStorageManager}>
         {/* This ensures color mode is persistent */}
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <InitializeState />
