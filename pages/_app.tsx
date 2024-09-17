@@ -9,11 +9,11 @@ import { mode } from '@chakra-ui/theme-tools';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-  const{colorMode,toggleColorMode} = useColorMode();
+  const userColorMode = localStorage.getItem('mode');
   // Theme configuration
   const theme = extendTheme({
     config: {
-     initialColorMode: colorMode, // Set default to dark mode
+     initialColorMode: userColorMode, 
       useSystemColorMode: false, // Disable system color mode preference
     },
     styles: {
