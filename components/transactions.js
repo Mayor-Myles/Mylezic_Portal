@@ -13,7 +13,7 @@ import {useRecoilState} from "recoil";
 
 
 
-const TransactionItem = ({ icon, name, type, amount ,color,date}) => (
+const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
   <HStack gap="4" justify="space-between" w="full" py={2}>
     
       <Icon color="seagreen" as={icon} boxSize={4} mr="3" />
@@ -21,9 +21,10 @@ const TransactionItem = ({ icon, name, type, amount ,color,date}) => (
         <Text fontWeight="bold">{name}</Text>
         <Text fontSize="sm" color="gray.500">{type}</Text>
       </VStack>
-    
+    <Text fontSize="13px" ml={2} color="gray.400">{tid}</Text>
+  
     <Text color={color} fontWeight="bold">₦{amount}</Text>
-    <Text fontSize="13px" ml={2} color="gray 400">{date}</Text>
+    <Text fontSize="13px" ml={2} color="gray.400">{date}</Text>
   </HStack>
 );
 
@@ -63,7 +64,7 @@ const icons = {
           {user.transactions ? user.transactions.map((transaction,index) => (
       
         
-<TransactionItem key={index} icon={icons[transaction.icon]} name={transaction.title} type={transaction.description} amount={transaction.amount} color={colors[transaction.status]} date={transaction.date} />
+<TransactionItem key={index} icon={icons[transaction.icon]} name={transaction.title} type={transaction.description} amount={transaction.amount} color={colors[transaction.status]} date={transaction.date} tid={transaction.tid} />
 
     )) :
 
