@@ -315,7 +315,7 @@ title:"Congrats 🎉 ",
 
         <Image alt="network" borderRadius="100%" w="25px" h="25px" src={`${network}.png`} objectFit="contain" />
 
-        <Text fontSize="14px" color={selected===index ? "white" : "gray"} m="1"  fontWeight ="bold">{item.planName}</Text>
+        <Text fontSize="14px" color={selected===index ? "white" : "gray.700"} m="1"  fontWeight ="bold">{item.planName}</Text>
 
       
       <Text color={selected === index ? "teal" : "grey"} fontSize="sm" fontWeight="400">₦{item.price} </Text>
