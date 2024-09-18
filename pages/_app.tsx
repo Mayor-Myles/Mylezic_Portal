@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager} from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { csrfState, userData, dataPlansState } from "../states/recoil";
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 import axios from 'axios';
 import { mode } from '@chakra-ui/theme-tools';
 
