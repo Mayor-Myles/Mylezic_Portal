@@ -35,9 +35,6 @@ const updateData = (key,value) => {
 }
 
   
-import axios from 'axios';
-import { toast } from '@chakra-ui/react';
-
 const submitForm = async () => {
   setBtnLoading(true);
 
