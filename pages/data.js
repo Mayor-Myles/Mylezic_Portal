@@ -97,8 +97,9 @@ if(!plan && !csrf){
   // Using axios for the POST request
   axios.post(url, data ,{
     headers: {
-      "Content-Type": "application/json",
-    })
+      "Content-Type": "application/json"
+    }
+  })
     .then((res) => {
       setCsrf(res.data.token);
       setBtnLoading(false);
