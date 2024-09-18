@@ -100,86 +100,77 @@ const data = {
   sender:sender,
 } 
 
-    
     const fields = Object.values(data).every(Boolean);
 
-    if(!fields){
-
-      setBtnLoading(false);
-
-      toast.closeAll();
-      
-      toast({
-        title:"Oops",
-        description:"Please enter the necessary information ",
-        status:"info",
-        duration:5000,
-        isClosable:true,
-        position:"top"
-      })
-
-      return;
-    }
-    console.log(data);
-
-    const url = "https://cbrbakery.com.ng/api?action=bulkSMS";
-    
-fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then(res => {
-        if (!res.ok) {
-          setBtnLoading(false);
-          throw new Error(res.statusText);
-        }
-        return res.json();
-      })
-      .then(data => {
-        setCsrf(data.token);
+    if (!fields) {
         setBtnLoading(false);
-        if (data.status === "success") {
-       
-   setUser(data.userData);
+        toast.closeAll();
+        toast({
+            title: "Oops",
+            description: "Please enter the necessary information",
+            status: "info",
+            duration: 5000,
+            isClosable: true,
+            position: "top",
+        });
+        return;
+    }
 
-toast ({
-title: "Congrats 🎉 ",
-  description:"Your message has been successfully sent to all recipients. Thanks for choosing us.",
-  status: "success",
-  duration:6000,
-  isClosable: true,
-  
-});
-          
+
+
+    const url = "https://cbrbakery.com.ng/api/bulkSMS";
+
+    axios.post(url, data, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then(response => {
+        const { status, message, token, userData } = response.data;
+        setCsrf(token);
+        setBtnLoading(false);
+
+        toast.closeAll(); // Close any existing toasts
+
+        if (status === "success") {
+            setUser(userData);
+
+            toast({
+                title: "Congrats 🎉",
+                description: "Your message has been successfully sent to all recipients. Thanks for choosing us.",
+                status: "success",
+                duration: 7000,
+                isClosable: true,
+                position: "top",
+            });
+
         } else {
-          toast({
+            toast({
+                title: "Error",
+                description: message,
+                status: "error",
+                duration: 5000,
+                isClosable: true,
+                position: "top",
+            });
+        }
+    })
+    .catch(error => {
+        toast({
             title: "Error",
-            description: data.message,
+            description: "Your request could not be processed. " + error.message,
             status: "error",
             duration: 5000,
             isClosable: true,
-          });
-        }
-      })
-      .catch(error => {
-        toast({
-          title: "Error",
-          description: "Your request could not be processed. " + error.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "top",
+            position: "top",
         });
         setBtnLoading(false);
-    
-      });
+    });
+};
 
 
-    
-  }
+
+   
   
   
   return (
