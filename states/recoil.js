@@ -20,17 +20,17 @@ key:"userData",
         amount:234,
         date:"03/05/2024 2:30pm",
         status: "success",
-         tid:"c23gf65al"
+         tid:"REF-c23gf65al"
       },
 
       {
         icon:"airtime",
         title:"Airtime",
-        description:"500 naira to 09023443155",
+        description:"₦500 to 09023443155",
         amount:6734,
         date:"03/05/2024 2:30pm",
         status: "error",
-        tid:"c23gf65al",
+        tid:"REF-49gwqopj",
       },
     ]
           }
