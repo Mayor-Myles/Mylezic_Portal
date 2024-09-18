@@ -14,7 +14,7 @@ import {useRecoilState} from "recoil";
 
 
 const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
-  <HStack gap="4" justify="space-between" w="fulll" py={2}>
+  <HStack gap="4" justify="space-between" w="fulll">
     
   
   <Text fontSize="sm" color="gray.500"> <Icon color="seagreen" as={icon} boxSize={4} ml="2" /></Text>
