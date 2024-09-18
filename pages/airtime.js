@@ -63,7 +63,7 @@ const toast = useToast();
 
   console.log(data);
 
-  const url = "https://cbrbakery.com.ng/api?action=buyAirtime";
+  const url = "https://cbrbakery.com.ng/api/buyAirtime";
 
   axios
     .post(url, data, {
