@@ -103,7 +103,7 @@ const data = {
     }//fileds not filled
 
 
-const url = "https://cbrbakery.com.ng/api?action=buyData";
+const url = "https://cbrbakery.com.ng/api/buyData";
 
     fetch(url, {
       method: "POST",
@@ -315,7 +315,7 @@ title:"Congrats 🎉 ",
 
         <Image alt="network" borderRadius="100%" w="25px" h="25px" src={`${network}.png`} objectFit="contain" />
 
-        <Text fontSize="14px" color={selected===index && "white"} m="1"  fontWeight ="bold">{item.planName}</Text>
+        <Text fontSize="14px" color={selected===index ? "white" : "gray"} m="1"  fontWeight ="bold">{item.planName}</Text>
 
       
       <Text color={selected === index ? "teal" : "grey"} fontSize="sm" fontWeight="400">₦{item.price} </Text>
