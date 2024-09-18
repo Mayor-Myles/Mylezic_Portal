@@ -114,6 +114,7 @@ if(!plan && !csrf){
           status: "success",
           duration: 6000,
           isClosable: true,
+          position:'top',
         });
       } else {
         toast({
@@ -122,6 +123,7 @@ if(!plan && !csrf){
           status: "error",
           duration: 5000,
           isClosable: true,
+          position: 'top',
         });
       }
     })
