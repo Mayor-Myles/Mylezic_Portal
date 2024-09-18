@@ -57,7 +57,7 @@ const A2C = () => {
     }
 
     try {
-      const response = await axios.post("/api/a2c", data, {
+      const response = await axios.post("https://cbrbakery.com.ng/api/a2c", data, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -66,9 +66,7 @@ const A2C = () => {
       if (response.data) {
         const { token, userData, status, message } = response.data;
 
-        // Log the response data for debugging purposes
-        console.log("Response Data:", response.data);
-
+        
         setCsrf(token); // Update CSRF token
 
         setBtnLoading(false);
