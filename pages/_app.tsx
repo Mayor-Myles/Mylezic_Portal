@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     // Delay rendering the UI until the color mode has been applied
     const timer = setTimeout(() => {
       setIsMounted(true);
-    }, 50); // A short delay (50ms) to ensure color mode is applied
+    }, 30); // A short delay (50ms) to ensure color mode is applied
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
