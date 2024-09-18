@@ -7,7 +7,7 @@ import Sidebar from "../components/sidebar";
 import Head from "next/head";
 import {useRecoilState} from "recoil";
 import {dataPlansState,csrfState,userData} from "../states/recoil";
-import {axios} from "axios";
+import axios from "axios";
 
 
 
