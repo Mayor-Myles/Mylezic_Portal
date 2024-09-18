@@ -9,6 +9,21 @@ import { mode } from '@chakra-ui/theme-tools';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Delay rendering the UI until the color mode has been applied
+    const timer = setTimeout(() => {
+      setIsMounted(true);
+    }, 50); // A short delay (50ms) to ensure color mode is applied
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
+  if (!isMounted) {
+    return null; p
+  }
+  
   // Theme configuration
   const theme = extendTheme({
   config: {
