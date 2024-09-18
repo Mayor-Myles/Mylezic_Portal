@@ -33,96 +33,85 @@ const toast = useToast();
 
   
   const submitForm = () => {
+  setBtnLoading(true);
 
-setBtnLoading(true)
-    
-const data = {
+  const data = {
+    amount: amount,
+    phoneNumber: phoneNumber,
+    csrf: csrf,
+    network: network,
+  };
 
-  amount:amount,
-  phoneNumber:phoneNumber,
-  csrf:csrf,
-  network: network,
-} 
+  const fields = Object.values(data).every(Boolean);
 
-    const fields = Object.values(data).every(Boolean);
+  if (!fields) {
+    setBtnLoading(false);
 
-    if(!fields){
+    toast.closeAll();
 
-      setBtnLoading(false);
+    toast({
+      title: "Oops",
+      description: "Please enter the amount and the receiver's phone number",
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
 
-      toast.closeAll();
-      
-      toast({
-        title:"Oops",
-        description:"Please enter the amount and the receivers phone number ",
-        status:"info",
-        duration:5000,
-        isClosable:true,
-        position:"top"
-      })
+    return;
+  }
 
-      return;
-    }
-    console.log(data);
+  console.log(data);
 
-    const url = "https://cbrbakery.com.ng/api?action=buyAirtime";
-    
-fetch(url, {
-      method: "POST",
+  const url = "https://cbrbakery.com.ng/api?action=buyAirtime";
+
+  axios
+    .post(url, data, {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
     })
-      .then(res => {
-        if (!res.ok) {
-          setBtnLoading(false);
-          throw new Error(res.statusText);
-        }
-        return res.json();
-      })
-      .then(data => {
-        setCsrf(data.token);
-        setBtnLoading(false);
-        if (data.status === "success") {
-       
-   setUser(data.userData);
-
-toast ({
-title: "Congrats 🎉 ",
-  description:"Airtime purchase is successful. Thanks for choosing us",
-  status: "success",
-  duration:6000,
-  isClosable: true,
-  
-});
-          
-        } else {
-          toast({
-            title: "Error",
-            description: data.message,
-            status: "error",
-            duration: 5000,
-            isClosable: true,
-          });
-        }
-      })
-      .catch(error => {
+    .then((res) => {
+      setCsrf(res.data.token);
+      setBtnLoading(false);
+      if (res.data.status === "success") {
+        setUser(res.data.userData);
+        
+        toast.closeAll();
+        toast({
+          title: "Congrats 🎉",
+          description: "Airtime purchase is successful. Thanks for choosing us",
+          status: "success",
+          duration: 6000,
+          isClosable: true,
+          position: "top",
+        });
+      } else {
+        toast.closeAll();
         toast({
           title: "Error",
-          description: "Your request could not be processed. " + error.message,
+          description: res.data.message,
           status: "error",
           duration: 5000,
           isClosable: true,
           position: "top",
         });
-        setBtnLoading(false);
-    
+      }
+    })
+    .catch((error) => {
+      toast.closeAll();
+      toast({
+        title: "Error",
+        description: "Your request could not be processed. " + error.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
       });
+      setBtnLoading(false);
+    });
+};
 
-
-    
-  }
   
   return(
 <>
