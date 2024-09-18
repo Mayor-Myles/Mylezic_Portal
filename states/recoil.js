@@ -14,7 +14,7 @@ key:"userData",
     "phoneNumber":"09060421393",
     "transactions":[
       {
-        icon:"a2c",
+        icon:"data",
         title:"Data bundle",
         description:"500mb to 07014443155",
         amount:234,
@@ -24,7 +24,7 @@ key:"userData",
       },
 
       {
-        icon:"bulkSMS",
+        icon:"airtime",
         title:"Airtime",
         description:"500 naira to 09023443155",
         amount:6734,
