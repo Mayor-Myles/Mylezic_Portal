@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   if (!isMounted) {
-    return null; p
+    return null; 
   }
   
   // Theme configuration
