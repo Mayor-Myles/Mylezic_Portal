@@ -20,7 +20,7 @@ key:"userData",
         amount:234,
         date:"03/05/2024 2:30pm",
         status: "success",
-         tid:"REF-c23gf65al"
+         tid:"c23gf65al"
       },
 
       {
@@ -30,7 +30,7 @@ key:"userData",
         amount:6734,
         date:"03/05/2024 2:30pm",
         status: "error",
-        tid:"REF-49gwqopj",
+        tid:"49gwqopj",
       },
 
       {
