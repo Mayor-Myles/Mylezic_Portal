@@ -35,12 +35,12 @@ key:"userData",
 
       {
         icon:"hire",
-        title:"Hired Us",
+        title:"Hiring",
         description:"Hired us for Website development.",
         amount:87346,
         date:"06/05/2024 2:30pm",
         status: "pending",
-        tid:"REF-49gwqopj",
+        tid:"49gwqopj",
       },
     ]
           }
