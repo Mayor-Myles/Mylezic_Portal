@@ -7,7 +7,7 @@ import Sidebar from "../components/sidebar";
 import Head from "next/head";
 import {useRecoilState} from "recoil";
 import {dataPlansState,csrfState,userData} from "../states/recoil";
-
+import {axios} from "axios";
 
 
 
@@ -95,7 +95,10 @@ if(!plan && !csrf){
   const url = "https://cbrbakery.com.ng/api/buyData";
 
   // Using axios for the POST request
-  axios.post(url, data)
+  axios.post(url, data ,{
+    headers: {
+      "Content-Type": "application/json",
+    })
     .then((res) => {
       setCsrf(res.data.token);
       setBtnLoading(false);
