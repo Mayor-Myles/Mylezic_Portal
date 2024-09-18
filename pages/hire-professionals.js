@@ -7,7 +7,7 @@ import Sidebar from "../components/sidebar";
 import Head from "next/head";
 import {csrfState,userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
-
+import axios from "axios";
 
 const Hire = () => {
 
@@ -35,90 +35,83 @@ const updateData = (key,value) => {
 }
 
   
-  const submitForm = () => {
+import axios from 'axios';
+import { toast } from '@chakra-ui/react';
 
-setBtnLoading(true)
+const submitForm = async () => {
+  setBtnLoading(true);
+
+  const fields = Object.values(formData).every(Boolean);
+
+  if (!fields) {
+    setBtnLoading(false);
     
+    toast.closeAll();
     
-    const fields = Object.values(formData).every(Boolean);
+    toast({
+      title: "Oops",
+      description: "Please fill all fields!!!",
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
 
-    if(!fields){
+    return false;
+  }
 
-      setBtnLoading(false);
+  const url = "https://cbrbakery.com.ng/api/hire";
 
-      toast.closeAll();
-      
-      toast({
-        title:"Oops",
-        description:"Please fill all fields!!! ",
-        status:"info",
-        duration:5000,
-        isClosable:true,
-        position:"top"
-      })
-
-      return false;
-    }
-    
-
-    const url = "https://cbrbakery.com.ng/api?action=hire";
-    
-fetch(url, {
-      method: "POST",
+  try {
+    const response = await axios.post(url, formData, {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
-    })
-      .then(res => {
-        if (!res.ok) {
-          setBtnLoading(false);
-          throw new Error(res.statusText);
-        }
-        return res.json();
-      })
-      .then(data => {
-        setCsrf(data.token);
-        setBtnLoading(false);
-        if (data.status === "success") {
-       
-   setUser(data.userData);
+    });
 
-toast ({
-title: "Congrats 🎉 ",
-  description:"Your request is completwd. Our staff will contact you with the number you provided shortly. ",
-  status: "success",
-  duration:6000,
-  isClosable: true,
-  
-});
-          
-        } else {
-          toast({
-            title: "Error",
-            description: data.message,
-            status: "error",
-            duration: 5000,
-            isClosable: true,
-          });
-        }
-      })
-      .catch(error => {
-        toast({
-          title: "Error",
-          description: "Your request could not be processed. " + error.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "top",
-        });
-        setBtnLoading(false);
-    
+    const data = response.data;
+
+    setCsrf(data.token);
+    setBtnLoading(false);
+
+    if (data.status === "success") {
+      setUser(data.userData);
+
+      toast.closeAll();
+      toast({
+        title: "Congrats 🎉",
+        description: "Your request is completed. Our staff will contact you with the number you provided shortly.",
+        status: "success",
+        duration: 6000,
+        isClosable: true,
+        position: "top",
       });
-
-
-    
+      
+    } else {
+      toast.closeAll();
+      toast({
+        title: "Error",
+        description: data.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  } catch (error) {
+    toast.closeAll();
+    toast({
+      title: "Error",
+      description: "Your request could not be processed. " + error.message,
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  } finally {
+    setBtnLoading(false);
   }
+};
   
   return (
 <>
