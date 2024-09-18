@@ -9,7 +9,7 @@ import {userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
 import {useRouter} from "next/router";
 import {Spinner,Flex} from "@chakra-ui/react";
-
+import Head from "next/head";
 
 
 
