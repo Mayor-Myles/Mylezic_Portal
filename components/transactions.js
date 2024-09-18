@@ -19,7 +19,7 @@ const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
   
   <Text fontSize="sm" color="gray.500"> <Icon color="seagreen" as={icon} boxSize={4} ml="2" /></Text>
  <Text fontSize="sm" color="gray.500">{name} - {type}</Text>
- <Text fontSize="13px" ml={2} color="gray.400">{tid}</Text>
+ <Text fontSize="13px" ml={2} color="gray.400">REF - {tid}</Text>
   <Text color={color} fontSize="14px">₦{amount}</Text>
   <Text fontSize="13px" ml={2} color="gray.400">{date}</Text>
       
