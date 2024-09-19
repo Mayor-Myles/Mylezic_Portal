@@ -46,7 +46,7 @@ const Profile = () => {
   };
 
     if(Object.values(data).length < 1){
-
+alert();
       return;
 
     }
@@ -132,10 +132,10 @@ const Profile = () => {
         <Container py={4} mt="2em">
           <Box bg="" p={2} rounded="md">
 
-        <p color="gray.300">Change any of your details below</p>
-            <FormControl mb={4}>
+        <p m="2" color="gray.300">Change any of your details below</p>
+            <FormControl mb={2}>
               <Flex align="center" justify="center">
-                <Avatar size="lg" src="avatar.jpeg" />
+                <Avatar size="md" src="avatar.jpeg" />
                 <IconButton
                   icon={<EditIcon />}
                   size="sm"
