@@ -45,11 +45,21 @@ const Profile = () => {
     newPassword : newPassword,
   };
 
-    if(Object.values(data).length < 1){
-alert();
-      return;
+    const hasValue = Object.entries(data).some(([key, value]) => key !== 'csrf' && value);
 
-    }
+if (!hasValue) {
+  toast.closeAll();
+  toast({
+    title: "Error",
+    description: "Please provide at least one field to update.",
+    status: "error",
+    duration: 5000,
+    isClosable: true,
+    position: "top",
+  });
+  return;
+}
+    
     setBtnLoading(true);
   const url = "https://cbrbakery.com.ng/api/editPofile";
 
