@@ -136,7 +136,7 @@ alert();
             <FormControl mb={2}>
               <Flex align="center" justify="center">
                 <Avatar size="md" src="avatar.jpeg" />
-                <IconButton
+        {/*<IconButton
                   icon={<EditIcon />}
                   size="sm"
                   position="relative"
@@ -146,7 +146,7 @@ alert();
                   color="white"
                   rounded="full"
                   aria-label="Edit profile picture"
-                />
+                />*/}
               </Flex>
             </FormControl>
 
