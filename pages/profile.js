@@ -18,78 +18,88 @@ import Sidebar from "../components/sidebar";
 import { useRecoilState } from "recoil";
 import { userData, csrfState } from "../states/recoil";
 import Link from "next/link";
-
+import axios from"axios";
 
 
 const Profile = () => {
   const [csrf, setCsrf] = useRecoilState(csrfState);
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [fullname,setFullname] = useState("");
+  const [email, setEmail] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [fullname,setFullname] = useState(null);
+  const [newPassword,setNewPassword] = useState(null);
+
   const [btnLoading, setBtnLoading] = useState(false);
   const [user, setUser] = useRecoilState(userData);
 
   const toast = useToast();
 
-const data = {
-      email: email,
-      phoneNumber: phoneNumber,
-      csrf: csrf,
-      fullName:fullname,
-    };
-  
-  
+
   const submitForm = () => {
-    setBtnLoading(true);
-    
+  setBtnLoading(true);
+  
+  const data = {
+    email: email,
+    phoneNumber: phoneNumber,
+    csrf: csrf,
+    fullName: fullname,
+    newPassword : newPassword,
+  };
 
-    const url = "https://cbrbakery.com.ng/api?action=editPofile";
+  const url = "https://cbrbakery.com.ng/api/editPofile";
 
-    fetch(url, {
-      method: "POST",
+  axios
+    .post(url, data, {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        setBtnLoading(false);
+    .then((response) => {
+      const data = response.data;
+      setBtnLoading(false);
 
-        if (data.status === "success") {
+      // Close all existing toasts before showing a new one
+      toast.closeAll();
 
-          setUser(data.userData);
-          
-          toast({
-            title: "Congratulations 🎉",
-            description: data.message,
-            status: "success",
-            duration: 5000,
-            isClosable: true,
-          });
-        } else {
-          toast({
-            title: "Error",
-            description: data.message,
-            status: "error",
-            duration: 5000,
-            isClosable: true,
-          });
-        }
-      })
-      .catch((error) => {
-        setBtnLoading(false);
-
+      if (data.status === "success") {
+        setUser(data.userData);
         toast({
-          title: "Error",
-          description: "Your request could not be processed. " + error.message,
-          status: "error",
-          duration: 5000,
+          title: "Congratulations 🎉",
+          description: data.message,
+          status: "success",
+          duration: 7000,
           isClosable: true,
           position: "top",
         });
+      } else {
+        toast({
+          title: "Error",
+          description: data.message,
+          status: "error",
+          duration: 7000,
+          isClosable: true,
+          position: "top",
+        });
+      }
+    })
+    .catch((error) => {
+      setBtnLoading(false);
+
+      // Close all existing toasts before showing a new one
+      toast.closeAll();
+
+      toast({
+        title: "Error",
+        description: "Your request could not be processed. " + error.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
       });
-  };
+    });
+};
+  
+  
+  
 
   return (
     <>
@@ -163,12 +173,12 @@ const data = {
             </FormControl>
 
             <FormControl mb={4}>
-              <FormLabel>My balance</FormLabel>
+              <FormLabel>Change Password</FormLabel>
               <Input
                 type="text"
-                value={`₦${user.balance}`}
+                placeholder="Enter New password"
                 border="1px solid teal"
-                readOnly
+                
               />
             </FormControl>
 
