@@ -14,7 +14,7 @@ import {useRecoilState} from "recoil";
 
 
 const TransactionItem = ({ icon, name, type, amount ,color,date,tid}) => (
-  <HStack gap="4" justify="space-between" w="fulll">
+  <HStack gap="3" justify="space-between" w="fulll">
     
   
   <Text fontSize="sm" color="gray.500"> <Icon color="seagreen" as={icon} boxSize={4} ml="2" /></Text>
@@ -52,7 +52,7 @@ const icons = {
   
   return (
     
-    <Box display="flex" flexFlow="column" justify="center" align="center" p={2} mb="5em" mt="1em" w="full" gap="7">
+    <Box display="flex" flexFlow="column" justify="center" align="center" p={2} mb="5em" mt="0.5em" w="full" gap="7">
       
       
         <Text fontSize="1em" fontWeight="bold">
