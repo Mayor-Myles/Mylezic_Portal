@@ -35,7 +35,7 @@ const Profile = () => {
 
 
   const submitForm = () => {
-  setBtnLoading(true);
+  
   
   const data = {
     email: email,
@@ -45,6 +45,12 @@ const Profile = () => {
     newPassword : newPassword,
   };
 
+    if(Object.values(data).length < 1){
+
+      return;
+
+    }
+    setBtnLoading(true);
   const url = "https://cbrbakery.com.ng/api/editPofile";
 
   axios
@@ -124,7 +130,9 @@ const Profile = () => {
         mx={{ base: "2em", sm: "auto", md: "auto" }}
       >
         <Container py={4} mt="2em">
-          <Box bg="white" p={2} rounded="md">
+          <Box bg="" p={2} rounded="md">
+
+        <p color="gray.300">Change any of your details below</p>
             <FormControl mb={4}>
               <Flex align="center" justify="center">
                 <Avatar size="lg" src="avatar.jpeg" />
@@ -174,7 +182,7 @@ const Profile = () => {
 
             <FormControl mb={4}>
               <FormLabel>Change Password</FormLabel>
-              <Input
+              <Input onChange={(e)=>setNewPassword(e.target.value)}
                 type="text"
                 placeholder="Enter New password"
                 border="1px solid teal"
