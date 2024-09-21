@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
 
-if(spinner === "on"{
+if(spinner === "on"){
 
 
 return(
