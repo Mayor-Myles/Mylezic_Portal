@@ -25,11 +25,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     
     return(
       
-     <Flex align="center" justify="center" minH="100vh">
+     <Box display="flex" align="center" justify="center" minH="100vh">
      
      <Spinner color="teal" size="lg" thickness="4px" speed="0.65s" emptyColor="gray.200" />
    
-     </Flex>
+     </Box>
       
       ); 
   }
