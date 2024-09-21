@@ -48,7 +48,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   
   if (!isMounted) {
-    
+
+    setLoading(true);
     return null;
   }
   
