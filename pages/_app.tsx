@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager} from "@chakra-ui/react";
+import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager, Flex, Spinner} from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
-import { csrfState, userData, dataPlansState } from "../states/recoil";
+import { csrfState, userData, dataPlansState,merchantState } from "../states/recoil";
 import { useEffect ,useState} from "react";
 import axios from 'axios';
 import { mode } from '@chakra-ui/theme-tools';
@@ -20,8 +20,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
+
   if (!isMounted) {
-    return null; 
+    
+    return(
+      
+     <Flex align="center" justify="center" minH="100vh">
+     
+     <Spinner size="xl" color="teal" />
+       
+     </Flex>
+      
+      ); 
   }
   
   // Theme configuration
@@ -59,6 +69,7 @@ function InitializeState() {
   const [user, setUser] = useRecoilState(userData);
   const [csrf, setCsrf] = useRecoilState(csrfState);
   const [plan, setPlan] = useRecoilState(dataPlansState);
+  const [pk,setPk] = useRecoilState(merchantState);
   const toast = useToast();
 
   useEffect(() => {
