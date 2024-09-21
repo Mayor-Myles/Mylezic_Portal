@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       
      <Flex align="center" justify="center" minH="100vh">
      
-     <Spinner size="xl" color="teal" />
+     <Spinner size="lg" color="teal" />
        
      </Flex>
       
