@@ -10,8 +10,28 @@ import { mode } from '@chakra-ui/theme-tools';
 function MyApp({ Component, pageProps }: AppProps) {
 
   const [isMounted, setIsMounted] = useState(false);
-  const[spinner,setSpinner] = useState("on");
+  //const[spinner,setSpinner] = useState("on");  
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const handleStart = () => setLoading(true);
+    const handleComplete = () => setLoading(false);
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+
+    // Cleanup event listeners on unmount
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleComplete);
+    };
+  }, [router]);
+
   
+
   useEffect(() => {
     // Delay rendering the UI until the color mode has been applied
     const timer = setTimeout(() => {
@@ -22,24 +42,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
-
-if(spinner === "on"){
-
-
-return(
-      <ChakraProvider>
-     <Flex display="flex" align="center" justify="center" minH="100vh">
-     
-     <Spinner color="teal" size="xl" />
-   
-     </Flex>
-      </ChakraProvider>
-      ); 
-}
-
-    
-
- 
 
   
   if (!isMounted) {
@@ -71,6 +73,15 @@ return(
         {/* This ensures color mode is persistent */}
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <InitializeState />
+                     {loading &&
+                       (
+
+                 <Flex align="center" minH="100vh" justify="center">
+                 
+                  <Spinner size="xl" color="teal" />
+                 
+                 </Flex>        
+                       ) }
         <Component {...pageProps} />
       </ChakraProvider>
     </RecoilRoot>
