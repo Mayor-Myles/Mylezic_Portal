@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager, Box, Spinner} from "@chakra-ui/react";
+import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager, Box, Flex, Spinner} from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { csrfState, userData, dataPlansState,merchantState } from "../states/recoil";
 import { useEffect ,useState} from "react";
@@ -25,11 +25,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     
     return(
       <ChakraProvider>
-     <Box display="flex" align="center" justify="center" minH="100vh">
+     <Flex display="flex" align="center" justify="center" minH="100vh">
      
      <Spinner color="teal" size="lg" thickness="4px" speed="0.65s" emptyColor="gray.200" />
    
-     </Box>
+     </Flexx>
       </ChakraProvider>
       ); 
   }
