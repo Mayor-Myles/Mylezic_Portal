@@ -121,7 +121,7 @@ function InitializeState() {
           setCsrf(response.data.token);
           setUser(response.data.userData || null);
           setPlan(response.data.dataPlans || null);
-          setPk({response.data.pk || null);
+          setPk(response.data.pk || null);
         } else {
           toast({
             title: "Error",
