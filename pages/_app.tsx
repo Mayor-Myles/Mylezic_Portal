@@ -49,8 +49,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   
   if (!isMounted) {
 
-    setLoading(true);
-    return null;
+    return(
+      <Flex align="center" minH="100vh" justify="center">
+                 
+      <Spinner size="xl" color="teal" />
+                 
+      </Flex>   
+    );
   }
   
   // Theme configuration
