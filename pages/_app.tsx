@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager, Flex, Spinner} from "@chakra-ui/react";
+import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager, Box, Spinner} from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
 import { csrfState, userData, dataPlansState,merchantState } from "../states/recoil";
 import { useEffect ,useState} from "react";
