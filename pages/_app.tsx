@@ -10,20 +10,23 @@ import { mode } from '@chakra-ui/theme-tools';
 function MyApp({ Component, pageProps }: AppProps) {
 
   const [isMounted, setIsMounted] = useState(false);
-
+  const[spinner,setSpinner] = useState("on");
+  
   useEffect(() => {
     // Delay rendering the UI until the color mode has been applied
     const timer = setTimeout(() => {
       setIsMounted(true);
+      setSpinner("off");
     }, 30); // A short delay (50ms) to ensure color mode is applied
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
 
-  if (!isMounted) {
-    
-    return(
+if(spinner === "on"{
+
+
+return(
       <ChakraProvider>
      <Flex display="flex" align="center" justify="center" minH="100vh">
      
@@ -32,6 +35,16 @@ function MyApp({ Component, pageProps }: AppProps) {
      </Flex>
       </ChakraProvider>
       ); 
+}
+
+    
+
+ 
+
+  
+  if (!isMounted) {
+    
+    return null;
   }
   
   // Theme configuration
