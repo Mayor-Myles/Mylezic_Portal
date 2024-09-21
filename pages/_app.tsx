@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
      
      <Spinner color="teal" size="lg" thickness="4px" speed="0.65s" emptyColor="gray.200" />
    
-     </Flexx>
+     </Flex>
       </ChakraProvider>
       ); 
   }
