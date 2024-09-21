@@ -30,7 +30,7 @@ return(
       <ChakraProvider>
      <Flex display="flex" align="center" justify="center" minH="100vh">
      
-     <Spinner color="teal" size="xl" thickness="1px" speed="0.65s" emptyColor="gray" />
+     <Spinner color="teal" size="xl" />
    
      </Flex>
       </ChakraProvider>
