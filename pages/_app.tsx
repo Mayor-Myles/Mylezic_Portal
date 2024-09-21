@@ -6,6 +6,9 @@ import { csrfState, userData, dataPlansState,merchantState } from "../states/rec
 import { useEffect ,useState} from "react";
 import axios from 'axios';
 import { mode } from '@chakra-ui/theme-tools';
+import { useRouter } from "next/router";
+
+
 
 function MyApp({ Component, pageProps }: AppProps) {
 
