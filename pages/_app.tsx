@@ -50,11 +50,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (!isMounted) {
 
     return(
+      <ChakraProvider>
+        
       <Flex align="center" minH="100vh" justify="center">
                  
       <Spinner size="xl" color="teal" />
                  
       </Flex>   
+
+        </ChakraProvider>
     );
   }
   
