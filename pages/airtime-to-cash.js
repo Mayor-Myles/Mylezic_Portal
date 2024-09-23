@@ -74,10 +74,11 @@ const A2C = () => {
         if (status === "success") {
           toast({
             title: "Congrats 🎉",
-            description: "Airtime purchase is successful. Thanks for choosing us",
+            description: message,
             status: "success",
             duration: 6000,
             isClosable: true,
+            position:'top'
           });
         } else {
           toast({
