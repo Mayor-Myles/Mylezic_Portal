@@ -11,8 +11,8 @@ import axios from "axios";
 
 const A2C = () => {
   const [rate, setRate] = useRecoilState(a2cState);
-  const [network, setNetwork] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [network, setNetwork] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(null);
   const [amount, setAmount] = useState(0);
   const toReceive = Math.floor(amount * rate[network] || 0);
   const [csrf, setCsrf] = useRecoilState(csrfState);
