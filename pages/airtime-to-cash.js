@@ -8,6 +8,9 @@ import Head from "next/head";
 import { a2cState, csrfState } from "../states/recoil";
 import { useRecoilState } from "recoil";
 import axios from "axios";
+import Update from "../components/Update";
+
+
 
 const A2C = () => {
   const [rate, setRate] = useRecoilState(a2cState);
@@ -38,9 +41,9 @@ const A2C = () => {
       network: network,
     };
 
-    const fieldsFilled = Object.values(data).every(Boolean);
+ //   const fieldsFilled = Object.values(data).every(Boolean);
 
-    if (!fieldsFilled) {
+    if (!amount || !phoneNumber) {
       setBtnLoading(false);
 
       toast.closeAll();
@@ -65,13 +68,15 @@ const A2C = () => {
 
       if (response.data) {
         const { token, userData, status, message } = response.data;
-
+      
         
         setCsrf(token); // Update CSRF token
 
         setBtnLoading(false);
 
         if (status === "success") {
+
+  
           toast({
             title: "Congrats 🎉",
             description: message,
@@ -80,6 +85,8 @@ const A2C = () => {
             isClosable: true,
             position:'top'
           });
+
+          return(<Update/>);
         } else {
           toast({
             title: "Error",
