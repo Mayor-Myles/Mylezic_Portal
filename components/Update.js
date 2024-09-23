@@ -8,7 +8,7 @@ const Update = () => {
   const [user, setUser] = useRecoilState(userData);
   const toast = useToast();
 
-  useEffect(() => {
+  
     const fetchData = async () => {
       const url = "https://cbrbakery.com.ng/api/welcome";
       
@@ -24,6 +24,7 @@ const Update = () => {
             status: "error",
             duration: 5000,
             isClosable: true,
+            position:'top',
           });
         }
       } catch (error) {
@@ -38,7 +39,7 @@ const Update = () => {
     };
 
     fetchData();
-  }, [toast, setUser]);
+  
 
   return null;
 };
