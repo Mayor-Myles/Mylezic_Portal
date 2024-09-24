@@ -67,7 +67,7 @@ function getCharge(amount) {
 
   const fundMe = () => {
 
-  
+  alert(amount);
     setLoading(true);
 
     const charge =  getCharge(amount);
@@ -237,7 +237,7 @@ function getCharge(amount) {
     <option value="manual">Manual Funding</option>
     </Select>  
 
-<Text shadow="md" bg="teal.200" p="5" color="white" borderRadius="0.6em">{fundType == "manual" ? "Transfer to 9060421393(Opay) - Babalola Mayowa Abel. After successful transfer, type in the amount sent below and click on 'Notify Us'" : "Choose preffered funding type. Manual deposits is free but takesfew minutes to reflect in your wallet. Auto funding attracts a merchant fee."}</Text>
+<Text shadow="md" bg="teal.200" p="5" color="white" borderRadius="0.6em">{fundType == "manual" ? "Transfer to 9060421393(Opay) - Babalola Mayowa Abel. After successful transfer, type in the amount sent below and click on 'Notify Us'" : "Choose preffered funding type. Manual deposits is free but takes few minutes to reflect in your wallet. Auto funding is instant and attracts little merchant fee."}</Text>
 
         {fundType == "auto" || fundType=="manual" ? (
   
