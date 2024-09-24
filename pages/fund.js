@@ -66,8 +66,8 @@ function getCharge(amount) {
   
 
   const fundMe = () => {
-    console.log(merchant);
-const pk = merchant['paystack']['pk'];
+    
+  const pk = merchant['paystack']['pk'];
   
     setLoading(true);
 
@@ -85,7 +85,7 @@ const pk = merchant['paystack']['pk'];
             // This function is called when the payment is successful
           setLoading(false);
           
-            console.log('Payment successful. Reference:', response.reference);
+          //  console.log('Payment successful. Reference:', response.reference);
 
         setUser(prev=>({...prev,balance:Number(prev.balance) + Number(amount)}));
             toast({
