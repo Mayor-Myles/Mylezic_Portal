@@ -67,7 +67,7 @@ function getCharge(amount) {
 
   const fundMe = () => {
 
-  alert(amount);
+  alert(pk);
     setLoading(true);
 
     const charge =  getCharge(amount);
