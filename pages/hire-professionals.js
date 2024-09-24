@@ -8,13 +8,15 @@ import Head from "next/head";
 import {csrfState,userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
 import axios from "axios";
+import useUpdate from "../components/Update";
+
 
 const Hire = () => {
 
 const [csrf,setCsrf] = useRecoilState(csrfState);
 
   const [btnLoading,setBtnLoading] =  useState(false);
-
+const update = useUpdate();
 
   const [user,setUser] = useRecoilState(userData);
 
@@ -72,8 +74,9 @@ const submitForm = async () => {
     setBtnLoading(false);
 
     if (data.status === "success") {
-      setUser(data.userData);
-
+    //  setUser(data.userData);
+ update();
+      
       toast.closeAll();
       toast({
         title: "Congrats 🎉",
