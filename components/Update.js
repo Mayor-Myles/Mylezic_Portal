@@ -38,5 +38,5 @@ const useUpdate = () => {
   return update;
 };
 
-export default useUpdateUserData;
+export default useUpdate;
         
