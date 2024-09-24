@@ -21,7 +21,7 @@ const A2C = () => {
   const [csrf, setCsrf] = useRecoilState(csrfState);
   const [btnLoading, setBtnLoading] = useState(false);
   const toast = useToast();
-  const update = useUpdateUserData();
+  const update = useUpdate();
 
   // Check if rates are not yet loaded
   if (!rate) {
