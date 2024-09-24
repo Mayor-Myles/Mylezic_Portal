@@ -210,8 +210,11 @@ function getCharge(amount) {
     `}
   </script>
       
-      <Script src="https://js.paystack.co/v1/inline.js" />
-    </Head>
+         </Head>
+    
+<Script src="https://js.paystack.co/v1/inline.js" />
+   
+      
     <NavbarTop/>
 
 
