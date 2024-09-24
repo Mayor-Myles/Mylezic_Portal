@@ -124,25 +124,25 @@ function getCharge(amount) {
     
      <Head>
   {/* Title */}
-  <title>Dashboard | Mylezic - Manage Your Transactions Effortlessly</title>
+  <title>Fund Wallet| Mylezic - Manage Your Transactions Effortlessly</title>
 
   {/* Meta Description */}
   <meta 
     name="description" 
-    content="Access your Mylezic dashboard to manage your airtime purchases, view transaction history, and monitor account details easily and securely." 
+    content="Access your Mylezic dashboard, fund your walet to manage your airtime purchases, view transaction history, and monitor account details easily and securely." 
   />
 
   {/* Keywords */}
   <meta 
     name="keywords" 
-    content="dashboard, mylezic dashboard, manage transactions, account details, transaction history, airtime management" 
+    content="fund wallet, mylezic wallet, manage transactions, account details, transaction history, airtime management" 
   />
 
   {/* Canonical URL */}
-  <link rel="canonical" href="https://mylezic.com.ng/dashboard" />
+  <link rel="canonical" href="https://mylezic.com.ng/fund" />
 
   {/* Open Graph Tags */}
-  <meta property="og:title" content="Dashboard | Mylezic - Manage Your Transactions Effortlessly" />
+  <meta property="og:title" content="Fund Wallet| Mylezic - Manage Your Transactions Effortlessly" />
   <meta 
     property="og:description" 
     content="Manage your transactions, view history, and update your account settings securely in the Mylezic dashboard." 
@@ -153,10 +153,10 @@ function getCharge(amount) {
 
   {/* Twitter Card */}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dashboard | Mylezic - Manage Your Transactions Effortlessly" />
+  <meta name="twitter:title" content="Fund wallet | Mylezic - Manage Your Transactions Effortlessly" />
   <meta 
     name="twitter:description" 
-    content="Access your personal dashboard to track your airtime purchases and manage your Mylezic account with ease." 
+    content="Access your personal dashboard, fund your wallet to track your airtime purchases and manage your Mylezic account with ease." 
   />
   <meta name="twitter:image" content="/logo.png" />
 
