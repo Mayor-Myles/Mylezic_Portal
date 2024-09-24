@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider, useToast, extendTheme, ColorModeScript, localStorageManager, Box, Flex, Spinner} from "@chakra-ui/react";
 import { RecoilRoot, useRecoilState } from "recoil";
-import { csrfState, userData, dataPlansState,merchantState } from "../states/recoil";
+import { csrfState, userData, dataPlansState,merchantState,a2cState } from "../states/recoil";
 import { useEffect ,useState} from "react";
 import axios from 'axios';
 import { mode } from '@chakra-ui/theme-tools';
@@ -107,6 +107,7 @@ function InitializeState() {
   const [csrf, setCsrf] = useRecoilState(csrfState);
   const [plan, setPlan] = useRecoilState(dataPlansState);
   const [pk,setPk] = useRecoilState(merchantState);
+ const[a2c,setA2C] = useRecoilState(a2cState);
   const toast = useToast();
 
   useEffect(() => {
@@ -122,6 +123,7 @@ function InitializeState() {
           setUser(response.data.userData || null);
           setPlan(response.data.dataPlans || null);
           setPk(response.data.pk || null);
+           setA2C(respose.data.a2c || null);
         } else {
           toast({
             title: "Error",
