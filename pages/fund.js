@@ -21,7 +21,7 @@ const [merchant,setMerchant] = useRecoilState(merchantState);
 
   const [loading,setLoading] = useState(false);
 
-  const [amount , setAmount]  =  useState(null);
+  const [amount , setAmount]  =  useState(0);
     
 const pk = merchant.paystack.pk;
 
