@@ -68,7 +68,7 @@ function getCharge(amount) {
   const fundMe = () => {
     console.log(merchant);
 const pk = merchant['paystack']['pk'];
-  alert(pk);
+  
     setLoading(true);
 
     const charge =  getCharge(amount);
