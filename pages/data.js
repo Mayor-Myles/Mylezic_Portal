@@ -33,9 +33,9 @@ const[selected,setSelected] = useState(null);
 
   const [btnLoading,setBtnLoading] = useState(false);
   
-  const [phoneNumber,setPhoneNumber] = useState("");
+  const [phoneNumber,setPhoneNumber] = useState(null);
 
-  const [planName,setPlanName] = useState("");
+  const [planName,setPlanName] = useState(null);
 
   const select = (index,planName) => {
 
