@@ -8,7 +8,7 @@ import Sidebar from "../components/sidebar";
 import {useRecoilState} from "recoil";
 import {merchantState,userData} from "../states/recoil";
 import Script from "next/script";
-
+import Head from "next/head";
 
 const Fund = () => {
 
@@ -64,11 +64,6 @@ function getCharge(amount) {
 
   
   
-  useEffect(()=>{
-//get public key
-    
-    
-  },[])
 
   const fundMe = () => {
 
@@ -126,8 +121,9 @@ function getCharge(amount) {
   return(
 
     <>
+    <Head>
       <Script src="https://js.paystack.co/v1/inline.js" />
-      
+    </Head>
     <NavbarTop/>
 
 
