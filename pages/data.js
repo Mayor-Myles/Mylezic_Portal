@@ -74,8 +74,8 @@ if(!plan && !csrf){
     csrf: csrf,
   };
 
-  const fields = Object.values(data).every(Boolean);
-  if (!fields) {
+  //const fields = Object.values(data).every(Boolean);
+  if (!phoneNumber ||  !planName) {
     toast.closeAll();
     setBtnLoading(false);
 
