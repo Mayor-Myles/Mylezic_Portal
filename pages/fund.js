@@ -121,7 +121,95 @@ function getCharge(amount) {
   return(
 
     <>
-    <Head>
+    
+     <Head>
+  {/* Title */}
+  <title>Dashboard | Mylezic - Manage Your Transactions Effortlessly</title>
+
+  {/* Meta Description */}
+  <meta 
+    name="description" 
+    content="Access your Mylezic dashboard to manage your airtime purchases, view transaction history, and monitor account details easily and securely." 
+  />
+
+  {/* Keywords */}
+  <meta 
+    name="keywords" 
+    content="dashboard, mylezic dashboard, manage transactions, account details, transaction history, airtime management" 
+  />
+
+  {/* Canonical URL */}
+  <link rel="canonical" href="https://mylezic.com.ng/dashboard" />
+
+  {/* Open Graph Tags */}
+  <meta property="og:title" content="Dashboard | Mylezic - Manage Your Transactions Effortlessly" />
+  <meta 
+    property="og:description" 
+    content="Manage your transactions, view history, and update your account settings securely in the Mylezic dashboard." 
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mylezic.com.ng/dashboard" />
+  <meta property="og:image" content="/logo.png" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dashboard | Mylezic - Manage Your Transactions Effortlessly" />
+  <meta 
+    name="twitter:description" 
+    content="Access your personal dashboard to track your airtime purchases and manage your Mylezic account with ease." 
+  />
+  <meta name="twitter:image" content="/logo.png" />
+
+  {/* Robots Tag (Allow all crawling) */}
+  <meta name="robots" content="index, follow" />
+
+  {/* Author */}
+  <meta name="author" content="Mylezic" />
+
+  {/* Charset */}
+  <meta charSet="UTF-8" />
+
+  {/* Viewport */}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {/* Favicon */}
+  <link rel="icon" href="/logo.png" />
+
+  {/* Additional SEO Tags */}
+  <meta property="og:site_name" content="Mylezic" />
+  <meta name="theme-color" content="teal" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <meta name="application-name" content="Mylezic Dashboard" />
+
+  {/* Structured Data for Search Engines */}
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "Mylezic Dashboard",
+        "description": "Manage your Mylezic transactions, view transaction history, and update account details in the dashboard.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Mylezic",
+          "url": "https://mylezic.com.ng"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Global"
+        },
+        "image": "https://mylezic.com.ng/logo.png",
+        "url": "https://mylezic.com.ng/dashboard"
+      },
+        "sameAs": [
+    "https://x.com/Mylezic?t=rZ-XsKl0de9aDIJL_1LREA&s=09",
+    "https://www.facebook.com/profile.php?id=61564236574047",
+    "https://www.instagram.com/mylezic",
+    "https://linkedin.com/mylezic"
+  ]
+    `}
+  </script>
+      
       <Script src="https://js.paystack.co/v1/inline.js" />
     </Head>
     <NavbarTop/>
