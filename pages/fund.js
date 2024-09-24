@@ -23,7 +23,7 @@ const [merchant,setMerchant] = useRecoilState(merchantState);
 
   const [amount , setAmount]  =  useState(100);
     
-const pk = merchant.paystack.pk;
+
 
   
     
@@ -66,7 +66,7 @@ function getCharge(amount) {
   
 
   const fundMe = () => {
-
+const pk = merchant['paystack']['pk'];
   alert(pk);
     setLoading(true);
 
