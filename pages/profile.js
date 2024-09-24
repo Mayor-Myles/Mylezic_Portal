@@ -61,7 +61,7 @@ if (!hasValue) {
 }
     
     setBtnLoading(true);
-  const url = "https://cbrbakery.com.ng/api/editPofile";
+  const url = "https://cbrbakery.com.ng/api/editProfile";
 
   axios
     .post(url, data, {
