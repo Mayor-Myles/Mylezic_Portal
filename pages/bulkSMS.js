@@ -18,7 +18,7 @@ import Head from "next/head";
 import {csrfState,userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
 import axios from "axios";
-
+import useUpdate from "../components/Update";
 
 
 
@@ -31,6 +31,8 @@ const toast = useToast();
 const [numbers,setNumbers] = useState([]);
 
 const inputRef = useRef(0);
+
+  const update = useUpdate();
   
 const addNumber = (number) => {
 
@@ -132,8 +134,8 @@ const data = {
         toast.closeAll(); // Close any existing toasts
 
         if (status === "success") {
-            setUser(userData);
-
+            //setUser(userData);
+update();
             toast({
                 title: "Congrats 🎉",
                 description: "Your message has been successfully sent to all recipients. Thanks for choosing us.",
