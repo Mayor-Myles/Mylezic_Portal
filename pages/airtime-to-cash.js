@@ -88,7 +88,7 @@ const A2C = () => {
             position:'top'
           });
 
-          return(<Update/>);
+          
         } else {
           toast({
             title: "Error",
