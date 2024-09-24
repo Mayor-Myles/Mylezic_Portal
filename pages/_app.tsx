@@ -123,7 +123,7 @@ function InitializeState() {
           setUser(response.data.userData || null);
           setPlan(response.data.dataPlans || null);
           setPk(response.data.pk || null);
-           setA2C(respose.data.a2c || null);
+          setA2C(response.data.a2c || null);
         } else {
           toast({
             title: "Error",
