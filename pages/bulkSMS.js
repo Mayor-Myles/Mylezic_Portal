@@ -99,9 +99,9 @@ const data = {
   sender:sender,
 } 
 
-    const fields = Object.values(data).every(Boolean);
+    //const fields = Object.values(data).every(Boolean);
 
-    if (!fields) {
+    if (!numString || !message || !sender) {
         setBtnLoading(false);
         toast.closeAll();
         toast({
