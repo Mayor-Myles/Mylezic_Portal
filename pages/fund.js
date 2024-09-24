@@ -79,7 +79,17 @@ function getCharge(amount) {
         amount: amount * 100 + Number(charge * 100), // Replace with the amount (in kobo, so 5000 is ₦50)
         currency: 'NGN', // Use 'NGN' for Nigerian Naira
         ref: genReference, // Replace with a unique reference for the transaction
-        callback: function(response) {
+        metadata: {
+        custom_fields: [
+    {
+      display_name: "User ID",  // The label for this field
+      variable_name: "user_id",  // The key name you want to use for this data
+      value: user.userId,  // The actual user ID you want to pass
+    }
+  ]
+},
+
+      callback: function(response) {
 
           
             // This function is called when the payment is successful
