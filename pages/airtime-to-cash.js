@@ -8,7 +8,7 @@ import Head from "next/head";
 import { a2cState, csrfState } from "../states/recoil";
 import { useRecoilState } from "recoil";
 import axios from "axios";
-import Update from "../components/Update";
+import useUpdate from "../components/Update";
 
 
 
@@ -21,6 +21,7 @@ const A2C = () => {
   const [csrf, setCsrf] = useRecoilState(csrfState);
   const [btnLoading, setBtnLoading] = useState(false);
   const toast = useToast();
+  const update = useUpdateUserData();
 
   // Check if rates are not yet loaded
   if (!rate) {
@@ -76,7 +77,8 @@ const A2C = () => {
 
         if (status === "success") {
 
-  
+          update();
+          
           toast({
             title: "Congrats 🎉",
             description: message,
