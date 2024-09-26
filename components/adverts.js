@@ -22,7 +22,7 @@ const Advert = () => {
     return () => {
       clearInterval(slider);
     };
-  }, [adverts]); // Empty dependency array ensures this runs once on mount
+  }); // Empty dependency array ensures this runs once on mount
 
   return (
     <Flex align="center" justify="center" mt="1em">
