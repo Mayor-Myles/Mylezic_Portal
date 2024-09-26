@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Box, Flex, Avatar, Text, useColorModeValue, IconButton ,Grid,Badge,useColorMode} from '@chakra-ui/react';
 import {GoBell} from 'react-icons/go';
-import {userData} from "../states/recoil";
+import {userData, notificationsState} from "../states/recoil";
 import {useRecoilState} from "recoil";
 import Notification from "../components/notifications";
 
@@ -10,6 +10,8 @@ const NavbarTop = () => {
 const [user,setUser] = useRecoilState(userData);
 const { colorMode, toggleColorMode } = useColorMode();
 const [opened, setOpened] = useState(false);
+const [messages, setMessages] = useRecoilState(notificationsState);
+const [isRead,setIsRead] = useState(false);
   
   return (
     <>
@@ -48,7 +50,7 @@ const [opened, setOpened] = useState(false);
           />
           <Flex onClick={()=>setOpened(true)} position ="absolute" top="1" right="2.5"  align="center" p="3">
           
-          <Badge fontSize="0.5em" borderRadius="sm" bg="teal"  color="white">New</Badge>
+              {!isRead && messages ( <Badge fontSize="0.5em" borderRadius="sm" bg="teal"  color="white">New</Badge>)}
           </Flex>
         </Flex>
 
