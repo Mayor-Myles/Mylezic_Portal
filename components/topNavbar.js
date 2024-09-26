@@ -18,7 +18,7 @@ const openNotification = () => {
 
 setOpened(!opened); 
   
-setIsRead(true)
+setIsRead(true);
 
 }
 
@@ -49,7 +49,7 @@ setIsRead(true)
         <Text fontSize="15" fontWeight="bold ">{user.fullname}</Text>
       </Flex>
         
-        <Flex position ="relative"
+        <Flex onClick={openNotification} position ="relative"
           p="4" alignItems="center">
           <IconButton fontSize="1.3em" shadow="md"
             aria-label="Notifications"
@@ -58,7 +58,7 @@ setIsRead(true)
             mr="4"
             borderRadius="50%"
           />
-          <Flex onClick={openNotification} position ="absolute" top="1" right="2.5"  align="center" p="3">
+          <Flex  position ="absolute" top="1" right="2.5"  align="center" p="3">
           
               {(!isRead && messages) && ( <Badge fontSize="0.5em" borderRadius="sm" bg="teal"  color="white">New</Badge>)}
           </Flex>
