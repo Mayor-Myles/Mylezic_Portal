@@ -46,7 +46,7 @@ const [opened, setOpened] = useState(false);
             mr="4"
             borderRadius="50%"
           />
-          <Flex onClick={()=>setNotification(true)} position ="absolute" top="1" right="2.5"  align="center" p="3">
+          <Flex onClick={()=>setOpened(true)} position ="absolute" top="1" right="2.5"  align="center" p="3">
           
           <Badge fontSize="0.5em" borderRadius="sm" bg="teal"  color="white">New</Badge>
           </Flex>
