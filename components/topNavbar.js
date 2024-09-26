@@ -4,22 +4,21 @@ import {GoBell} from 'react-icons/go';
 import {userData, notificationsState} from "../states/recoil";
 import {useRecoilState} from "recoil";
 import Notification from "../components/notifications";
+import {useRouter} from "next/router";
+
+
+
 
 const NavbarTop = () => {
-
 const [user,setUser] = useRecoilState(userData);
 const { colorMode, toggleColorMode } = useColorMode();
 const [opened, setOpened] = useState(false);
 const [messages, setMessages] = useRecoilState(notificationsState);
 const [isRead,setIsRead] = useState(false);
-
+const router = useRouter();
 const openNotification = () => {
-
-
-setOpened(!opened); 
-  
+setOpened(!opened);   
 setIsRead(true);
-
 }
 
   
@@ -64,7 +63,7 @@ setIsRead(true);
           </Flex>
         </Flex>
 
-        <Avatar size="md" name={user.fullname} />
+        <Avatar onClick={()=>router.push("/profile"} size="md" name={user.fullname} />
       </Grid>
     </Box>
           </>
