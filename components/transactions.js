@@ -78,7 +78,8 @@ const icons = {
         <Box w="10px" h="10px" bg="teal.400" borderRadius="50%" mr="2" />
         <Text>Success</Text>
       </Flex>
-    
+
+  </Flex>
         <VStack spacing={4} align="center">
 
           {user.transactions ? user.transactions.map((transaction,index) => (
