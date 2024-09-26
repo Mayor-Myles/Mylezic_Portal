@@ -18,6 +18,9 @@ import {useRecoilState} from "recoil";
 function Notification({ opened: { opened, setOpened } }) {
   
 const [messages,setMessages] = useRecoilState(notificationsState);
+
+  console.log(messages);
+  
   return (
     <Modal isOpen={opened} onClose={() => setOpened(false)}>
       <ModalOverlay />
