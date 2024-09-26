@@ -13,7 +13,7 @@ const [opened, setOpened] = useState(false);
   
   return (
     <>
-    {opened && <Notification opened={opened,setOpened}/>}
+    {opened && <Notification opened={{opened,setOpened}}/>}
     <Box
       position="fixed"
       top="0"
