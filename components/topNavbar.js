@@ -3,7 +3,7 @@ import { Box, Flex, Avatar, Text, useColorModeValue, IconButton ,Grid,Badge,useC
 import {GoBell} from 'react-icons/go';
 import {userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
-import Notification from "../components/notification";
+import Notification from "../components/notifications";
 
 const NavbarTop = () => {
 
