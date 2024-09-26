@@ -60,7 +60,24 @@ const icons = {
         </Text>
 
 
-    
+    <Flex align="center" justify="space-around" w="100%">
+      {/* Error State */}
+      <Flex align="center">
+        <Box w="10px" h="10px" bg="red.500" borderRadius="50%" mr="2" />
+        <Text>Error</Text>
+      </Flex>
+
+      {/* Pending State */}
+      <Flex align="center">
+        <Box w="10px" h="10px" bg="orange.400" borderRadius="50%" mr="2" />
+        <Text>Pending</Text>
+      </Flex>
+
+      {/* Success State */}
+      <Flex align="center">
+        <Box w="10px" h="10px" bg="teal.400" borderRadius="50%" mr="2" />
+        <Text>Success</Text>
+      </Flex>
     
         <VStack spacing={4} align="center">
 
