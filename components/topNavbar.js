@@ -9,11 +9,11 @@ const NavbarTop = () => {
 
 const [user,setUser] = useRecoilState(userData);
 const { colorMode, toggleColorMode } = useColorMode();
-const [notification, setNotification] = useState(false);
+const [opened, setOpened] = useState(false);
   
   return (
     <>
-    {notification && <Notification notification={setNotification}/>}
+    {notification && <Notification opened={opened,setOpened}/>}
     <Box
       position="fixed"
       top="0"
