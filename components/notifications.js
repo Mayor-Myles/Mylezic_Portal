@@ -7,15 +7,12 @@ import {
   ModalBody,
   ModalFooter,
   Button,
-  useDisclosure,
   Box,
   Heading,
   Text,
 } from '@chakra-ui/react';
 
-function Notification({props}) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-const{opened,setOpened} = props;
+function Notification({ opened: { opened, setOpened } }) {
   const messages = [
     {
       title: 'New data plan',
@@ -28,27 +25,27 @@ const{opened,setOpened} = props;
   ];
 
   return (
-    <>
-
-      <Modal isOpen={opened} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Notifications</ModalHeader>
-          <ModalBody>
-            {messages.map((msg, index) => (
-              <Box key={index} mb={4}>
-                <Heading size="md">{msg.title}</Heading>
-                <Text>{msg.message}</Text>
-              </Box>
-            ))}
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="red.400" onClick={onClose}>close</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </>
+    <Modal isOpen={opened} onClose={() => setOpened(false)}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Notifications</ModalHeader>
+        <ModalBody>
+          {messages.map((msg, index) => (
+            <Box key={index} mb={4}>
+              <Heading size="md">{msg.title}</Heading>
+              <Text>{msg.message}</Text>
+            </Box>
+          ))}
+        </ModalBody>
+        <ModalFooter>
+          <Button colorScheme="red" onClick={() => setOpened(false)}>
+            close
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
   );
 }
 
 export default Notification;
+    
