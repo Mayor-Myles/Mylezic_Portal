@@ -3,18 +3,17 @@ import { Box, Flex, Avatar, Text, useColorModeValue, IconButton ,Grid,Badge,useC
 import {GoBell} from 'react-icons/go';
 import {userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
-
-
-
-
+import Notification from "../components/notification";
 
 const NavbarTop = () => {
 
 const [user,setUser] = useRecoilState(userData);
 const { colorMode, toggleColorMode } = useColorMode();
-
+const [notification, setNotification] = useState(false);
   
   return (
+    <>
+    {notification && <Notification notification={setNotification}/>}
     <Box
       position="fixed"
       top="0"
@@ -47,7 +46,7 @@ const { colorMode, toggleColorMode } = useColorMode();
             mr="4"
             borderRadius="50%"
           />
-          <Flex position ="absolute" top="1" right="2.5"  align="center" p="3">
+          <Flex onClick={()=>setNotification(true)} position ="absolute" top="1" right="2.5"  align="center" p="3">
           
           <Badge fontSize="0.5em" borderRadius="sm" bg="teal"  color="white">New</Badge>
           </Flex>
@@ -56,6 +55,7 @@ const { colorMode, toggleColorMode } = useColorMode();
         <Avatar size="md" name={user.fullname} />
       </Grid>
     </Box>
+          </>
   );
 };
 
