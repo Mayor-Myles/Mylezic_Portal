@@ -28,14 +28,14 @@ alert(opened);
         <ModalHeader>Notifications</ModalHeader>
         <ModalBody>
           {messages.all.map((msg, index) => (
-            <Box p="5" borderRadius="md" shadow="xl" color="white" bg="teal.600" key={index} mb={10}>
+            <Box p="5" borderRadius="md" shadow="xl" color="white" bg="teal.200" key={index} mb={10}>
               <Heading size="sm">{msg.title}</Heading>
               <Text>{msg.message}</Text>
             </Box>
           ))}
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="gray.300" onClick={() => setOpened(false)}>
+          <Button colorScheme="red.100" onClick={() => setOpened(false)}>
             close
           </Button>
         </ModalFooter>
