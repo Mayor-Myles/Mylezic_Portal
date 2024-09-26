@@ -11,19 +11,13 @@ import {
   Heading,
   Text,
 } from '@chakra-ui/react';
+import {notificationsState} from "../states/recoil";
+import {useRecoilState} from "recoil";
+
 
 function Notification({ opened: { opened, setOpened } }) {
-  const messages = [
-    {
-      title: 'New data plan',
-      message: 'We now have a good day at work and I will try to get the rest of the day.',
-    },
-    {
-      title: 'System update',
-      message: 'A new system update is available. Please update to the latest version.',
-    },
-  ];
-
+  
+const [messages,setMessages] = useRecoilState(notificationsState);
   return (
     <Modal isOpen={opened} onClose={() => setOpened(false)}>
       <ModalOverlay />
