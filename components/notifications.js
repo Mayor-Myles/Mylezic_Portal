@@ -19,7 +19,7 @@ function Notification({ opened: { opened, setOpened } }) {
   
 const [messages,setMessages] = useRecoilState(notificationsState);
 
-  console.log(messages);
+
   
   return (
     <Modal isOpen={opened} onClose={() => setOpened(false)}>
@@ -28,8 +28,8 @@ const [messages,setMessages] = useRecoilState(notificationsState);
         <ModalHeader>Notifications</ModalHeader>
         <ModalBody>
           {messages.all.map((msg, index) => (
-            <Box shadow="xl" bg="teal.300" key={index} mb={6}>
-              <Heading size="mlsm">{msg.title}</Heading>
+            <Box p="5" borderRadius="md" shadow="xl" bg="gray.300" key={index} mb={10}>
+              <Heading size="sm">{msg.title}</Heading>
               <Text>{msg.message}</Text>
             </Box>
           ))}
