@@ -13,9 +13,9 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-function Notification() {
+function Notification({opened}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+const{opened,setOpened} = opened;
   const messages = [
     {
       title: 'New data plan',
@@ -30,7 +30,7 @@ function Notification() {
   return (
     <>
 
-      <Modal isOpen={true} onClose={onClose}>
+      <Modal isOpen={opened} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Notifications</ModalHeader>
