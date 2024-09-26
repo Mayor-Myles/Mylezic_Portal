@@ -139,7 +139,7 @@ export const merchantState = atom({
   }
 });
 
-      export const notificationsState = atom({
+     /* export const notificationsState = atom({
 
         key:"notificationsState",
         default:[
@@ -153,5 +153,5 @@ export const merchantState = atom({
     },
   ]
 
-      })
+      })*/
 
