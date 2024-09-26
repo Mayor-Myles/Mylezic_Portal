@@ -24,7 +24,7 @@ function Notification({ opened: { opened, setOpened } }) {
       <ModalContent>
         <ModalHeader>Notifications</ModalHeader>
         <ModalBody>
-          {messages.map((msg, index) => (
+          {messages[0].map((msg, index) => (
             <Box p="5" borderRadius="md" boxShadow="lg" color="white" bg="teal.400" key={index} mb={10}>
               <Heading mb="2" textDecoration="underline" size="sm">{msg.title}</Heading>
               <Text>{msg.message}</Text>
