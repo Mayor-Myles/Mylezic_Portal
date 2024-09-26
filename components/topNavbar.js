@@ -12,6 +12,16 @@ const { colorMode, toggleColorMode } = useColorMode();
 const [opened, setOpened] = useState(false);
 const [messages, setMessages] = useRecoilState(notificationsState);
 const [isRead,setIsRead] = useState(false);
+
+const openNotification = () => {
+
+
+setOpened(!opened); 
+  
+setIsRead(true)
+
+}
+
   
   return (
     <>
@@ -48,7 +58,7 @@ const [isRead,setIsRead] = useState(false);
             mr="4"
             borderRadius="50%"
           />
-          <Flex onClick={()=> {setOpened(true); setIsRead(true);}} position ="absolute" top="1" right="2.5"  align="center" p="3">
+          <Flex onClick={openNotification} position ="absolute" top="1" right="2.5"  align="center" p="3">
           
               {(!isRead && messages) && ( <Badge fontSize="0.5em" borderRadius="sm" bg="teal"  color="white">New</Badge>)}
           </Flex>
