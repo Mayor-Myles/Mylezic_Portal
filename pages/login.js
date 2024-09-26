@@ -36,7 +36,7 @@ const LoginForm = () => {
   // Update formData when csrf token changes
   useEffect(() => {
     setFormData((prev) => ({ ...prev, ['csrf']: csrf }));
-  }, [setCsrf]);
+  }, [setCsrf,csrf]);
 
   const toggleVisibility = () => {
     setPasswordVisible(!passwordVisible);
