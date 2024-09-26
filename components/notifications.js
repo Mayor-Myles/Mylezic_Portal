@@ -13,9 +13,9 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-function Notification({opened}) {
+function Notification({props}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-const{opened,setOpened} = opened;
+const{opened,setOpened} = props;
   const messages = [
     {
       title: 'New data plan',
