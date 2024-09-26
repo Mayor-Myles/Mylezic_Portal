@@ -137,7 +137,7 @@ export const merchantState = atom({
     },
     
   }
-})
+});
 
       export const notificationsState = atom({
 
@@ -151,7 +151,7 @@ export const merchantState = atom({
       title: 'System update',
       message: 'A new system update is available. Please update to the latest version.',
     },
-  ];
+  ]
 }
       })
 
