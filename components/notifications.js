@@ -24,7 +24,7 @@ const [messages,setMessages] = useRecoilState(notificationsState);
       <ModalContent>
         <ModalHeader>Notifications</ModalHeader>
         <ModalBody>
-          {messages.map((msg, index) => (
+          {messages[0].map((msg, index) => (
             <Box shadow="xl" bg="teal.300" key={index} mb={6}>
               <Heading size="mlsm">{msg.title}</Heading>
               <Text>{msg.message}</Text>
