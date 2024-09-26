@@ -35,7 +35,7 @@ alert(opened);
           ))}
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="teal.100" onClick={() => setOpened(false)}>
+          <Button colorScheme="gray.300" onClick={() => setOpened(false)}>
             close
           </Button>
         </ModalFooter>
