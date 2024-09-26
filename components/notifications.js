@@ -31,8 +31,8 @@ function Notification({ opened: { opened, setOpened } }) {
         <ModalHeader>Notifications</ModalHeader>
         <ModalBody>
           {messages.map((msg, index) => (
-            <Box key={index} mb={4}>
-              <Heading size="md">{msg.title}</Heading>
+            <Box shadow="xl" bg="teal.300" key={index} mb={6}>
+              <Heading size="mlsm">{msg.title}</Heading>
               <Text>{msg.message}</Text>
             </Box>
           ))}
