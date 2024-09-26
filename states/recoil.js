@@ -142,7 +142,7 @@ export const merchantState = atom({
      export const notificationsState = atom({
 
         key:"notificationsState",
-        default:{"all":[
+       default:[
     {
       title: 'New data plan',
       message: 'We now have a good day at work and I will try to get the rest of the day.',
@@ -153,7 +153,7 @@ export const merchantState = atom({
       message: 'A new system update is available. Please update to the latest version.',
      date:"23/September/2024 , 6:45am",
     },
-  ]}
+  ]
 
       })
 
