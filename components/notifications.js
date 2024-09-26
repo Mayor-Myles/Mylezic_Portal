@@ -28,14 +28,14 @@ const [messages,setMessages] = useRecoilState(notificationsState);
         <ModalHeader>Notifications</ModalHeader>
         <ModalBody>
           {messages.all.map((msg, index) => (
-            <Box p="5" borderRadius="md" shadow="xl" bg="gray.300" key={index} mb={10}>
+            <Box p="5" borderRadius="md" shadow="xl" color="white" bg="teal.600" key={index} mb={10}>
               <Heading size="sm">{msg.title}</Heading>
               <Text>{msg.message}</Text>
             </Box>
           ))}
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="red" onClick={() => setOpened(false)}>
+          <Button colorScheme="teal.100" onClick={() => setOpened(false)}>
             close
           </Button>
         </ModalFooter>
