@@ -148,7 +148,7 @@ function InitializeState() {
     };
 
     getToken();
-  }, [setCsrf, setUser, setPlan, setA2C, setPk, setNotifications toast]);
+  }, [setCsrf, setUser, setPlan, setA2C, setPk, setNotifications, toast]);
 
   return null;
 }
