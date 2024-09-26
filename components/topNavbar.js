@@ -63,7 +63,7 @@ setIsRead(true);
           </Flex>
         </Flex>
 
-        <Avatar onClick={()=>router.push("/profile"} size="md" name={user.fullname} />
+        <Avatar onClick={()=>router.push("/profile")} size="md" name={user.fullname} />
       </Grid>
     </Box>
           </>
