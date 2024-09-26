@@ -118,7 +118,7 @@ function InitializeState() {
         const response = await axios.get(url);
 
         if (response.data) {
-          console.log(response.data);
+        
           setCsrf(response.data.token);
           setUser(response.data.userData || null);
           setPlan(response.data.dataPlans || null);
@@ -146,7 +146,7 @@ function InitializeState() {
     };
 
     getToken();
-  }, [setCsrf, setUser, setPlan, toast]);
+  }, [setCsrf, setUser, setPlan, setA2C, setPk, toast]);
 
   return null;
 }
