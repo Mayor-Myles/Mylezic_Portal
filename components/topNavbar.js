@@ -53,7 +53,7 @@ const { colorMode, toggleColorMode } = useColorMode();
           </Flex>
         </Flex>
 
-        <Avatar size="md" name={user.fullname} src="avatar.jpeg" />
+        <Avatar size="md" name={user.fullname} />
       </Grid>
     </Box>
   );
