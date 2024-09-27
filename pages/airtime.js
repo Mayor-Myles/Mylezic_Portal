@@ -26,7 +26,7 @@ const [csrf,setCsrf] = useRecoilState(csrfState);
 
   const [btnLoading,setBtnLoading] =  useState(false);
 
-  const update = useUpdate;
+  const update = useUpdate();
   
   const [user,setUser] = useRecoilState(userData);
 
