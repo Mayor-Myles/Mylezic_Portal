@@ -130,10 +130,16 @@ function getCharge(amount) {
 
   const notify = () => {
 
-    const userId = user.userId;
+    
+const user = user.userId;
+    
+const phoneNumber = "2347014443158"; // WhatsApp number without the '+' sign
 
-    const url = `https://wa.me/?text=Hi, I just made a transfer of ₦${amount} to you. My user Id is ${userId}`;
-  
+// Construct the WhatsApp URL
+const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ${amount} to you. My user Id is ${user}`;
+
+console.log(url);
+
     window.location.href=url;
   }
 
