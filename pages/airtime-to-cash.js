@@ -29,12 +29,12 @@ const submitForm = async () => {
 
   //const fields = Object.values(formData).every(Boolean);
 const formData = {
-  "service":service,
-  "phoneNumber":phoneNumber,
-  "csrf":csrf,
-  "description": description,
+  service,
+  phoneNumber,
+  csrf,
+  description,
 }
-  if (!formData['service'] || !formData['phoneNumber'] || !formData['description'] || !formData['csrf']) {
+  if (!service || !phoneNumber || !description || !csrf) {
     setBtnLoading(false);
     
     toast.closeAll();
