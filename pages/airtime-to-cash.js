@@ -1,95 +1,116 @@
-import React, { useState } from 'react';
-import { Flex, Text, Input, Select, Textarea, Button, Box, useToast } from '@chakra-ui/react';
-import NavbarTop from '../components/topNavbar';
-import NavbarBottom from '../components/bottomNavbar';
+import React, { useState, useEffect } from "react";
+import { Button, Input, Flex, Box, Select, Text, Spinner, useToast } from "@chakra-ui/react";
+import NavbarTop from "../components/topNavbar";
+import NavbarBottom from "../components/bottomNavbar";
+import Advert from "../components/adverts";
 import Sidebar from "../components/sidebar";
 import Head from "next/head";
-import { csrfState, userData } from "../states/recoil";
+import { a2cState, csrfState } from "../states/recoil";
 import { useRecoilState } from "recoil";
 import axios from "axios";
-import useUpdate from "../components/Update';
+import useUpdate from "../components/Update";
 
-const Hire = () => {
+
+
+const A2C = () => {
+  const [rate, setRate] = useRecoilState(a2cState);
+  const [network, setNetwork] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [amount, setAmount] = useState(0);
+  const toReceive = Math.floor(amount * rate[network] || 0);
   const [csrf, setCsrf] = useRecoilState(csrfState);
-  const [service, setService] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [description, setDescription] = useState('');
   const [btnLoading, setBtnLoading] = useState(false);
-  const update = useUpdate();
-  const [user, setUser] = useRecoilState(userData);
   const toast = useToast();
+  const update = useUpdate();
+
+  // Check if rates are not yet loaded
+  if (!rate) {
+    return (
+      <Flex align="center" justify="center" minH="100vh">
+        <Spinner size="xl" color="teal" speed="0.4s" />
+      </Flex>
+    );
+  }
 
   const submitForm = async () => {
     setBtnLoading(true);
 
-    const formData = {
-      service,
-      phoneNumber,
-      csrf,
-      description
+    const data = {
+      amount: amount,
+      phoneNumber: phoneNumber,
+      csrf: csrf,
+      network: network,
     };
 
-    if (!service || !phoneNumber || !description || !csrf) {
+ //   const fieldsFilled = Object.values(data).every(Boolean);
+
+    if (!amount || !phoneNumber) {
       setBtnLoading(false);
+
       toast.closeAll();
       toast({
         title: "Oops",
-        description: "Please fill all fields!!!",
+        description: "Please enter all the necessary information",
         status: "info",
         duration: 5000,
         isClosable: true,
         position: "top",
       });
-      return false;
+
+      return;
     }
 
-    const url = "https://cbrbakery.com.ng/api/hire";
-
     try {
-      const response = await axios.post(url, formData, {
+      const response = await axios.post("https://cbrbakery.com.ng/api/a2c", data, {
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      const data = response.data;
+      if (response.data) {
+        const { token, userData, status, message } = response.data;
+      
+        
+        setCsrf(token); // Update CSRF token
 
-      setCsrf(data.token);
-      setBtnLoading(false);
+        setBtnLoading(false);
 
-      if (data.status === "success") {
-        update();
-        toast.closeAll();
-        toast({
-          title: "Congrats 🎉",
-          description: "Your request is completed. Our staff will contact you with the number you provided shortly.",
-          status: "success",
-          duration: 6000,
-          isClosable: true,
-          position: "top",
-        });
-      } else {
-        toast.closeAll();
-        toast({
-          title: "Error",
-          description: data.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "top",
-        });
+        if (status === "success") {
+
+          update();
+          
+          toast({
+            title: "Congrats 🎉",
+            description: message,
+            status: "success",
+            duration: 6000,
+            isClosable: true,
+            position:'top'
+          });
+
+          
+        } else {
+          toast({
+            title: "Error",
+            description: message || "Something went wrong",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+            position:'top',
+          });
+        }
       }
     } catch (error) {
-      toast.closeAll();
+      console.error("Error:", error);
+
       toast({
         title: "Error",
-        description: "Your request could not be processed. " + error.message,
+        description: `Your request could not be processed. ${error.message}`,
         status: "error",
         duration: 5000,
         isClosable: true,
         position: "top",
       });
-    } finally {
       setBtnLoading(false);
     }
   };
@@ -97,141 +118,58 @@ const Hire = () => {
   return (
     <>
       <Head>
-        {/* Title */}
-        <title>Hire Professional Web Developers, Graphics Designers, and UI/UX Designers | Mylezic</title>
-
-        {/* Meta Description */}
-        <meta 
-          name="description" 
-          content="Hire skilled web developers, graphics designers, and UI/UX designers at Mylezic. Get top-quality work from professionals to bring your projects to life." 
-        />
-
-        {/* Keywords */}
-        <meta 
-          name="keywords" 
-          content="hire web developer, hire graphics designer, hire UI/UX designer, professional designers, skilled developers, Mylezic" 
-        />
-
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://mylezic.com.ng/hire" />
-
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Hire Professional Web Developers, Graphics Designers, and UI/UX Designers | Mylezic" />
-        <meta 
-          property="og:description" 
-          content="Find expert web developers, graphics designers, and UI/UX designers at Mylezic. Get high-quality, professional services tailored to your project needs." 
-        />
+        <title>Convert Airtime to Cash Instantly | Mylezic - Best Rates & Fast Service</title>
+        <meta name="description" content="Convert your airtime to cash instantly at the best rates with Mylezic. We offer fast and reliable airtime to cash conversion services. Easy process, secure transactions, and quick payouts." />
+        <meta name="keywords" content="airtime to cash, convert airtime to cash, airtime conversion, airtime to money, sell airtime, airtime conversion service, Mylezic" />
+        <link rel="canonical" href="https://mylezic.com.ng/airtime_to_cash" />
+        <meta property="og:title" content="Convert Airtime to Cash Instantly | Mylezic - Best Rates & Fast Service" />
+        <meta property="og:description" content="Get the best rates for converting your airtime to cash with Mylezic. Fast, secure, and easy airtime to cash conversion process. Instant payouts guaranteed!" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mylezic.com.ng/hire" />
-        <meta property="og:image" content="/logo.png" />
-
-        {/* Twitter Card */}
+        <meta property="og:url" content="https://mylezic.com.ng/airtime_to_cash" />
+        <meta property="og:image" content="logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hire Professional Web Developers, Graphics Designers, and UI/UX Designers | Mylezic" />
-        <meta 
-          name="twitter:description" 
-          content="Looking for expert web developers, graphics designers, or UI/UX designers? Hire top talent at Mylezic for your next project." 
-        />
-        <meta name="twitter:image" content="/logo.png" />
-
-        {/* Robots Tag */}
+        <meta name="twitter:title" content="Convert Airtime to Cash Instantly | Mylezic - Best Rates & Fast Service" />
+        <meta name="twitter:description" content="Convert your airtime to cash with ease. Enjoy quick and secure transactions with Mylezic's airtime to cash service. Best rates guaranteed." />
+        <meta name="twitter:image" content="logo.png" />
         <meta name="robots" content="index, follow" />
-
-        {/* Author */}
         <meta name="author" content="Mylezic" />
-
-        {/* Charset */}
         <meta charSet="UTF-8" />
-
-        {/* Viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        {/* Favicon */}
-        <link rel="icon" href="/logo.png" />
-
-        {/* Additional SEO Tags */}
+        <link rel="icon" href="logo.png" />
         <meta property="og:site_name" content="Mylezic" />
         <meta name="theme-color" content="teal" />
         <link rel="apple-touch-icon" href="/logo.png" />
-        <meta name="application-name" content="Mylezic Hire Service" />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "http://schema.org",
-              "@type": "Service",
-              "name": "Hire Web Developers, Graphics Designers, and UI/UX Designers",
-              "description": "Mylezic offers professional web developers, graphics designers, and UI/UX designers for hire. Get quality service from experts to handle your projects with precision.",
-              "provider": {
-                "@type": "Organization",
-                "name": "Mylezic",
-                "url": "https://mylezic.com.ng"
-              },
-              "areaServed": {
-                "@type": "Place",
-                "name": "Global"
-              },
-              "image": "https://mylezic.com.ng/logo.png",
-              "url": "https://mylezic.com.ng/hire"
-            },
-            "sameAs": [
-              "https://x.com/Mylezic?t=rZ-XsKl0de9aDIJL_1LREA&s=09",
-              "https://www.facebook.com/profile.php?id=61564236574047",
-              "https://www.instagram.com/mylezic",
-              "https://linkedin.com/mylezic"
-            ]
-          `}
-        </script>
+        <meta name="application-name" content="Mylezic Airtime to Cash Service" />
       </Head>
 
       <NavbarTop />
 
-      <Box display={{ sm: "none", base: "none", md: "none", lg: "flex" }}>
+      <Box display={{ sm: "none", base: "none", lg: "flex", xl: "flex" }}>
         <Sidebar />
       </Box>
 
-      <Flex
-        direction="column"
-        minH="100vh"
-        align="center"
-        justify="center"
-        gap="7"
-        maxW={{ sm: '27em', base: '35em', md: '27em', lg: '25em', xl: '28em', '2xl': '30em' }}
-        mx={{ base: "2em", sm: 'auto', md: "auto" }}
-      >
-        <Text fontWeight="bold" fontSize="lg">Hire Us</Text>
+      <Flex justify="center" align="center" minH="100vh" direction="column" maxW={{ sm: '27em', base: '35em', md: '27em', lg: '25em', xl: '28em', '2xl': '30em' }} mx={{ base: "2em", sm: 'auto', md: "auto" }}>
+        <Advert />
 
-        <Input
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          type="tel"
-          placeholder="Active Whatsapp number"
-          size="md"
-          value={phoneNumber}
-        />
+        <Flex w="full" flexFlow="column" gap="3" align="center" justify="center">
+          <Text mb="1em" fontWeight="bold">Airtime to cash</Text>
 
-        <Select
-          onChange={(e) => setService(e.target.value)}
-          size="md"
-          placeholder="Choose Service"
-          value={service}
-        >
-          <option value="web">Website Development</option>
-          <option value="graphics">Graphics Design</option>
-          <option value="ui/ux">UI/UX</option>
-        </Select>
+          <Input onChange={(e) => setPhoneNumber(e.target.value)} type="tel" placeholder="Whatsapp number" size="lg" border="1px solid teal" />
 
-        <Textarea
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Describe what you want us to do for you in detail..."
-          size="md"
-          h={{ base: "13em", lg: "10em" }}
-          value={description}
-        />
+          <Select onChange={(e) => setNetwork(e.target.value)} border="1px solid teal" size="lg" colorScheme="teal">
+            <option value="">Choose Network</option>
+            <option value="mtn">MTN</option>
+            <option value="glo">GLO</option>
+            <option value="airtel">AIRTEL</option>
+            <option value="9mobile">9MOBILE</option>
+          </Select>
 
-        <Button onClick={submitForm} isLoading={btnLoading} w="full" size="md" colorScheme="teal">
-          Request
-        </Button>
+          <Input onChange={(e) => setAmount(Number(e.target.value))} type="number" placeholder="Amount to convert (Naira)" size="lg" border="1px solid teal" />
+
+          <Input type="number" size="lg" border="1px solid teal" placeholder={toReceive ? `We will pay you ₦${toReceive}` : "Amount to receive"} readOnly />
+
+          <Button isLoading={btnLoading} onClick={submitForm} size="md" w="full" colorScheme="teal">Request</Button>
+        </Flex>
       </Flex>
 
       <NavbarBottom />
@@ -239,5 +177,5 @@ const Hire = () => {
   );
 };
 
-export default Hire;
-    
+export default A2C;
+      
