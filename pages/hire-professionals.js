@@ -83,6 +83,7 @@ const Hire = () => {
         });
       }
     } catch (error) {
+      setBtnLoading(false);
       toast.closeAll();
       toast({
         title: "Error",
@@ -92,9 +93,7 @@ const Hire = () => {
         isClosable: true,
         position: "top",
       });
-    } finally {
-      setBtnLoading(false);
-    }
+    } 
   };
 
   return (
