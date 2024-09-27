@@ -8,6 +8,7 @@ import Head from "next/head";
 import {useRecoilState} from "recoil";
 import {dataPlansState,csrfState,userData} from "../states/recoil";
 import axios from "axios";
+import useUpdate from "../components/Update";
 
 
 
@@ -38,7 +39,7 @@ const[selected,setSelected] = useState(null);
   const [planName,setPlanName] = useState(null);
 
   const select = (index,planName) => {
-
+const update = useUpdate();
     setSelected(index);
 
     setPlanName(planName);
@@ -106,8 +107,8 @@ if(!plan && !csrf){
 
       if (res.data.status === "success") {
         setOpenModal(false);
-        setUser(res.data.userData);
-
+      //  setUser(res.data.userData);
+update();
         toast({
           title: "Congrats 🎉",
           description: "Your data plan purchase is successful. You will receive an SMS shortly. Thanks for trusting us!!!",
