@@ -32,7 +32,7 @@ const formData = {
   service,
   phoneNumber,
   csrf,
-  description,
+  description
 }
   if (!service || !phoneNumber || !description || !csrf) {
     setBtnLoading(false);
