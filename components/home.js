@@ -156,6 +156,7 @@ const testimonials = [
         fontSize="1.8rem"
         variant="ghost"
       />
+          </Box>
         <IconButton
           display={{ base: "block", md: "none" }}
           icon={<HamburgerIcon />}
@@ -188,10 +189,10 @@ const testimonials = [
               <Text onClick={()=>router.push('/')}>Home</Text>
               
               <Text  onClick={()=>router.push('/data')}>Buy data</Text>
-              <Text onClick={()=>router.push('/hire')}>Hire Us</Text>
+              <Text onClick={()=>router.push('/hire-professionals')}>Hire Us</Text>
               <Text onClick={()=>router.push('/airtime')}>Buy airtime</Text>
               <Text onClick={()=>router.push('/bulkSMS')}>Bulk SMS</Text>
-       <Text onClick={()=>router.push('/airtime_to_cash')}>Airtime to cash</Text>   
+       <Text onClick={()=>router.push('/airtime-to-cash')}>Airtime to cash</Text>   
      <Text onClick={()=>router.push('/about')}>About us</Text>         
               
               
