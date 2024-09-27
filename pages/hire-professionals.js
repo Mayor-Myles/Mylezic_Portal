@@ -34,7 +34,7 @@ const formData = {
   "csrf":csrf,
   "description": description,
 }
-  if (!formData.service || !formData.phoneNumber || !formData.description || !formData.csrf) {
+  if (!formData['service'] || !formData['phoneNumber'] || !formData['description'] || !formData['csrf']) {
     setBtnLoading(false);
     
     toast.closeAll();
