@@ -19,82 +19,85 @@ const Hire = () => {
   const [user, setUser] = useRecoilState(userData);
   const toast = useToast();
 
-  const submitForm = async () => {
-    setBtnLoading(true);
+  const submitForm = async (event) => {
+  event.preventDefault(); // Prevent default form submission
 
-    const formData = {
-      service,
-      phoneNumber,
-      csrf,
-      description,
-    };
+  setBtnLoading(true);
 
-    if (!service || !phoneNumber || !description || !csrf) {
-      setBtnLoading(false);
+  const formData = {
+    service,
+    phoneNumber,
+    csrf,
+    description,
+  };
 
+  if (!service || !phoneNumber || !description || !csrf) {
+    setBtnLoading(false);
+
+    toast.closeAll();
+
+    toast({
+      title: "Oops",
+      description: "Please fill all fields!!!",
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+
+    return false;
+  }
+
+  const url = "https://cbrbakery.com.ng/api/hire";
+
+  try {
+    const response = await axios.post(url, formData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = response.data;
+
+    setCsrf(data.token);
+    setBtnLoading(false);
+
+    if (data.status === "success") {
+      update();
       toast.closeAll();
-
       toast({
-        title: "Oops",
-        description: "Please fill all fields!!!",
-        status: "info",
-        duration: 5000,
+        title: "Congrats 🎉",
+        description: "Your request is completed. Our staff will contact you with the number you provided shortly.",
+        status: "success",
+        duration: 6000,
         isClosable: true,
         position: "top",
       });
-
-      return false;
-    }
-
-    const url = "https://cbrbakery.com.ng/api/hire";
-
-    try {
-      const response = await axios.post(url, formData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      const data = response.data;
-
-      setCsrf(data.token);
-      setBtnLoading(false);
-
-      if (data.status === "success") {
-        update();
-        toast.closeAll();
-        toast({
-          title: "Congrats 🎉",
-          description: "Your request is completed. Our staff will contact you with the number you provided shortly.",
-          status: "success",
-          duration: 6000,
-          isClosable: true,
-          position: "top",
-        });
-      } else {
-        toast.closeAll();
-        toast({
-          title: "Error",
-          description: data.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "top",
-        });
-      }
-    } catch (error) {
-      setBtnLoading(false);
+    } else {
       toast.closeAll();
       toast({
         title: "Error",
-        description: "Your request could not be processed. " + error.message,
+        description: data.message,
         status: "error",
         duration: 5000,
         isClosable: true,
         position: "top",
       });
-    } 
-  };
+    }
+  } catch (error) {
+    toast.closeAll();
+    toast({
+      title: "Error",
+      description: "Your request could not be processed. " + error.message,
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  } finally {
+    setBtnLoading(false);
+  }
+};
 
   return (
     <>
