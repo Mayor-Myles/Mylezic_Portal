@@ -148,7 +148,7 @@ return(
     
   <Wallet/>
   <Menu/>
-  <Advert/>
+  
   <Transaction/>
 
 </Flex>
