@@ -70,7 +70,7 @@ return(
       <Text fontSize="sm" fontWeight="400" mt="2">Airtime2Cash</Text>
     </Flex>
     
-    <Flex align="center" flexFlow="column wrap">
+    <Flex onClick={router.push("/cable")} align="center" flexFlow="column wrap">
 
     <IconButton bg="white" p="2" icon={<MdComputer color="teal" fontSize="1.5em"/>}  size="lg" borderRadius="0.5em" shadow="md" />
 
