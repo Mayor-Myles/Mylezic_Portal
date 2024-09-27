@@ -11,27 +11,28 @@ import {useRecoilState} from "recoil";
 
 
 const TransactionItem = ({ icon, name, type, amount, color, date, tid }) => (
-  <SimpleGrid columns={4} spacing={4} w="full" alignItems="center">
-    <HStack spacing={2} overflow="hidden">
+  <SimpleGrid columns={4} spacing={4} w="full" minW="900px" alignItems="center">
+    <HStack spacing={2}>
       <Icon color="seagreen" as={icon} boxSize={4} />
-      <Text fontSize="sm" color="gray.500" isTruncated>
+      <Text fontSize="sm" color="gray.500" wordBreak="break-word">
         {name} - {type}
       </Text>
     </HStack>
 
-    <Text fontSize="13px" color="gray.400" isTruncated>
+    <Text fontSize="13px" color="gray.400" wordBreak="break-word">
       REF - {tid}
     </Text>
 
-    <Text color={color} fontSize="14px" textAlign="center" whiteSpace="nowrap">
+    <Text color={color} fontSize="14px" textAlign="center" whiteSpace="normal">
       ₦{amount.toLocaleString()}
     </Text>
 
-    <Text fontSize="13px" color="gray.400" textAlign="right" isTruncated>
+    <Text fontSize="13px" color="gray.400" textAlign="right" whiteSpace="normal">
       {date}
     </Text>
   </SimpleGrid>
 );
+  
 
 
 
