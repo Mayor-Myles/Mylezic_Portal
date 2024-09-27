@@ -15,7 +15,7 @@ const { colorMode, toggleColorMode } = useColorMode();
 const {user,setUser} = useRecoilState(userData);
 const router = useRouter();
 //const email = user.email;
- const whatsappLink = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.%20My%20email%20is%20 ";
+ const whatsappLink = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.%20My%20user id%20is%20 "+user.userId;
   
   return (
     
