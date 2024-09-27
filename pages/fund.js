@@ -130,13 +130,11 @@ function getCharge(amount) {
 
   const notify = () => {
 
-const amount = amount;
-
     const userId = user.userId;
 
     const url = `https://wa.me/?text=Hi, I just made a transfer of ₦${amount} to you. My user Id is ${userId}`;
   
-window.location.href=url;
+    window.location.href=url;
   }
 
   return(
