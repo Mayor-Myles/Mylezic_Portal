@@ -108,7 +108,7 @@ function InitializeState() {
   const [plan, setPlan] = useRecoilState(dataPlansState);
   const [pk,setPk] = useRecoilState(merchantState);
  const[a2c,setA2C] = useRecoilState(a2cState);
- const [notifications,setNotifications] = useState(notificationsState);
+ const [notifications,setNotifications] = useRecoilState(notificationsState);
   const toast = useToast();
 
   useEffect(() => {
