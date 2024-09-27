@@ -28,7 +28,7 @@ function CableTvSubscription() {
   };
 
   return (
-    <Box p={5} maxW="800px" mx="auto" mt={10} boxShadow="lg" borderRadius="md">
+    <Box p={5} maxW="800px" mx="auto" mt={10} borderRadius="md">
       <Heading as="h1" size="lg" mb={6} textAlign="center" color="teal.500">
         Cable TV Subscription
       </Heading>
@@ -44,9 +44,9 @@ function CableTvSubscription() {
           <FormControl id="tvPackage" isRequired>
             <FormLabel>Choose Tv Operator</FormLabel>
             <Select placeholder="Select package">
-              <option value="basic">Dstv- ₦2,000</option>
-              <option value="premium">GOTV - ₦5,000</option>
-              <option value="ultimate">Startimes - ₦10,000</option>
+              <option value="basic">Dstv</option>
+              <option value="premium">GOTV</option>
+              <option value="ultimate">Startimes</option>
             </Select>
           </FormControl>
 
@@ -59,7 +59,7 @@ function CableTvSubscription() {
           {/* Total Price */}
           <HStack justify="space-between" w="full">
             <Text fontSize="lg" fontWeight="bold" color="gray.600">Total: ₦</Text>
-            <Text fontSize="lg" fontWeight="bold" color="teal.500">5,000</Text>
+            <Text fontSize="lg" fontWeight="bold" color="teal.500">0</Text>
           </HStack>
 
           {/* Submit Button */}
