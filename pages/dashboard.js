@@ -21,7 +21,7 @@ const [user,setUser] = useRecoilState(userData);
     
 const router = useRouter();
 
-    useEffect(()=>{
+   /* useEffect(()=>{
         
 if(!user){
 
@@ -43,7 +43,7 @@ if(!user){
       </Flex> 
     )
 }
-
+*/
     
 return(
     
