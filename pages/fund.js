@@ -136,9 +136,7 @@ const userId = user.userId;
 const phoneNumber = "2347014443158"; // WhatsApp number without the '+' sign
 
 // Construct the WhatsApp URL
-const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ${amount} to you. My user Id is ${userId}`;
-
-console.log(url);
+const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦${amount} to you. My user Id is ${userId}`;
 
     window.location.href=url;
   }
