@@ -22,13 +22,14 @@ import {
   Stack,
   Avatar,
   Input,
+  ColorMode
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {useRouter} from "next/router";
 import {FaStar} from "react-icons/fa";
 import Link from "next/link";
 import Head from "next/head";
-
+import {CiLight,CiDark} from "react-icons/ci";
 
 
 function Home() {
@@ -57,6 +58,8 @@ const testimonials = [
   },
 
 ];
+
+  const {colorMode,toggleColorMode} = useColorMode();
   
   return (
 
@@ -144,8 +147,15 @@ const testimonials = [
     <Box>
       
       {/* Header Section */}
-      <Flex shadow="sm" position ="fixed" zIndex="999" top="0" bg="whitee" w="full" as="header" align="center" justify="space-between" py={4} px={2}>
+      <Flex shadow="sm" position ="fixed" zIndex="999" top="0" bg={ColorMode == "light" ? "white" :"gray.900"} w="full" as="header" align="center" justify="space-between" py={4} px={2}>
         <Heading as="h1" size="sm">Mylezic</Heading>
+    <Box onClick={toggleColorMode}>
+      <IconButton
+        aria-label="receipt"
+        icon={colorMode === "light" ? (<Icon as={CiDark} size="md"/>) : (<Icon as={CiLight} size="md"/>)}
+        fontSize="1.8rem"
+        variant="ghost"
+      />
         <IconButton
           display={{ base: "block", md: "none" }}
           icon={<HamburgerIcon />}
@@ -156,10 +166,10 @@ const testimonials = [
           <Text onClick={()=>router.push('/')}>Home</Text>
 
                     <Text onClick={()=>router.push('/data')}>Buy data</Text>
-                    <Text onClick={()=>router.push('/hire')}>Hire Us</Text>
+                    <Text onClick={()=>router.push('/hire-professionals')}>Hire Us</Text>
                     <Text onClick={()=>router.push('/airtime')}>Buy airtime</Text>
                     <Text onClick={()=>router.push('/bulkSMS')}>Bulk SMS</Text>
-             <Text onClick={()=>router.push('/airtime_to_cash')}>Airtime to cash</Text>   
+             <Text onClick={()=>router.push('/airtime-to-cash')}>Airtime to cash</Text>   
                     
           
          
