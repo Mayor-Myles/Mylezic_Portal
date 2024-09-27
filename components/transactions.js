@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, HStack,VStack, Icon, Flex } from '@chakra-ui/react';
+import { Box, Text, HStack,VStack, Icon, Flex, SimpleGrid } from '@chakra-ui/react';
 import { MdCellWifi,} from 'react-icons/md';
 import { FiPhoneCall,} from 'react-icons/fi';
 import {FaRegMessage} from "react-icons/fa6";
