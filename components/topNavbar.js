@@ -45,7 +45,7 @@ setIsRead(true);
       >
         <Flex flexFlow="column wrap"  align="flex-start" justify="center" ml="3">
         <Text color="grey" fontSize="17" fontWeight="300" >Welcome back,</Text>
-        <Text fontSize="15" fontWeight="bold ">{user.fullname.slice(0,20)+"..."}</Text>
+        <Text fontSize="15" fontWeight="bold ">{user.fullname.length > 20 ? user.fullname.slice(0,20)+"..." : user.fullname}</Text>
       </Flex>
         
         <Flex onClick={openNotification} position ="relative"
