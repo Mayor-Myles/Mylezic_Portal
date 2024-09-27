@@ -42,7 +42,7 @@ const submitForm = async () => {
 
   //const fields = Object.values(formData).every(Boolean);
 
-  if (!service || !phoneNumber || !description || !csrf) {
+  if (!formData.service || !formData.phoneNumber || !formData.description || !csrf) {
     setBtnLoading(false);
     
     toast.closeAll();
