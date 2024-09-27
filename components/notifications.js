@@ -19,9 +19,13 @@ function Notification({ opened: { opened, setOpened } }) {
   const [messages, setMessages] = useRecoilState(notificationsState);
   
   return (
-    <Modal isOpen={opened} onClose={() => setOpened(false)}>
+    <Modal isOpen={opened} onClose={() => setOpened(false)} isCentered>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent
+        marginTop={{ base: "5%", md: "10%" }} // Adds top margin for better centering
+        maxH={{ base: "90vh", md: "80vh" }}  // Max height for small devices
+        overflowY="auto"  // Makes the content scrollable if it exceeds the height
+      >
         <ModalHeader>Notifications</ModalHeader>
         <ModalBody>
           {messages && messages.map((msg, index) => (
