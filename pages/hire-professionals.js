@@ -29,7 +29,6 @@ const submitForm = async () => {
 
   //const fields = Object.values(formData).every(Boolean);
 const formData = {
-
   service:service,
   phoneNumber:phoneNumber,
   csrf:csrf,
