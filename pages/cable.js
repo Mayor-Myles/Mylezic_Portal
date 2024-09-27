@@ -13,6 +13,12 @@ import {
   useToast,
 } from '@chakra-ui/react';
 
+import NavbarBottom from "../components/botomNavbar";
+import NavbarTop from "../components/topNavbar";
+import Wallet from "../components/wallet";
+
+
+
 function CableTvSubscription() {
   const toast = useToast();
 
@@ -28,7 +34,10 @@ function CableTvSubscription() {
   };
 
   return (
-    <Box p={5} maxW="800px" mx="auto" mt={10} borderRadius="md">
+    <>
+    <TopNavbar/>
+    <Wallet/>
+    <Box minH="100vh> p={5} maxW="800px" mx="auto" mt={10} borderRadius="md">
       <Heading as="h1" size="lg" mb={6} textAlign="center" color="teal.500">
         Cable TV Subscription
       </Heading>
@@ -69,8 +78,11 @@ function CableTvSubscription() {
         </VStack>
       </form>
     </Box>
+            <NavbarBottom/>
+            </>
   );
 }
 
 export default CableTvSubscription;
-      
+
+    
