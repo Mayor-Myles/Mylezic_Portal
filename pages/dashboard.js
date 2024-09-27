@@ -20,12 +20,12 @@ const Dashboard = () => {
 const [user,setUser] = useRecoilState(userData);
     
 const router = useRouter();
-/*
+
     useEffect(()=>{
         
-if(!user.isLogged){
+if(!user){
 
-        router.push("/login");
+ router.push("/login");
 
     
 }
@@ -33,7 +33,7 @@ if(!user.isLogged){
     },[user])
     
 
-if(!user.isLogged){
+if(!user){
 
     return(
 
@@ -44,7 +44,6 @@ if(!user.isLogged){
     )
 }
 
-*/
     
 return(
     
