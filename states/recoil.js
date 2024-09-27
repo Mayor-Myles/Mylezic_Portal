@@ -142,7 +142,7 @@ export const merchantState = atom({
      export const notificationsState = atom({
 
         key:"notificationsState",
-       default: null/*[
+       default: []/*[
     {
       title: 'New data plan',
       message: 'We now have a good day at work and I will try to get the rest of the day.',
