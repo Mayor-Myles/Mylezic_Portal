@@ -26,7 +26,7 @@ const Advert = () => {
 
   return (
     <Flex align="center" justify="center" mt="1em">
-      <Image alt="adverts" src={src} objectFit="contain" h="120px" w="400px" />
+      <Image alt="adverts" src={src} objectFit="contain" h="80px" w="400px" />
     </Flex>
   );
 };
