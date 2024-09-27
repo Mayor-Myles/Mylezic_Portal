@@ -163,6 +163,8 @@ const testimonials = [
           onClick={onOpen}
           aria-label="Open Menu"
         />
+
+            </Box>
         <HStack display={{ base: "none", md: "flex" }} spacing={6}>
           <Text onClick={()=>router.push('/')}>Home</Text>
 
