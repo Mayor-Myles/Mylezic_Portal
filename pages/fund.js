@@ -128,7 +128,7 @@ function getCharge(amount) {
     handler.openIframe(); // Open the payment modal
   }
 
-  const notifyMe = () => {
+  const notify = () => {
 
 const amount = amount;
 
@@ -265,7 +265,7 @@ window.location.href=url;
     <Flex mb="3em" gap="2" align="center" flexFlow="row">
 <Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" />
 
-   <Button isLoading={loading} onClick={fundType=="auto" ? fundMe : notifyMe} colorScheme="teal">{fundType=="manual"?"Notify Us" : "Fund"}</Button>
+   <Button isLoading={loading} onClick={fundType=="auto" ? fundMe : notify} colorScheme="teal">{fundType=="manual"?"Notify Us" : "Fund"}</Button>
   </Flex>
     ) : ""}
       </Flex>
