@@ -34,7 +34,7 @@ function CableTvSubscription() {
   };
 
   return (
-    <>
+    <Box>
     <NavbarTop/>
     <Wallet/>
     <Box minH="100vh"> p={5} maxW="800px" mx="auto" mt={10} borderRadius="md">
@@ -79,7 +79,7 @@ function CableTvSubscription() {
       </form>
     </Box>
             <NavbarBottom/>
-            </>
+            </Box>
   );
 }
 
