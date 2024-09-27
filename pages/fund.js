@@ -127,7 +127,17 @@ function getCharge(amount) {
 
     handler.openIframe(); // Open the payment modal
   }
+
+  const notifyMe = () => {
+
+const amount = amount;
+
+    const userId = user.userId;
+
+    const url = `https://wa.me/?text=Hi, I just made a transfer of ₦${amount} to you. My user Id is ${userId}`;
   
+window.location.href=url;
+  };
 
   return(
 
@@ -255,7 +265,7 @@ function getCharge(amount) {
     <Flex mb="3em" gap="2" align="center" flexFlow="row">
 <Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" value={amount} />
 
-   <Button isLoading={loading} onClick={fundType=="auto" && fundMe} colorScheme="teal">{fundType=="manual"?"Notify Us" : "Fund"}</Button>
+   <Button isLoading={loading} onClick={fundType=="auto" ? fundMe : notifyMe} colorScheme="teal">{fundType=="manual"?"Notify Us" : "Fund"}</Button>
   </Flex>
     ) : ""}
       </Flex>
