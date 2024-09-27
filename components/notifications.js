@@ -26,12 +26,14 @@ function Notification({ opened: { opened, setOpened } }) {
         maxH={{ base: "90vh", md: "80vh" }}  // Max height for small devices
         overflowY="auto"  // Makes the content scrollable if it exceeds the height
       >
-        <ModalHeader>Notifications</ModalHeader>
+        <ModalHeader>Notifications <Button ml="3em" colorScheme="red" onClick={() => setOpened(false)}>
+            Close
+          </Button></ModalHeader>
         <ModalBody>
           {messages && messages.map((msg, index) => (
             <Box p="5" borderRadius="md" boxShadow="lg" color="white" bg="teal.400" key={index} mb={10}>
-              <Heading mb="2" textDecoration="underline" size="sm">{msg.title}</Heading>
-              <Text>{msg.message}</Text>
+              <Heading mb="2" textDecoration="underline" size="xs">{msg.title}</Heading>
+              <Text size="sm">{msg.message}</Text>
               
               <Text fontSize="sm" mt="2" color="gray.300">
                 {msg.date}
@@ -40,9 +42,7 @@ function Notification({ opened: { opened, setOpened } }) {
           ))}
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="red" onClick={() => setOpened(false)}>
-            Close
-          </Button>
+          <Text>Mylezic</Text>
         </ModalFooter>
       </ModalContent>
     </Modal>
