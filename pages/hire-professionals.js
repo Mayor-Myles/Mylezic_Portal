@@ -40,9 +40,9 @@ const updateData = (key,value) => {
 const submitForm = async () => {
   setBtnLoading(true);
 
-  const fields = Object.values(formData).every(Boolean);
+  //const fields = Object.values(formData).every(Boolean);
 
-  if (!fields) {
+  if (!service || !phoneNumber || !description || !csrf) {
     setBtnLoading(false);
     
     toast.closeAll();
