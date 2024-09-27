@@ -19,6 +19,7 @@ import { useRecoilState } from "recoil";
 import { userData, csrfState } from "../states/recoil";
 import Link from "next/link";
 import axios from"axios";
+import useUpdate from "../components/Update";
 
 
 const Profile = () => {
@@ -32,7 +33,7 @@ const Profile = () => {
   const [user, setUser] = useRecoilState(userData);
 
   const toast = useToast();
-
+const update = useUpdate();
 
   const submitForm = () => {
   
@@ -77,7 +78,8 @@ if (!hasValue) {
       toast.closeAll();
 
       if (data.status === "success") {
-        setUser(data.userData);
+        //setUser(data.userData);
+       update();
         toast({
           title: "Congratulations 🎉",
           description: data.message,
