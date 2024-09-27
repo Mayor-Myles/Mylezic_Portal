@@ -58,7 +58,7 @@ const icons = {
   
   return (
     
-    <Box display="flex" flexFlow="column" justify="center" align="center" mb="5em" mt="1.5em" p="2" w="full">
+    <Box display="flex" flexFlow="column" justify="center" align="center" mb="5em" mt="1.5em" p="1" w="full">
       
       
         <Text fontSize="1em" fontWeight="bold">
@@ -66,7 +66,7 @@ const icons = {
         </Text>
 
 
-    <Flex align="center" justify="space-around" w="100%">
+    <Flex align="center" justify="space-around" w="100%" my="3">
       {/* Error State */}
       <Flex align="center">
         <Box w="10px" h="10px" bg="red.500" borderRadius="50%" mr="2" />
