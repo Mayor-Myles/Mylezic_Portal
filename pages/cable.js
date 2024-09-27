@@ -13,7 +13,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 
-import NavbarBottom from "../components/botomNavbar";
+import NavbarBottom from "../components/bottomNavbar";
 import NavbarTop from "../components/topNavbar";
 import Wallet from "../components/wallet";
 
