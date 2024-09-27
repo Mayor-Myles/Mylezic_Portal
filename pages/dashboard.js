@@ -151,7 +151,6 @@ return(
   <Transaction/>
 
 </Flex>
-  <NavbarBottom/>
 </>
     )
 }
