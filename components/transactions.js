@@ -15,7 +15,7 @@ const TransactionItem = ({ icon, name, type, amount, color, date, tid }) => (
     <HStack spacing={5}>
       <Icon color="seagreen" as={icon} boxSize={4} />
       <Text fontSize="sm" color="gray.500" wordBreak="break-word">
-        {name} - {type}
+        {name} {/*- {type}*/}
       </Text>
     </HStack>
 
@@ -61,7 +61,7 @@ const icons = {
   
   return (
     
-    <Box display="flex" flexFlow="column" justify="center" align="center" p={2} mb="5em" mt="0.5em" w="full" gap="7">
+    <Box display="flex" flexFlow="column" justify="center" align="center" p={1} mb="5em" mt="0.5em" w="full" gap="7">
       
       
         <Text fontSize="1em" fontWeight="bold">
