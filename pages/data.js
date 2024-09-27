@@ -35,11 +35,11 @@ const[selected,setSelected] = useState(null);
   const [btnLoading,setBtnLoading] = useState(false);
   
   const [phoneNumber,setPhoneNumber] = useState(null);
-
+const update = useUpdate();
   const [planName,setPlanName] = useState(null);
 
   const select = (index,planName) => {
-const update = useUpdate();
+
     setSelected(index);
 
     setPlanName(planName);
