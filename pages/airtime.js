@@ -9,7 +9,7 @@ import Head from "next/head";
 import axios from "axios";
 import {useRecoilState} from "recoil";
 import {csrfState,userData} from  "../states/recoil";
-
+import useUpdate from "../components/Update";
 
 
   
@@ -26,7 +26,8 @@ const [csrf,setCsrf] = useRecoilState(csrfState);
 
   const [btnLoading,setBtnLoading] =  useState(false);
 
-
+  const update = useUpdate;
+  
   const [user,setUser] = useRecoilState(userData);
 
 const toast = useToast();
@@ -75,8 +76,8 @@ const toast = useToast();
       setCsrf(res.data.token);
       setBtnLoading(false);
       if (res.data.status === "success") {
-        setUser(res.data.userData);
-        
+       // setUser(res.data.userData);
+        update();
         toast.closeAll();
         toast({
           title: "Congrats 🎉",
