@@ -26,7 +26,7 @@ function Notification({ opened: { opened, setOpened } }) {
         maxH={{ base: "90vh", md: "80vh" }}  // Max height for small devices
         overflowY="auto"  // Makes the content scrollable if it exceeds the height
       >
-        <ModalHeader position="fixed">Notifications <Button ml="3em" colorScheme="red" onClick={() => setOpened(false)}>
+        <ModalHeader position="scroll">Notifications <Button ml="3em" colorScheme="red" onClick={() => setOpened(false)}>
             Close
           </Button></ModalHeader>
         <ModalBody>
