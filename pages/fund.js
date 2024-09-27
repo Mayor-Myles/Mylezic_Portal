@@ -258,7 +258,7 @@ window.location.href=url;
     <option value="manual">Manual Transfer Funding</option>
     </Select>  
 
-<Text shadow="md" bg="gray.200" p="5" color="gray" borderRadius="0.6em">{fundType == "manual" ? (<Text>Transfer to <span color="black" fontWeight="bold">9060421393(Opay) - Babalola Mayowa Abel</span>. After successful transfer, type in the amount sent below and click on 'Notify Us' </Text>) : "Choose preffered funding type. Manual deposits is free but takes few minutes to reflect in your wallet. Auto funding is instant and attracts little merchant fee."}</Text>
+<Text shadow="md" bg="gray.200" p="5" color="gray" borderRadius="0.6em">{fundType == "manual" ? (<Text>Transfer to <strong>9060421393(Opay) - Babalola Mayowa Abel</strong>. After successful transfer, type in the amount sent below and click on 'Notify Us' </Text>) : "Choose preffered funding type. Manual deposits is free but takes few minutes to reflect in your wallet. Auto funding is instant and attracts little merchant fee."}</Text>
 
         {fundType == "auto" || fundType=="manual" ? (
   
