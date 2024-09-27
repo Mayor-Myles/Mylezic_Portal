@@ -11,7 +11,7 @@ import {useRecoilState} from "recoil";
 
 
 const TransactionItem = ({ icon, name, type, amount, color, date, tid }) => (
-  <SimpleGrid columns={4} spacing={4} w="full" maxW="900px" alignItems="center">
+  <SimpleGrid columns={4} spacing={4} w="fulll" maxW="900px" alignItems="center">
     <HStack spacing={2}>
       <Icon color="seagreen" as={icon} boxSize={4} />
       <Text fontSize="sm" color="gray.500" wordBreak="break-word">
