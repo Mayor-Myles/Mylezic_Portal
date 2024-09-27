@@ -17,7 +17,7 @@ const [csrf,setCsrf] = useRecoilState(csrfState);
 const [service,setService] = useRecoilState(null);
 const [phoneNumber,setPhoneNumber] = useState(null);
 const [description,setDescription] = useState(null);
-  const [btnLoading,setBtnLoading] =  useState(false);
+const [btnLoading,setBtnLoading] =  useState(false);
 const update = useUpdate();
 
   const [user,setUser] = useRecoilState(userData);
@@ -35,7 +35,7 @@ const formData = {
   csrf:csrf,
   description: description,
 }
-  if (!formData.service || !formData.phoneNumber || !formData.description || !csrf) {
+  if (!formData.service || !formData.phoneNumber || !formData.description || !formData.csrf) {
     setBtnLoading(false);
     
     toast.closeAll();
@@ -220,8 +220,7 @@ const formData = {
           <option value="web">Website Development</option>
           <option value="graphics">Graphics Design</option>
           <option value="ui/ux">UI/UX</option>
-          <option value="others">Others</option>
-        </Select>
+              </Select>
       
 
 <Textarea onChange={(e)=>setDescription(e.target.value)}
