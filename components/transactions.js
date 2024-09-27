@@ -58,7 +58,7 @@ const icons = {
   
   return (
     
-    <Box display="flex" flexFlow="column" justify="center" align="center" mb="5em" mt="0.5em" p="1" w="full">
+    <Box display="flex" flexFlow="column" justify="center" align="center" mb="5em" mt="1.5em" p="2" w="full">
       
       
         <Text fontSize="1em" fontWeight="bold">
