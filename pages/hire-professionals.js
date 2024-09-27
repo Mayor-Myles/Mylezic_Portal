@@ -14,34 +14,27 @@ import useUpdate from "../components/Update";
 const Hire = () => {
 
 const [csrf,setCsrf] = useRecoilState(csrfState);
-
+const [service,setService] = useRecoilState(null);
+const [phoneNumber,setPhoneNumber] = useState(null);
+const [description,setDescription] = useState(null);
   const [btnLoading,setBtnLoading] =  useState(false);
 const update = useUpdate();
 
   const [user,setUser] = useRecoilState(userData);
 
 const toast = useToast();
-
-  const[formData,setFormData] = useState({
-
-  service:null,
-  phoneNumber:null,
-  csrf:csrf,
-  description:null,
-});
-  
-const updateData = (key,value) => {
-
-    setFormData((prev)=>({...prev,[key]:value}))
-  
-}
-
   
 const submitForm = async () => {
   setBtnLoading(true);
 
   //const fields = Object.values(formData).every(Boolean);
+const formData = {
 
+  service:service,
+  phoneNumber:phoneNumber,
+  csrf:csrf,
+  description: description,
+}
   if (!formData.service || !formData.phoneNumber || !formData.description || !csrf) {
     setBtnLoading(false);
     
@@ -221,9 +214,9 @@ const submitForm = async () => {
           Hire Us
         </Text>
 
-        <Input onChange={(e)=>updateData("phoneNumber",e.target.value)} type="tel" placeholder="Active Whatsapp number" size="md" colorScheme="teal" value={formData.phoneNumber} />
+        <Input onChange={(e)=>setPhoneNumber(e.target.value)} type="tel" placeholder="Active Whatsapp number" size="md" colorScheme="teal" value={formData.phoneNumber} />
 
-        <Select onChange={(e)=>updateData("service",e.target.value)} size="md" colorScheme="teal" placeholder="Choose Service" value={formData.service}>
+        <Select onChange={(e)=>setService(e.target.value)} size="md" colorScheme="teal" placeholder="Choose Service" value={formData.service}>
           <option value="web">Website Development</option>
           <option value="graphics">Graphics Design</option>
           <option value="ui/ux">UI/UX</option>
@@ -231,7 +224,7 @@ const submitForm = async () => {
         </Select>
       
 
-<Textarea onChange={(e)=>updateData("description",e.target.value)}
+<Textarea onChange={(e)=>setDescription(e.target.value)}
           placeholder="Describe what you want us to do for you in details... e.g., Create an event banner for me for a wedding ceremony. The banner should be a simple and modern design. The color scheme should be a light blue and white. etc"
           size="md" h={{base:"13em",lg:"10em"}}
        value={formData.description} />
