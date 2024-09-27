@@ -30,13 +30,14 @@ function CableTvSubscription() {
       status: 'error',
       duration: 6000,
       isClosable: true,
+      position:'top',
     });
-  };
+  }
 
-  return (
+  return(
     <Box>
-    <NavbarTop/>
-    <Wallet/>
+    <NavbarTop />
+    <Wallet />
     <Box minH="100vh"> p={5} maxW="800px" mx="auto" mt={10} borderRadius="md">
       <Heading as="h1" size="lg" mb={6} textAlign="center" color="teal.500">
         Cable TV Subscription
