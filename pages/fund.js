@@ -263,7 +263,7 @@ window.location.href=url;
         {fundType == "auto" || fundType=="manual" ? (
   
     <Flex mb="3em" gap="2" align="center" flexFlow="row">
-<Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" value={amount} />
+<Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" />
 
    <Button isLoading={loading} onClick={fundType=="auto" ? fundMe : notifyMe} colorScheme="teal">{fundType=="manual"?"Notify Us" : "Fund"}</Button>
   </Flex>
