@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Box, Flex, IconButton, Icon ,Text,Link,useColorMode} from '@chakra-ui/react';
 import { GoHome } from 'react-icons/go';
 import { CiReceipt,CiUser,CiMoneyCheck1} from 'react-icons/ci';
