@@ -22,7 +22,7 @@ import {
   Stack,
   Avatar,
   Input,
-  ColorMode
+  useColorMode
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {useRouter} from "next/router";
@@ -147,7 +147,7 @@ const testimonials = [
     <Box>
       
       {/* Header Section */}
-      <Flex shadow="sm" position ="fixed" zIndex="999" top="0" bg={ColorMode == "light" ? "white" :"gray.900"} w="full" as="header" align="center" justify="space-between" py={4} px={2}>
+      <Flex shadow="sm" position ="fixed" zIndex="999" top="0" bg={colorMode == "light" ? "white" :"gray.900"} w="full" as="header" align="center" justify="space-between" py={4} px={2}>
         <Heading as="h1" size="sm">Mylezic</Heading>
     <Box onClick={toggleColorMode}>
       <IconButton
