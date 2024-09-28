@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useRef} from 'react';
 import { Box, Flex, IconButton, Icon ,Text,Link,useColorMode} from '@chakra-ui/react';
 import { GoHome } from 'react-icons/go';
 import { CiReceipt,CiUser,CiMoneyCheck1} from 'react-icons/ci';
@@ -17,13 +17,13 @@ const router = useRouter();
 //const email = user.email;
 
  
- let whatsappLink = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.";
+ const whatsappLink = useRef("https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.");
 
  useEffect(()=>{
   
  if(user){
   
-whatsappLink = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.%20My%20user id%20is%20 "+user.userId;
+whatsappLink.current = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.%20My%20user id%20is%20 "+user.userId;
  }
 
  },[user]);
