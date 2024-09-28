@@ -1,5 +1,8 @@
 import { Box, Heading, Text, Image, VStack, Stack, useColorModeValue } from '@chakra-ui/react';
 import Head from 'next/head';
+import NavbarTop from "topNavbar";
+
+
 
 export default function About() {
   return (
@@ -41,7 +44,8 @@ export default function About() {
         <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="application-name" content="Mylezic About Page" />
       </Head>
-
+<NavbarTop/>
+            
       {/* About Page Content */}
       <Box 
         bg={useColorModeValue('gray.100', 'gray.900')} 
