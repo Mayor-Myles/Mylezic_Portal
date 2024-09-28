@@ -215,7 +215,7 @@ const testimonials = [
             <Button onClick={()=>router.push('/register')} colorScheme="teal">Sign up / Login</Button>
           </VStack>
           <Image
-            src="av4.jpg"
+            src="avatar.jpg"
             alt="Person working on laptop"
             objectFit="cover"
             boxSize={{ base: "300px", md: "400px" }}
@@ -230,8 +230,8 @@ const testimonials = [
       <Box mx={[1,10]} as="section" py={20} px={8} bg="whitee">
         <Flex direction={{ base: "column", md: "row" }} align="center">
           <Image
-            src="avatar.jpg"
-            alt="Teamwork"
+            src="av4.jpg"
+            alt="Mylezic happy clients"
             boxSize={{ base: "380px", md: "400px" }}
             borderRadius="md"
             mb={{ base: 6, md: 0 }}
