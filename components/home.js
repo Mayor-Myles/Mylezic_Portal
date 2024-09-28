@@ -31,13 +31,13 @@ import {FaStar} from "react-icons/fa";
 import Link from "next/link";
 import Head from "next/head";
 import {CiLight,CiDark} from "react-icons/ci";
-
+import {useRouter} from "next/router";
 
 function Home() {
 
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const router = useRouter();
 const testimonials = [
   {
     name: "Adeyemi Deborah",
