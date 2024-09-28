@@ -36,7 +36,7 @@ function Home() {
 
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const router = useRouter();
+  
 const testimonials = [
   {
     name: "Adeyemi Deborah",
