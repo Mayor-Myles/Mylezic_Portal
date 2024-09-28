@@ -65,7 +65,7 @@ return;
 <Text color="grey" fontSize="12px">{colorMode==="light" ? "Dark Mode" : "Light Mode"}</Text>
       </Box>
 
-      <Box onClick={() => window.open(`https://wa.me/2347014443158?text=Hi, I need an assistance my Iser Id is ${user.userId}`, '_blank')}>
+      <Box onClick={() => window.location.href=`https://wa.me/2347014443158?text=Hi, I need an assistance my Iser Id is ${user.userId}`}>
   <IconButton
     aria-label="support"
     icon={<Icon as={AiOutlineCustomerService} />}
