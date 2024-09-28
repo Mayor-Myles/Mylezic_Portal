@@ -70,14 +70,14 @@ const A2C = () => {
       if (response.data) {
         const { token, userData, status, message } = response.data;
       
-        
+        update();
         setCsrf(token); // Update CSRF token
 
         setBtnLoading(false);
 
         if (status === "success") {
 
-          update();
+          
           
           toast({
             title: "Congrats 🎉",
