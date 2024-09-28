@@ -192,8 +192,8 @@ const Refer = () => {
           icon={<FaWhatsapp />}
           aria-label="Share on WhatsApp"
           colorScheme="whatsapp"
-          onClick={() => window.open(`https://api.whatsapp.com/send?text=Check%20this%20out. Buy cheap data , airtime, send  sms to multiple people with custom sender name. Hire them for website development, graphics design and more.:%20https://mylezic.com.ng/register Use my referralCode to get more discounts
-           ${referralCode}`, '_blank')}
+          onClick={() => window.open(`https://api.whatsapp.com/send?text=Check%20this%20out. Buy cheap data , airtime, send  bulksms with custom sender name. Hire them for website development, graphics design and more.:%20https://mylezic.com.ng/register Use my referralCode to get more discounts.
+         My referral code is  **${referralCode}**`, '_blank')}
         />
         <IconButton
           icon={<FaInstagram />}
