@@ -130,12 +130,11 @@ const data = {
         const { status, message, token, userData } = response.data;
         setCsrf(token);
         setBtnLoading(false);
-
+        update();
         toast.closeAll(); // Close any existing toasts
 
         if (status === "success") {
             //setUser(userData);
-update();
             toast({
                 title: "Congrats 🎉",
                 description: "Your message has been successfully sent to all recipients. Thanks for choosing us.",
