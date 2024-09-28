@@ -2,13 +2,13 @@ import { Box, Heading, Text, Image, VStack, Stack, useColorModeValue,Flex,Icon,I
 import Head from 'next/head';
 import {CiLight,CiDark} from "react-icons/ci";
 import { HamburgerIcon } from "@chakra-ui/icons";
-
+import {useRouter} from "next/router";
 
 
 export default function About() {
  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const{colorMode, toggleColorMode} = useColorMode();
+ const router = useRouter();
+ const{colorMode, toggleColorMode} = useColorMode();
   
   return (
     <>
@@ -52,7 +52,7 @@ export default function About() {
 
             {/* Header*/}
      <Flex shadow="sm" position ="fixed" zIndex="999" top="0" bg={colorMode == "light" ? "white" :"gray.900"} w="full" as="header" align="center" justify="space-between" py={4} px={2}>
-        <Heading as="h1" size="sm">Mylezic</Heading>
+        <Heading onClick={()=>router.push("/")} as="h1" size="sm">Mylezic</Heading>
     <Box onClick={toggleColorMode}>
       <IconButton
         aria-label="receipt"
