@@ -75,7 +75,9 @@ export default function About() {
             alt="About Mylezic" 
             borderRadius="md" 
             boxShadow="lg" 
-            maxW="600px" 
+            height="200px" 
+width="200px"
+              objectFit="contain"
           />
         </VStack>
 
