@@ -42,19 +42,19 @@ const testimonials = [
     name: "Adeyemi Deborah",
     role: "Entrepreneur",
     image:"debbie.jpg",
-    quote: "A very nice portal. Very fast and easy to use. The custom care is always very helpful and ready to assit if there is ever a problem. Keep it up!!!",
+    quote: "A very nice portal. Very fast and easy to use. The customer care is always very helpful and ready to assit if there is ever a problem. Keep it up!!!",
   },
   {
     name: "Ayokanmi Ajayi",
     role: "Artiste",
     image: "kanmi.jpg",
-    quote: "I use them on a regular. They are very okay. There support is fast to attend to issues if there is any. Not a bad service.",
+    quote: "I use them on a regular basis. They are very okay. Their support is fast to attend to issues if there is any. Not a bad service.",
   },
   {
     name: "John Opeyemi",
     role: "Engineer",
     image: "john.jpg",
-    quote: "This guys are trying. I see them flying higher. They have Excellent professionals.",
+    quote: "These guys are trying. I see them flying higher. They have Excellent professionals.",
   },
 
 ];
