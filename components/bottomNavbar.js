@@ -34,9 +34,11 @@ whatsappLink.current = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%
 window.location.href= whatsappLink;
   
 return;
- }*/}
 
 }
+ }*/}
+
+
 
   return (
     
