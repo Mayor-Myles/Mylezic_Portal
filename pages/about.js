@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Image, VStack, Stack, useColorModeValue } from '@chakra-ui/react';
 import Head from 'next/head';
-import NavbarTop from "topNavbar";
+import NavbarTop from "../components/topNavbar";
 
 
 
