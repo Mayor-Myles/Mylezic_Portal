@@ -62,8 +62,6 @@ const toast = useToast();
     return;
   }
 
-  console.log(data);
-
   const url = "https://cbrbakery.com.ng/api/buyAirtime";
 
   axios
@@ -75,9 +73,10 @@ const toast = useToast();
     .then((res) => {
       setCsrf(res.data.token);
       setBtnLoading(false);
+      update();
       if (res.data.status === "success") {
        // setUser(res.data.userData);
-        update();
+      
         toast.closeAll();
         toast({
           title: "Congrats 🎉",
