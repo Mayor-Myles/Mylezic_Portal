@@ -65,7 +65,7 @@ return;
 <Text color="grey" fontSize="12px">{colorMode==="light" ? "Dark Mode" : "Light Mode"}</Text>
       </Box>
 
-      <Box onClick={()=>window.open("https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.%20My%20user id%20is%20 "+user.userId,'_blank')}>
+      <Box onClick={()=>window.open(`https://wa.me/2347014443158?text=Hi%20Mylezic%20support%2C%20I%20need%20an%20assistant%20from%20you.%20My%20user id%20is%20 ${user.userId}`,'_blank')}>
       <IconButton
         aria-label="support"
         icon={<Icon as={AiOutlineCustomerService} fontSize="" />}
