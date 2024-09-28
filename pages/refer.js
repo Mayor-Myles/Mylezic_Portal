@@ -192,31 +192,32 @@ const Refer = () => {
           icon={<FaWhatsapp />}
           aria-label="Share on WhatsApp"
           colorScheme="whatsapp"
-          onClick={() => window.open(`https://api.whatsapp.com/send?text=Check%20this%20out:%20https://mylezic.com.ng`, '_blank')}
+          onClick={() => window.open(`https://api.whatsapp.com/send?text=Check%20this%20out. Buy cheap data , airtime, send  sms to multiple people with custom sender name. Hire them for website development, graphics design and more.:%20https://mylezic.com.ng/register Use my referralCode to get more discounts
+           ${referralCode}`, '_blank')}
         />
         <IconButton
           icon={<FaInstagram />}
           aria-label="Share on Instagram"
           colorScheme="pink"
-          onClick={() => window.open(`https://www.instagram.com/?url=https://mylezic.com.ng`, '_blank')}
+          onClick={() => window.open(`https://www.instagram.com/?url=https://mylezic.com.ng/register`, '_blank')}
         />
         <IconButton
           icon={<FaFacebookMessenger />}
           aria-label="Share on Messenger"
           colorScheme="messenger"
-          onClick={() => window.open(`fb-messenger://share?link=https://mylzic.com.ng&app_id=YOUR_APP_ID`, '_blank')}
+          onClick={() => window.open(`fb-messenger://share?link=https://mylzic.com.ng/register&app_id=YOUR_APP_ID`, '_blank')}
         />
         <IconButton
           icon={<FaEnvelope />}
           aria-label="Share via Email"
           colorScheme="red"
-          onClick={() => window.open(`mailto:?subject=${encodeURIComponent('Check this out!')}&body=${encodeURIComponent('Check this out: https://mylzic.com.ng')}`)}
+          onClick={() => window.open(`mailto:?subject=${encodeURIComponent('Check this out!')}&body=${encodeURIComponent('Check this out: https://mylzic.com.ng/register')}`)}
         />
         <IconButton
           icon={<FaTwitter />}
           aria-label="Share on Twitter"
           colorScheme="twitter"
-          onClick={() => window.open(`https://twitter.com/intent/tweet?url=https://mylezic.com.ng&text=Check%20this%20out:`, '_blank')}
+          onClick={() => window.open(`https://twitter.com/intent/tweet?url=https://mylezic.com.ng/register&text=Check%20this%20out:`, '_blank')}
         />
       </Stack>
 
