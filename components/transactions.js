@@ -44,7 +44,7 @@ const icons = {
   "bulkSMS":FaRegMessage,
   "a2c":FaExchangeAlt,
   "hire":IoPersonOutline,
-  "fund":FaCreditCard,
+  "Wallet":FaCreditCard,
   
   
 }
