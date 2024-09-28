@@ -136,9 +136,9 @@ return(
     `}
   </script>
 </Head>
-      
+{/*    
     <NavbarTop/>
-
+*/}
     
 <Flex justifyContent="center" minH="100vh" align="center" direction="column"  maxW={{sm:'27em', base: '35em', md: '27em', lg: '30em', xl: '30em', '2xl':'30em', }} mx={{base:"2em",sm:'auto',md:"auto"}}
 >
@@ -151,6 +151,7 @@ return(
   <Transaction/>
 
 </Flex>
+{/*  <NavbarBottom/>*/}
 </>
     )
 }
