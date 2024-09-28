@@ -60,7 +60,7 @@ return;
 <Text color="grey" fontSize="12px">{colorMode==="light" ? "Dark Mode" : "Light Mode"}</Text>
       </Box>
 
-      <Box onClick={openSupport}>
+      <Box onClick={()=>window.open(whatsappLink,'_blank')}>
       <IconButton
         aria-label="support"
         icon={<Icon as={AiOutlineCustomerService} fontSize="" />}
