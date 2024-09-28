@@ -157,6 +157,8 @@ const testimonials = [
         fontSize="1.8rem"
         variant="ghost"
       />
+          </Box>
+          
         <IconButton
           display={{ base: "block", md: "none" }}
           icon={<HamburgerIcon />}
@@ -164,7 +166,7 @@ const testimonials = [
           aria-label="Open Menu"
         />
 
-            </Box>
+            
         <HStack display={{ base: "none", md: "flex" }} spacing={6}>
           <Text onClick={()=>router.push('/')}>Home</Text>
 
