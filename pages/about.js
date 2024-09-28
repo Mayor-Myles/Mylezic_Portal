@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Image, VStack, Stack, useColorModeValue,Flex,Icon,IconButton,HStack,useColorMode } from '@chakra-ui/react';
+import { Box, Heading, Text, Image, VStack, Stack, useColorModeValue,Flex,Icon,IconButton,HStack,useColorMode,useDisclosure } from '@chakra-ui/react';
 import Head from 'next/head';
 import {CiLight,CiDark} from "react-icons/ci";
 import { HamburgerIcon } from "@chakra-ui/icons";
@@ -6,7 +6,8 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 
 
 export default function About() {
- 
+ const { isOpen, onOpen, onClose } = useDisclosure();
+
   const{colorMode, toggleColorMode} = useColorMode();
   
   return (
