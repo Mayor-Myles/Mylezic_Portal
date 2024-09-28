@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Text, HStack,VStack, Icon, Flex, SimpleGrid } from '@chakra-ui/react';
 import { MdCellWifi,} from 'react-icons/md';
 import { FiPhoneCall,} from 'react-icons/fi';
-import {FaRegMessage} from "react-icons/fa6";
+import {FaRegMessage,FaCreditCard} from "react-icons/fa6";
 import {FaExchangeAlt} from "react-icons/fa";
 import { IoPersonOutline } from "react-icons/io5";
 import {userData} from "../states/recoil";
@@ -44,6 +44,7 @@ const icons = {
   "bulkSMS":FaRegMessage,
   "a2c":FaExchangeAlt,
   "hire":IoPersonOutline,
+  "funding":FaCreditCard,
   
   
 }
@@ -91,7 +92,7 @@ const icons = {
           {user.transactions ? user.transactions.map((transaction,index) => (
       
         
-<TransactionItem key={index} icon={icons[transaction.icon]} name={transaction.title} type={transaction.description} amount={transaction.amount} color={colors[transaction.status]} date={transaction.date} tid={transaction.tid}/>
+<TransactionItem key={index} icon={icons[transaction.icon] } name={transaction.title} type={transaction.description} amount={transaction.amount} color={colors[transaction.status]} date={transaction.date} tid={transaction.tid}/>
 
     )) :
 
