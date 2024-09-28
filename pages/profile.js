@@ -147,7 +147,7 @@ if (!hasValue) {
         <p m="2" color="gray.300">Change any of your details below</p>
             <FormControl mb={2}>
               <Flex align="center" justify="center">
-                <Avatar size="md" src="avatar.jpeg" />
+                <Avatar size="md" src="avatar.jpg" />
         <IconButton
                   icon={<EditIcon />}
                   size="sm"
