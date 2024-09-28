@@ -31,7 +31,6 @@ import {FaStar} from "react-icons/fa";
 import Link from "next/link";
 import Head from "next/head";
 import {CiLight,CiDark} from "react-icons/ci";
-import {useRouter} from "next/router";
 
 function Home() {
 
