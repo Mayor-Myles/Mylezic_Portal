@@ -28,15 +28,15 @@ whatsappLink.current = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%
 
  },[user]);
 
-
+*/}
  const openSupport = () => {
 
-window.location.href= whatsappLink;
+ window.open(`https://wa.me/2347014443158?text=Hi, I need an assistance my Iser Id is ${user.userId}`,"_blank");
   
 return;
 
 }
- }*/}
+ 
 
 
 
@@ -65,7 +65,7 @@ return;
 <Text color="grey" fontSize="12px">{colorMode==="light" ? "Dark Mode" : "Light Mode"}</Text>
       </Box>
 
-      <Box onClick={() => window.location.href=`https://wa.me/2347014443158?text=Hi, I need an assistance my Iser Id is ${user.userId}`}>
+      <Box onClick={openSupport}>
   <IconButton
     aria-label="support"
     icon={<Icon as={AiOutlineCustomerService} />}
