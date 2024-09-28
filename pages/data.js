@@ -104,11 +104,11 @@ if(!plan && !csrf){
     .then((res) => {
       setCsrf(res.data.token);
       setBtnLoading(false);
-
+      update();
       if (res.data.status === "success") {
         setOpenModal(false);
       //  setUser(res.data.userData);
-update();
+
         toast({
           title: "Congrats 🎉",
           description: "Your data plan purchase is successful. You will receive an SMS shortly. Thanks for trusting us!!!",
