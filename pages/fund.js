@@ -9,12 +9,12 @@ import {useRecoilState} from "recoil";
 import {merchantState,userData} from "../states/recoil";
 import Script from "next/script";
 import Head from "next/head";
-
+import useUpdate from "../components/Update";
 const Fund = () => {
 
 
   const [fundType,setFundType] = useState(null);
-
+const update = useUpdate();
 const [merchant,setMerchant] = useRecoilState(merchantState);
 
   const [user,setUser] = useRecoilState(userData);
@@ -91,7 +91,7 @@ function getCharge(amount) {
 
       callback: function(response) {
 
-          
+          update();
             // This function is called when the payment is successful
           setLoading(false);
           
