@@ -27,7 +27,14 @@ whatsappLink.current = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%
  }
 
  },[user]);
- 
+
+
+ const openSupport = () => {
+
+window.location.href= whatsappLink;
+  
+return:
+ }
   return (
     
     <Flex mt="1em"
@@ -53,7 +60,7 @@ whatsappLink.current = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%
 <Text color="grey" fontSize="12px">{colorMode==="light" ? "Dark Mode" : "Light Mode"}</Text>
       </Box>
 
-      <Box onClick={()=>window.location.href=whatsappLink}>
+      <Box onClick={openSupport}>
       <IconButton
         aria-label="support"
         icon={<Icon as={AiOutlineCustomerService} fontSize="" />}
