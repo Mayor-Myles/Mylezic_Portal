@@ -61,9 +61,9 @@ const Hire = () => {
 
     setCsrf(data.token);
     setBtnLoading(false);
-
+update();
     if (data.status === "success") {
-      update();
+      
       toast.closeAll();
       toast({
         title: "Congrats 🎉",
