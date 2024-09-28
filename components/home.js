@@ -231,7 +231,7 @@ const testimonials = [
       <Box mx={[1,10]} as="section" py={20} px={8} bg="whitee">
         <Flex direction={{ base: "column", md: "row" }} align="center">
           <Image
-            src="avatar.jpeg"
+            src="avatar.jpg"
             alt="Teamwork"
             boxSize={{ base: "380px", md: "400px" }}
             borderRadius="md"
@@ -430,11 +430,12 @@ const testimonials = [
             
             <Stack spacing={2}>
               <Text fontSize="lg" fontWeight="bold">Services</Text>
-              <Link href="/hire">Web development</Link>
-              <Link href="/hire">Graphics design</Link>
-              <Link href="/airtime_to_cash">Airtime to cash</Link>
+              <Link href="/hire-professionals">Web development</Link>
+              <Link href="/airtime">Airtime</Link> 
+                <Link href="/hire-professionals">Graphics design</Link>
+              <Link href="/airtime-to-cash">Airtime to cash</Link>
               <Link href="/data">Data bundle</Link>
-              <Link href="/hire">UI/UX</Link>
+              <Link href="/hire-professionals">UI/UX</Link>
 
      <Link href="/bulkSMS">Bulk SMS</Link>         
             </Stack>
