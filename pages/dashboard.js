@@ -30,7 +30,7 @@ if(!user){
     
 }
     
-    },[user])
+    },[user,router])
     
 
 if(!user){
