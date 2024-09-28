@@ -2,12 +2,12 @@ import React from 'react';
 import { Box, Text, HStack,VStack, Icon, Flex, SimpleGrid } from '@chakra-ui/react';
 import { MdCellWifi,} from 'react-icons/md';
 import { FiPhoneCall,} from 'react-icons/fi';
-import {FaRegMessage,FaCreditCard} from "react-icons/fa6";
+import {FaRegMessage} from "react-icons/fa6";
 import {FaExchangeAlt} from "react-icons/fa";
 import { IoPersonOutline } from "react-icons/io5";
 import {userData} from "../states/recoil";
 import {useRecoilState} from "recoil";
-
+import {FaCreditCard} from "react-icons/fa";
 
 
 const TransactionItem = ({ icon, name, type, amount, color, date, tid }) => (
