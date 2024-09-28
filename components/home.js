@@ -153,9 +153,10 @@ const testimonials = [
     <Box onClick={toggleColorMode}>
       <IconButton
         aria-label="receipt"
-        icon={colorMode === "light" ? (<Icon as={CiDark} size="md"/>) : (<Icon as={CiLight} size="md"/>)}
+        icon={colorMode === "light" ? (<Icon as={CiDark} />) : (<Icon as={CiLight} />)}
         fontSize="1.8rem"
         variant="ghost"
+          size="md"
       />
           </Box>
           
