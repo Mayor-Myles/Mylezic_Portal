@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Image, VStack, Stack, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, Image, VStack, Stack, useColorModeValue,Flex,Icon,IconButton,HStack } from '@chakra-ui/react';
 import Head from 'next/head';
 
 
