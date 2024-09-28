@@ -162,7 +162,7 @@ const Refer = () => {
       <Flex justifyContent="center" alignItems="center" mb={4} bg="#f5f5f5" borderRadius="full" p="2">
         
         <Image 
-          src="avatar.jpeg" 
+          src="avatar.jpg" 
           alt="refer people to mylezic image" 
           boxSize="100px"
           objectFit="cover"
