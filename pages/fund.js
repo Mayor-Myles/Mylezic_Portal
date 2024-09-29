@@ -76,7 +76,7 @@ function getCharge(amount) {
     var handler = PaystackPop.setup({
         key: pk, // Replace with your public key
         email: user.email, // Replace with the customer's email
-        amount: amount * 100 + Number(charge * 100), // Replace with the amount (in kobo, so 5000 is ₦50)
+        amount: amount * 100, // Replace with the amount (in kobo, so 5000 is ₦50)
         currency: 'NGN', // Use 'NGN' for Nigerian Naira
         ref: genReference, // Replace with a unique reference for the transaction
         metadata: {
