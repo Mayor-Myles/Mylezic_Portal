@@ -57,18 +57,18 @@ key:"csrfState",
 export const dataPlansState = atom({
 
   key:"dataPlansState",
-  default:null,/*
+  default:
     {"glo":[
     {
       planName:"500mb",
-      price:100,
+      price:"",
       duration:"1 month",
       planId:"ab"
 
     },
     {
       planName:"1gb",
-      price:300,
+      price:"",
       duration:"1 month",
       planId:"ac"
 
@@ -76,7 +76,7 @@ export const dataPlansState = atom({
 
     {
       planName:"2gb",
-      price:500,
+      price:"",
       duration:"1 month",
       planId:"ad",
       
@@ -85,7 +85,7 @@ export const dataPlansState = atom({
 
     {
       planName:"3gb",
-      price:800,
+      price:"",
       duration:"1 month",
       planId:"ae"
 
@@ -93,7 +93,7 @@ export const dataPlansState = atom({
 
     {
       planName:"4gb",
-      price:1000,
+      price:"",
       duration:"1 month",
       planId:"af",
 
@@ -101,7 +101,7 @@ export const dataPlansState = atom({
 
     {
       planName:"5gb",
-      price:3000,
+      price:"",
       duration:"1 month",
       planId :"ag"
 
@@ -112,31 +112,31 @@ export const dataPlansState = atom({
      "9mobile":[],
      
     }
-    */
+    
 })
 
 
 export const a2cState = atom({
 
   key:"a2cState",
-  default: null,/*{
-    mtn:0.6,
-    glo:0.6,
-    airtel:0.65,
-    "9mobile":0.5,
-  }*/
+  default:{
+    mtn:0.7,
+    glo:0.7,
+    airtel:0.7,
+    "9mobile":0.7,
+  }
 })
 
 export const merchantState = atom({
   key:"merchantState",
-  default: null,/*{
+  default:{
 
     paystack:{
       pk:"pk_test_742980136536f6cf3edb8a53642c030a0a2cd685",
       sk:""
     },
     
-  }*/
+  }
 });
 
      export const notificationsState = atom({
