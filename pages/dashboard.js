@@ -33,7 +33,7 @@ if(!user){
     },[user,router])
     
 
-if(!user){
+if(user.fullname == ""){
 
     return(
 
