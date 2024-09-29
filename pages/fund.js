@@ -40,7 +40,7 @@ function genReference() {
 
 function getCharge(amount) {
   
-    const paystackFeePercentage = 0.0152; // 1.5% fee
+    const paystackFeePercentage = 0.015; // 1.5% fee
   
     const flatFee = 100; // ₦100 
   
@@ -50,7 +50,7 @@ function getCharge(amount) {
 
     // Add flat fee if the amount is more than ₦2500
     if (amount > 2500) {
-        paystackFee += flatFee;
+        paystackFee += flatFee + (0.005 *amount);
     }
 
     // Apply the fee cap
