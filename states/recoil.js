@@ -7,7 +7,7 @@ export const userData = atom({
 key:"userData",
   default:{
     "email":"",
-           "fullname":"Not logged in",
+           "fullname":"",
            "balance":0,
            "dp":"user.jpeg",
            "referral":"Log in",
@@ -59,7 +59,7 @@ export const dataPlansState = atom({
   key:"dataPlansState",
   default:
     {"glo":[
-    {
+    /*{
       planName:"500mb",
       price:"",
       duration:"1 month",
@@ -105,7 +105,7 @@ export const dataPlansState = atom({
       duration:"1 month",
       planId :"ag"
 
-    },
+    },*/
     ],
      "mtn":[],
      "airtel":[],
