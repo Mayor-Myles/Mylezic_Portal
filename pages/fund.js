@@ -57,7 +57,7 @@ function getCharge(amount) {
   // paystackFee = Math.min(paystackFee, feeCap);
 
     // Set the total amount (original amount + Paystack fee) to charge
-    return Math.ceil(paystackFee);
+    return paystackFee;
 
     
 }
