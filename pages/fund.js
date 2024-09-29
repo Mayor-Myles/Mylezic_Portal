@@ -40,7 +40,7 @@ function genReference() {
 
 function getCharge(amount) {
   
-    const paystackFeePercentage = 0.0151; // 1.5% fee
+    const paystackFeePercentage = 0.0152; // 1.5% fee
   
     const flatFee = 100; // ₦100 
   
