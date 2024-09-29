@@ -54,10 +54,10 @@ function getCharge(amount) {
     }
 
     // Apply the fee cap
-   paystackFee = Math.min(paystackFee, feeCap);
+  // paystackFee = Math.min(paystackFee, feeCap);
 
     // Set the total amount (original amount + Paystack fee) to charge
-    return paystackFee;
+    return Math.ceil(paystackFee);
 
     
 }
