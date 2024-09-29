@@ -76,7 +76,7 @@ function getCharge(amount) {
     var handler = PaystackPop.setup({
         key: pk, // Replace with your public key
         email: user.email, // Replace with the customer's email
-        amount: amount * 100, // Replace with the amount (in kobo, so 5000 is ₦50)
+        amount: (amount * 100) + Number(charge * 100), // Replace with the amount (in kobo, so 5000 is ₦50)
         currency: 'NGN', // Use 'NGN' for Nigerian Naira
         ref: genReference, // Replace with a unique reference for the transaction
         metadata: {
@@ -97,14 +97,14 @@ function getCharge(amount) {
           
           //  console.log('Payment successful. Reference:', response.reference);
 
-        setUser(prev=>({...prev,balance:Number(prev.balance) + Number(amount)}));
+       // setUser(prev=>({...prev,balance:Number(prev.balance) + Number(amount)}));
             toast({
               position:"top",
               title:"Congrats",
               description:"Your account has been funded successfully!",
               isClosable:true,
               status:"success",
-              duration:5000,
+              duration:3000,
             })
             // You can send the response to your server here
         },
