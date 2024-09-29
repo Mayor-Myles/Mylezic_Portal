@@ -50,11 +50,11 @@ function getCharge(amount) {
 
     // Add flat fee if the amount is more than ₦2500
     if (amount > 2500) {
-        paystackFee += flatFee + (0.005 *amount);
+        paystackFee += flatFee;
     }
 
     // Apply the fee cap
-  // paystackFee = Math.min(paystackFee, feeCap);
+  paystackFee = Math.min(paystackFee, feeCap);
 
     // Set the total amount (original amount + Paystack fee) to charge
     return paystackFee;
