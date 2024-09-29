@@ -53,6 +53,7 @@ return;
       alignItems="center"
       paddingY="0.2em"
     visibility={{lg:"hidden"}}
+ zIndex="99999"
     >
 
       <Box onClick={toggleColorMode}>
