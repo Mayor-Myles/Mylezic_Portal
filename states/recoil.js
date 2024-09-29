@@ -5,15 +5,15 @@ import {atom} from "recoil";
 export const userData = atom({
 
 key:"userData",
-  default:null,/*{
-    "email":"user@gmail.com",
-           "fullname":"Abel Mayowa Babalola",
-           "balance":1,
+  default:{
+    "email":"",
+           "fullname":"Not logged in",
+           "balance":0,
            "dp":"user.jpeg",
-           "referral":"zx37abG",
-    "phoneNumber":"09060421393",
+           "referral":"Log in",
+    "phoneNumber":"xxxxxxxxx",
     "transactions":[
-      {
+     /* {
         icon:"data",
         title:"Data bundle",
         description:"500mb to 07014443155",
@@ -41,16 +41,16 @@ key:"userData",
         date:"06/05/2024 2:30pm",
         status: "pending",
         tid:"49gwqopj",
-      },
+      },*/
     ]
           }
-  */
+
 });
 
 export const csrfState = atom({
 
 key:"csrfState",
-  default:null,
+  default:0,
   
 })
 
