@@ -23,7 +23,7 @@ const router = useRouter();
 
     useEffect(()=>{
         
-if(user.fullname === ""){
+if(!user){
 
  router.push("/login");
 
