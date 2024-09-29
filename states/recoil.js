@@ -44,20 +44,20 @@ key:"userData",
       },
     ]
           }
-  
+  */
 });
 
 export const csrfState = atom({
 
 key:"csrfState",
-  default:4,
+  default:null,
   
 })
 
 export const dataPlansState = atom({
 
   key:"dataPlansState",
-  default:
+  default:null,/*
     {"glo":[
     {
       planName:"500mb",
@@ -112,14 +112,14 @@ export const dataPlansState = atom({
      "9mobile":[],
      
     }
-    
+    */
 })
 
 
 export const a2cState = atom({
 
   key:"a2cState",
-  default: {
+  default: null,/*{
     mtn:0.6,
     glo:0.6,
     airtel:0.65,
