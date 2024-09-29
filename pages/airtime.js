@@ -167,7 +167,7 @@ const toast = useToast();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   {/* Favicon */}
-  <link rel="icon" href="/logo.png" />
+  <link rel="icon" href="/favicon.ico" />
 
   {/* Additional SEO Tags */}
   <meta property="og:site_name" content="Mylezic" />
