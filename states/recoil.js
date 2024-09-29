@@ -5,7 +5,7 @@ import {atom} from "recoil";
 export const userData = atom({
 
 key:"userData",
-  default:{
+  default:null,/*{
     "email":"user@gmail.com",
            "fullname":"Abel Mayowa Babalola",
            "balance":1,
@@ -124,19 +124,19 @@ export const a2cState = atom({
     glo:0.6,
     airtel:0.65,
     "9mobile":0.5,
-  }
+  }*/
 })
 
 export const merchantState = atom({
   key:"merchantState",
-  default:{
+  default: null,/*{
 
     paystack:{
       pk:"pk_test_742980136536f6cf3edb8a53642c030a0a2cd685",
       sk:""
     },
     
-  }
+  }*/
 });
 
      export const notificationsState = atom({
