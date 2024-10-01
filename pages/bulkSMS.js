@@ -119,7 +119,7 @@ const data = {
 
 
 
-    const url = "https://cbrbakery.com.ng/api/bulkSMS";
+    const url = "https://mylezic.com.ng/api/bulkSMS";
 
     axios.post(url, data, {
         headers: {
