@@ -79,7 +79,7 @@ function CableTvSubscription() {
           </Button>
         </VStack>
       </form>
-    </Box>
+    </Flex>
             <NavbarBottom/>
             </Box>
   );
