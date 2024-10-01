@@ -113,13 +113,13 @@ function InitializeState() {
 
   useEffect(() => {
     const getToken = async () => {
-      const url = "https://cbrbakery.com.ng/api/welcome";
+      const url = "https://mylezic.com.ng/api/welcome";
 
       try {
         const response = await axios.get(url);
 
         if (response.data) {
-        console.log(response.data.notifications)
+        //console.log(response.data.notifications)
           setCsrf(response.data.token);
           setUser(response.data.userData || null);
           setPlan(response.data.dataPlans || null);
@@ -131,6 +131,7 @@ function InitializeState() {
             title: "Error",
             description: "Page is expired. Please reload the page.",
             status: "error",
+            position:'top',
             duration: 5000,
             isClosable: true,
           });
