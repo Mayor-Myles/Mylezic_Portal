@@ -8,7 +8,7 @@ const useUpdate = () => {
   const toast = useToast();
 
   const update= async () => {
-    const url = "https://cbrbakery.com.ng/api/welcome";
+    const url = "https://mylezic.com.ng/api/welcome";
     
     try {
       const response = await axios.get(url);
