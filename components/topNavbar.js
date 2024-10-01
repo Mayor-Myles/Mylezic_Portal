@@ -48,21 +48,29 @@ setIsRead(true);
         <Text fontSize="15" fontWeight="bold ">{user.fullname.length > 20 ? user.fullname.slice(0,20)+"..." : user.fullname}</Text>
       </Flex>
         
-        <Flex onClick={openNotification} position ="relative"
-          p="4" alignItems="center">
-          <IconButton fontSize="1.3em" shadow="md"
-            aria-label="Notifications"
-            icon={<GoBell />}
-            
-            mr="4"
-            borderRadius="50%"
-          />
-          <Flex  position ="absolute" top="1" right="2.5"  align="center" p="3">
-          
-              {(!isRead && messages) && ( <Badge fontSize="0.5em" borderRadius="sm" bg="teal"  color="white">New</Badge>)}
-          </Flex>
-        </Flex>
-
+<Flex onClick={openNotification} position="relative" p="4" alignItems="center">
+  <IconButton
+    fontSize="1.3em"
+    shadow="md"
+    aria-label="Notifications"
+    icon={<GoBell />}
+    mr="4"
+    borderRadius="50%"
+  />
+  <Flex
+    position="absolute"
+    top="-5px"  // Adjusted to be closer to the top of the bell icon
+    right="-5px"  // Adjusted to align closer to the bell
+    align="center"
+  >
+    {(!isRead && messages) && (
+      <Badge fontSize="0.4em" borderRadius="full" bg="teal" color="white">
+        New
+      </Badge>
+    )}
+  </Flex>
+</Flex>
+  
         <Avatar onClick={()=>router.push("/profile")} size="md" name={user.fullname} />
       </Grid>
     </Box>
