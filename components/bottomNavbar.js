@@ -31,7 +31,7 @@ whatsappLink.current = "https://wa.me/2347014443158?text=Hi%20Mylezic%20support%
 */}
  const openSupport = () => {
 
- window.open(`https://wa.me/2347014443158?text=Hi, I need an assistance my Mylezic account Phone number is`,"_blank");
+ window.location.href="https://wa.me/2347014443158?text=Hi, I need an assistance my Mylezic account Phone number is";
   
 return;
 
