@@ -93,7 +93,7 @@ if(!plan && !csrf){
     return;
   }
 
-  const url = "https://cbrbakery.com.ng/api/buyData";
+  const url = "https://mylezic.com.ng/api/buyData";
 
   // Using axios for the POST request
   axios.post(url, data ,{
