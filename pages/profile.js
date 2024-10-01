@@ -203,8 +203,8 @@ if (!hasValue) {
             </FormControl>
 
             <Flex justify="space-between" mb="2em">
-              <Button variant="outline" colorScheme="red">
-               <Link onClick={()=>window.location.href="/logout"}>Logout</Link> 
+              <Button onClick={()=>window.location.href="/signOut"} variant="outline" colorScheme="red">
+               Logout 
               </Button>
               <Button
                 colorScheme="teal"
