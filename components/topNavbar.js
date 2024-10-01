@@ -56,9 +56,10 @@ setIsRead(true);
     icon={<GoBell />}
     mr="4"
     borderRadius="50%"
+      color={(messages && !isRead) && "teal"}
   />
-  <Flex
-    position="absolute"
+        {/* <Flex
+    position="relative"
     top="-5px"  // Adjusted to be closer to the top of the bell icon
     right="-5px"  // Adjusted to align closer to the bell
     align="center"
@@ -68,7 +69,7 @@ setIsRead(true);
         New
       </Badge>
     )}
-  </Flex>
+  </Flex>*/}
 </Flex>
   
         <Avatar onClick={()=>router.push("/profile")} size="md" name={user.fullname} />
