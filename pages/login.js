@@ -56,7 +56,7 @@ const LoginForm = () => {
     }
 
     setLoading(true);
-    const url = 'https://cbrbakery.com.ng/api/login';
+    const url = 'https://mylezic.com.ng/api/login';
     toast.closeAll();
 
     axios
