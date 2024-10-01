@@ -61,7 +61,7 @@ const A2C = () => {
     }
 
     try {
-      const response = await axios.post("https://cbrbakery.com.ng/api/a2c", data, {
+      const response = await axios.post("https://mylezic.com.ng/api/a2c", data, {
         headers: {
           "Content-Type": "application/json",
         },
