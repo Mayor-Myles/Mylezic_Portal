@@ -41,8 +41,7 @@ return(
   <Link color={router.pathname=="/fund" && "teal"} href="/fund">Fund Wallet</Link>
   <Link color={router.pathname=="/about" && "teal"} href="/about">About Us</Link>
   
-  <Button w="full"  size="lg" colorScheme="red">Logout</Button>
-
+  
 
   <Flex align="center" justify="center" gap="4">
   
