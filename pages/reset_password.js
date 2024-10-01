@@ -47,7 +47,7 @@ const ResetPassword = () => {
     }
 
     setLoading(true);
-    const url = "https://cbrbakery.com.ng/api/resetPassword";
+    const url = "https://mylezic.com.ng/api/resetPassword";
     toast.closeAll();
 
     axios.post(url, formData)
