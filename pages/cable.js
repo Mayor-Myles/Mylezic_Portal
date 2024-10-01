@@ -11,6 +11,7 @@ import {
   HStack,
   Text,
   useToast,
+  Flex,
 } from '@chakra-ui/react';
 
 import NavbarBottom from "../components/bottomNavbar";
@@ -38,7 +39,7 @@ function CableTvSubscription() {
     <Box>
     <NavbarTop />
     
-    <Box mt="2em" minH="100vh" p={5} maxW="800px" mx="auto" mt={10} borderRadius="md">
+    <Flex align="center" justify="center" flexDirection="column"  minH="100vh" p={5} maxW="800px" mx="auto" mt={10} borderRadius="md">
       <Heading as="h1" size="lg" mb={6} textAlign="center" color="teal.500">
         Cable TV Subscription
       </Heading>
