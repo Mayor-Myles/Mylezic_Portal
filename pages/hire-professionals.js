@@ -48,7 +48,7 @@ const Hire = () => {
     return false;
   }
 
-  const url = "https://cbrbakery.com.ng/api/hire";
+  const url = "https://mylezic.com.ng/api/hire";
 
   try {
     const response = await axios.post(url, formData, {
