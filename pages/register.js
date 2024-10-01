@@ -71,7 +71,7 @@ useEffect(() => {
 
     setLoading(true);
 
-    const url = 'https://cbrbakery.com.ng/api/register';
+    const url = 'https://mylezic.com.ng/api/register';
 
     toast.closeAll();
 
