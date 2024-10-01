@@ -62,7 +62,7 @@ const toast = useToast();
     return;
   }
 
-  const url = "https://cbrbakery.com.ng/api/buyAirtime";
+  const url = "https://mylezic.com.ng/api/buyAirtime";
 
   axios
     .post(url, data, {
