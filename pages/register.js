@@ -257,7 +257,7 @@ useEffect(() => {
               type="email"
               placeholder="Email address"
               outline="none"
-              bg="#F5F5F5"
+              
               p="1.2em"
               border="0px"
               borderRadius="0.5em"
@@ -275,7 +275,7 @@ useEffect(() => {
               type="number"
               placeholder="Phone number"
               outline="none"
-              bg="#F5F5F5"
+              
               p="1.2em"
               border="0px"
               borderRadius="0.5em"
@@ -293,7 +293,7 @@ useEffect(() => {
               type="text"
               placeholder="Fullname"
               outline="none"
-              bg="#F5F5F5"
+            
               p="1.2em"
               border="0px"
               borderRadius="0.5em"
@@ -311,7 +311,7 @@ useEffect(() => {
               type={passwordVisible ? 'text' : 'password'}
               placeholder="Password"
               outline="none"
-              bg="#F5F5F5"
+          
               p="1.2em"
               border="0px"
               borderRadius="0.5em"
@@ -338,7 +338,7 @@ useEffect(() => {
               type="text"
               placeholder="Referred By (optional)"
               outline="none"
-              bg="#F5F5F5"
+              
               p="1.2em"
               border="0px"
               borderRadius="0.5em"
