@@ -218,7 +218,7 @@ const LoginForm = () => {
               type="number"
               placeholder="Phone number"
               outline="none"
-              bg="#F5F5F5"
+            
               p="1.2em"
               border="0px"
               borderRadius="0.5em"
@@ -235,7 +235,7 @@ const LoginForm = () => {
               type={!passwordVisible ? 'password' : 'text'}
               placeholder="Password"
               outline="none"
-              bg="#F5F5F5"
+              
               p="1.2em"
               border="0px"
               borderRadius="0.5em"
