@@ -62,71 +62,62 @@ function getCharge(amount) {
     
 }
 
-  
-  
-
   const fundMe = () => {
-    
-  const pk = merchant['paystack']['pk'];
+  const pk = merchant['flutterwave']['pk']; // Replace with your Flutterwave public key
+
+  setLoading(true);
+
+  const charge = getCharge(amount);
+
+  FlutterwaveCheckout({
+    public_key: pk, // Your Flutterwave public key
+    tx_ref: genReference(), // Unique transaction reference
+    amount: amount + charge, // Total amount (original + Flutterwave charge)
+    currency: 'NGN', // Nigerian Naira
+    //payment_options: 'card,banktransfer,ussd', // Available payment options
+    customer: {
+      email: user.email, // Customer's email
+      phonenumber: user.phoneNumber, // Customer's phone number
+      name: user.fullName, // Customer's name
+    },
+    customizations: {
+      title: "Mylezic Wallet Funding", // Title for the payment page
+      description: "Fund your Mylezic wallet effortlessly.",
+      logo: "/logo.png", // Optional logo
+    },
+    meta: {
+      user_id: user.userId, // Pass the user ID properly in metadata
+    },
+    callback: function (response) {
+      update(); // Perform any updates needed on success
+      setLoading(false);
+
+      toast({
+        position: "top",
+        title: "Congrats",
+        description: "Your account has been funded successfully!",
+        isClosable: true,
+        status: "success",
+        duration: 3000,
+      });
+
+      console.log("Payment successful. Reference:", response.tx_ref);
+    },
+    onclose: function () {
+      setLoading(false); // Handle payment modal close
+
+      toast({
+        status: "info",
+        title: "Payment cancelled",
+        duration: 5000,
+        isClosable: true,
+        description: "You have cancelled the payment",
+        position: "top",
+      });
+    },
+  });
+};
   
-    setLoading(true);
-
-    const charge =  getCharge(amount);
-    
-    var handler = PaystackPop.setup({
-        key: pk, // Replace with your public key
-        email: user.email, // Replace with the customer's email
-        amount: (amount * 100) + Number(charge * 100), // Replace with the amount (in kobo, so 5000 is ₦50)
-        currency: 'NGN', // Use 'NGN' for Nigerian Naira
-        ref: genReference, // Replace with a unique reference for the transaction
-        metadata: {
-        custom_fields: [
-    {
-      display_name: "User ID",  // The label for this field
-      variable_name: "user_id",  // The key name you want to use for this data
-      value: user.userId,  // The actual user ID you want to pass
-    }
-  ]
-},
-
-      callback: function(response) {
-
-          update();
-            // This function is called when the payment is successful
-          setLoading(false);
-          
-          //  console.log('Payment successful. Reference:', response.reference);
-
-       // setUser(prev=>({...prev,balance:Number(prev.balance) + Number(amount)}));
-            toast({
-              position:"top",
-              title:"Congrats",
-              description:"Your account has been funded successfully!",
-              isClosable:true,
-              status:"success",
-              duration:3000,
-            })
-            // You can send the response to your server here
-        },
-        onClose: function() {
-            // This function is called when the customer closes the payment window
-
-          setLoading(false);
-          
-           toast ({
-
-             status:"info",
-             title:"Payment cancelled",
-             duration:5000,
-             isClosable:true,
-             description:"You have cancelled the payment",
-             position:"top"
-           });
-        }
-    });
-
-    handler.openIframe(); // Open the payment modal
-  }
 
   const notify = () => {
 
