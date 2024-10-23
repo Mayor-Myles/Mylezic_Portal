@@ -174,11 +174,10 @@ const testimonials = [
                     <Text onClick={()=>router.push('/hire-professionals')}>Hire Us</Text>
                     <Text onClick={()=>router.push('/airtime')}>Buy airtime</Text>
                     <Text onClick={()=>router.push('/bulkSMS')}>Bulk SMS</Text>
-             <Text onClick={()=>router.push('/airtime-to-cash')}>Airtime to cash</Text>   
+          {/*<Text onClick={()=>router.push('/airtime-to-cash')}>Airtime to cash</Text> */}   
                     
           
-         
-          
+                 
         </HStack>
       </Flex>
 
@@ -196,7 +195,7 @@ const testimonials = [
               <Text onClick={()=>router.push('/hire-professionals')}>Hire Us</Text>
               <Text onClick={()=>router.push('/airtime')}>Buy airtime</Text>
               <Text onClick={()=>router.push('/bulkSMS')}>Bulk SMS</Text>
-       <Text onClick={()=>router.push('/airtime-to-cash')}>Airtime to cash</Text>   
+       {/*<Text onClick={()=>router.push('/airtime-to-cash')}>Airtime to cash</Text>*/}   
      <Text onClick={()=>router.push('/about')}>About us</Text>         
               
               
@@ -210,9 +209,9 @@ const testimonials = [
         <Flex direction={{ base: "column", md: "row" }} align="center">
           <VStack align="start" spacing={6} flex={1}>
             <Text color="teal.600" fontWeight="bold">Telecommunications & IT Solutions</Text>
-            <Heading as="h3" size={{sm:"lg",base:"md",md:"xl"}} maxW="md">We build creative websites, cheap data bundles, airtime to cash, Bulk SMS and more.</Heading>
+            <Heading as="h3" size={{sm:"lg",base:"md",md:"xl"}} maxW="md">We build creative websites, cheap data bundles, Bulk SMS and more.</Heading>
             <Text color="gray.600">Mylezic offers a relaible service which is specifically tailored for your needs. Your satisfaction is always our concern.</Text>
-            <Button onClick={()=>router.push('/register')} colorScheme="teal">Sign up / Login</Button>
+            <Button onClick={()=>router.push('/login')} colorScheme="teal">Sign up / Login</Button>
           </VStack>
           <Image
             src="avatar.jpg"

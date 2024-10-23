@@ -220,7 +220,7 @@ const LoginForm = () => {
               outline="none"
             
               p="1.2em"
-              border="0px"
+              border="1px solid teal"
               borderRadius="0.5em"
               size="lg"
               w="full"
@@ -237,7 +237,7 @@ const LoginForm = () => {
               outline="none"
               
               p="1.2em"
-              border="0px"
+              border="1px solid teal"
               borderRadius="0.5em"
               size="lg"
               w="full"

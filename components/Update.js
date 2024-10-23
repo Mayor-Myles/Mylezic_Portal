@@ -1,12 +1,12 @@
 import axios from "axios";
-import { userData } from "../states/recoil";
+import { userData,csrfState } from "../states/recoil";
 import { useRecoilState } from "recoil";
 import { useToast } from "@chakra-ui/react";
 
 const useUpdate = () => {
   const [user, setUser] = useRecoilState(userData);
   const toast = useToast();
-
+const [csrf,setCsrf] = useRecoilState(csrfState);
   const update= async () => {
     const url = "https://mylezic.com.ng/api/welcome";
     
@@ -14,7 +14,7 @@ const useUpdate = () => {
       const response = await axios.get(url);
 
       if (response.data && response.data.userData) {
-        setUser(response.data.userData);
+  setCsrf(response.data.token);      setUser(response.data.userData);
       } else {
         toast({
           title: "Error",
