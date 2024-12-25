@@ -13,7 +13,7 @@ import useUpdate from "../components/Update";
 const Fund = () => {
 
 
-  const [fundType,setFundType] = useState(null);
+  const [fundType,setFundType] = useState('auto');
 const update = useUpdate();
 const [merchant,setMerchant] = useRecoilState(merchantState);
 
@@ -249,14 +249,15 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
 <Wallet/>
 
         
-    <Select onChange={(e)=>setFundType(e.target.value)} _hover={{border:"1px solid teal"}} size="lg" colorScheme="lightgrey">
+        {/*<Select onChange={(e)=>setFundType(e.target.value)} _hover={{border:"1px solid teal"}} size="lg" colorScheme="lightgrey">
       <option>Choose Funding Type</option>
     <option value="auto">Auto Funding</option>
     <option value="manual">Manual Transfer Funding</option>
-    </Select>  
+    </Select>  */}
 
+        {/*}
 <Text shadow="md" bg="gray.200" p="5" color="gray" borderRadius="0.6em">{fundType == "manual" ? (<Text>Transfer to <strong>9060421393(Opay) - Babalola Mayowa Abel</strong>. After successful transfer, type in the amount sent below and click on 'Notify Us' </Text>) : "Choose preffered funding type. Manual deposits is free but takes few minutes to reflect in your wallet. Auto funding is instant and attracts little merchant fee."}</Text>
-
+*/}
         {fundType == "auto" || fundType=="manual" ? (
   
     <Flex mb="3em" gap="2" align="center" flexFlow="row">

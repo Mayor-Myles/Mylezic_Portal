@@ -189,7 +189,7 @@ const lastLogin = localStorage.getItem('lastLogin');
             Register
           </Text>
         </Text>
-        <Text fontWeight="bold" color="orange" onClick={()=>router.push('/reset_password')}>Click here if you forgot your Password!</Text>
+        <Text mt={2} fontWeight="bold" color="orange" onClick={()=>router.push('/reset_password')}>Click here if you forgot your Password!</Text>
       </Box>
     </Flex>
   );
