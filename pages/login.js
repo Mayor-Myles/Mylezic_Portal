@@ -95,6 +95,8 @@ const router = useRouter();
         <Text fontSize="3xl" fontWeight="bold" mb={2}>
           Mylezic
         </Text>
+        <Box mt="1em">
+          <Text>But cheap data, airtime, and even hire us to build any kind of website for you and more with us!!!</Text></Box>
       </Box>
       <Box
         w="full"
@@ -161,7 +163,7 @@ const router = useRouter();
           _active={{ bg: 'teal.600' }}
           boxShadow="sm"
         >
-          SIGN IN
+          Login
         </Button>
         <Text mt={8}>
           Don’t have an account?{' '}
@@ -171,7 +173,7 @@ const router = useRouter();
             cursor="pointer"
             onClick={() => router.push('/register')}
           >
-            Sign up
+            Register
           </Text>
         </Text>
       </Box>
