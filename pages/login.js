@@ -129,8 +129,7 @@ const lastLogin = localStorage.getItem('lastLogin');
             name="username"
       variant="flushed"     placeholder= "Phone number" 
             onChange={handleInputChange}
-            value={!lastLogin ? formData.phoneNumber : lastLogin}
-            
+            value={lastLogin}
             
             _placeholder={{ color: 'gray.300' }}
             _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
@@ -190,6 +189,7 @@ const lastLogin = localStorage.getItem('lastLogin');
             Register
           </Text>
         </Text>
+        <Text fontWeight="bold" color="orange" onClick={()=>router.push('/reset_password')}>Click here if you forgot your Password!</Text>
       </Box>
     </Flex>
   );

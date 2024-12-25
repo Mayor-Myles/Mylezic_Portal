@@ -7,7 +7,9 @@ import {
   Text,
   useToast,
   InputGroup,
+  InputLeftElement,
 } from '@chakra-ui/react';
+import { FaPhoneAlt } from 'react-icons/fa';
 import { csrfState } from "../states/recoil";
 import Head from "next/head";
 import Link from "next/link";
@@ -54,7 +56,7 @@ const ResetPassword = () => {
       .then(response => {
         setLoading(false);
         const { data } = response;
-        
+
         toast.closeAll();
         if (data.status === "success") {
           toast({
@@ -93,7 +95,7 @@ const ResetPassword = () => {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Reset Password | Mylezic</title>
       </Head>
@@ -104,39 +106,49 @@ const ResetPassword = () => {
         justify={'center'}
         flexFlow="column wrap"
         p="1em"
-        maxW={{ sm: '27em', base: '35em', md: '27em', lg: '25em', xl: '28em', '2xl': '30em' }} 
-        mx={{ base: "2em", sm: 'auto', md: "auto" }}
+        maxW="400px"
+        mx="auto"
       >
         <Flex userSelect="none" justify="center" align="center" flexFlow="column">
-          <Text fontSize="1.2em" fontWeight="bold">Recover your account</Text>
-          <Text mt="0">Have an account? <Link href="/login"><Box color="teal" as="span">Login</Box></Link></Text>
+          <Text fontSize="2xl" fontWeight="bold">Recover Your Account</Text>
+          <Text mt="0" fontSize="sm">
+            Have an account?{' '}
+            <Link href="/login">
+              <Box color="teal.500" as="span">Login</Box>
+            </Link>
+          </Text>
         </Flex>
 
         <Flex align="center" justify="center" flexDirection="column" mt="3em" w="full">
           <InputGroup mb="1.3em">
+            <InputLeftElement pointerEvents="none" color="teal.500">
+              <FaPhoneAlt />
+            </InputLeftElement>
             <Input
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              type="number"
-              placeholder="Phone number"
-              outline="none"
-              bg="#F5F5F5"
-              p="1.2em"
-              border="1px solid teal"
-              borderRadius="0.5em"
+              type="tel"
+              placeholder="Phone Number"
+              variant="flushed"
+              focusBorderColor="teal.500"
               size="lg"
-              w="full"
-              fontSize="14px"
             />
           </InputGroup>
         </Flex>
 
         <Flex w="full" mt="1em">
-          <Button onClick={submitForm} isLoading={loading} size="md" color="white" colorScheme="teal" w="full">Reset Password</Button>
+          <Button
+            onClick={submitForm}
+            isLoading={loading}
+            colorScheme="teal"
+            w="full"
+          >
+            Reset Password
+          </Button>
         </Flex>
 
         <Flex mt="3em" align="center" justify="center">
-          <Text fontWeight="bold">Mylezic</Text>
+          <Text fontWeight="bold" color="teal.500">Mylezic</Text>
         </Flex>
       </Flex>
     </>
@@ -144,4 +156,3 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
-            
