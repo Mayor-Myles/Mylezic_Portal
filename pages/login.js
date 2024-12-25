@@ -15,18 +15,25 @@ import { FaUser, FaLock,FaEye,FaEyeSlash } from 'react-icons/fa';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 const LoginForm = () => {
-  const [formData, setFormData] = useState({ username: '', password: '' });
+  const [formData, setFormData] = useState({ phoneNumber: '', password: '' });
   const [loading, setLoading] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const toast = useToast();
+const [passwordVisible, setPasswordVisible] = useState(false);
+const toast = useToast();
 const router = useRouter();
+  
+  //set last saved Login phone number 
+  
+const lastLogin = localStorage.getItem('lastLogin');
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+localStorage.setItem('lastLogin',formData.phoneNumber);
+    
   };
 
   const handleSubmit = async () => {
-    if (!formData.username || !formData.password) {
+    if (!formData.phoneNumber || !formData.password) {
       toast({
         title: 'Error',
         description: 'Please fill in all fields',
@@ -48,6 +55,7 @@ const router = useRouter();
       );
 
       if (response.data.status === 'success') {
+        toast.closeAll();
         toast({
           title: 'Success',
           description: response.data.message || 'Logged in successfully!',
@@ -56,8 +64,9 @@ const router = useRouter();
           isClosable: true,
           position: 'top',
         });
-        window.location.href = '/Admin/dashboard'; // Redirect on successful login
+        router.push('/dashboard'); // Redirect on successful login
       } else {
+        toast.closeAll();
         toast({
           title: 'Error',
           description: response.data.message || 'Invalid login details',
@@ -68,6 +77,7 @@ const router = useRouter();
         });
       }
     } catch (error) {
+      toast.closeAll();
       toast({
         title: 'Error',
         description: 'Something went wrong. Please try again later.',

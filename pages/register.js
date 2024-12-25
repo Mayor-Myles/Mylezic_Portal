@@ -156,6 +156,7 @@ const Register = () => {
                 setFormData((prev) => ({ ...prev, fullname: e.target.value }))
               }
               variant="flushed"
+              _placeholder={{ color: 'gray.300' }}
               focusBorderColor="teal.500"
             />
           </InputGroup>
@@ -166,6 +167,7 @@ const Register = () => {
             </InputLeftElement>
             <Input
               placeholder="Email Address"
+              _placeholder={{ color: 'gray.300' }}
               type="email"
               value={formData.email}
               onChange={(e) =>
@@ -182,6 +184,8 @@ const Register = () => {
             </InputLeftElement>
             <Input
               placeholder="Phone Number"
+
+              _placeholder={{ color: 'gray.300' }}
               type="tel"
               value={formData.phoneNumber}
               onChange={(e) =>
@@ -198,6 +202,9 @@ const Register = () => {
             </InputLeftElement>
             <Input
               placeholder="Password"
+
+              _placeholder={{ color: 'gray.300' }}
+              
               type={passwordVisible ? 'text' : 'password'}
               value={formData.password}
               onChange={(e) =>
@@ -223,6 +230,8 @@ const Register = () => {
             </InputLeftElement>
             <Input
               placeholder="Referral Code (Optional)"
+
+              
               value={formData.referral}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, referral: e.target.value }))
