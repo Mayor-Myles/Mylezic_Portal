@@ -103,7 +103,7 @@ const LoginForm = () => {
       height="100vh"
       align="center"
       justify="center"
-      bgGradient="linear(to-b, grey, grey)"
+      bgGradientt="linear(to-b, grey, grey)"
       direction="column"
       px={4}
     >
