@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -11,29 +11,32 @@ import {
   Text,
   useToast,
 } from '@chakra-ui/react';
-import { FaUser, FaLock,FaEye,FaEyeSlash } from 'react-icons/fa';
+import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+
 const LoginForm = () => {
   const [formData, setFormData] = useState({ phoneNumber: '', password: '' });
   const [loading, setLoading] = useState(false);
-const [passwordVisible, setPasswordVisible] = useState(false);
-const toast = useToast();
-const router = useRouter();
-  
-  //set last saved Login phone number 
-  
-const lastLogin = localStorage.getItem('lastLogin');
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const toast = useToast();
+  const router = useRouter();
+
+  // Set last saved Login phone number on component mount
+  useEffect(() => {
+    const lastLogin = localStorage.getItem('lastLogin');
+    if (lastLogin) {
+      setFormData((prev) => ({ ...prev, phoneNumber: lastLogin }));
+    }
+  }, []);
+
   const handleInputChange = (e) => {
-
-   //save last login
-    localStorage.setItem('lastLogin',value);
-    
     const { name, value } = e.target;
+    if (name === 'phoneNumber') {
+      // Save phone number in localStorage
+      localStorage.setItem('lastLogin', value);
+    }
     setFormData((prev) => ({ ...prev, [name]: value }));
-
-
-    
   };
 
   const handleSubmit = async () => {
@@ -100,8 +103,7 @@ const lastLogin = localStorage.getItem('lastLogin');
       height="100vh"
       align="center"
       justify="center"
-      bgGradientt="linear(to-b, grey, grey)"
-      
+      bgGradient="linear(to-b, grey, grey)"
       direction="column"
       px={4}
     >
@@ -110,15 +112,14 @@ const lastLogin = localStorage.getItem('lastLogin');
           Mylezic
         </Text>
         <Box mt="1em">
-          <Text><i>Buy cheap data, airtime, and even hire us to build websites and craft your graphics design!!!</i></Text></Box>
+          <Text><i>Buy cheap data, airtime, and even hire us to build websites and craft your graphics design!!!</i></Text>
+        </Box>
       </Box>
       <Box
         w="full"
         maxW="400px"
         p={6}
         bg="rgba(255, 255, 255, 0.05)"
-        
-        
         textAlign="center"
       >
         <InputGroup textAlign="center" mb={10}>
@@ -126,45 +127,39 @@ const lastLogin = localStorage.getItem('lastLogin');
             <FaUser color="grey" />
           </InputLeftElement>
           <Input
-            name="username"
-      variant="flushed"     placeholder= "Phone number" 
+            name="phoneNumber"
+            variant="flushed"
+            placeholder="Phone number"
             onChange={handleInputChange}
-            value={lastLogin}
-            
+            value={formData.phoneNumber} // Populate with stored phone number
             _placeholder={{ color: 'gray.300' }}
             _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
-        type="number"
-            />
+            type="number"
+          />
         </InputGroup>
         <InputGroup textAlign="center" mb={12}>
           <InputLeftElement pointerEvents="none">
             <FaLock color="grey" />
           </InputLeftElement>
-          
           <Input
             name="password"
             type={passwordVisible ? 'text' : 'password'}
             placeholder="Password"
             onChange={handleInputChange}
             value={formData.password}
-        
-     variant="flushed"       
+            variant="flushed"
             _placeholder={{ color: 'gray.300' }}
             _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
-
-            
           />
-
           <InputRightElement>
             <IconButton
-            onClick={() => setPasswordVisible(!passwordVisible)}
-            icon={passwordVisible ? <FaEyeSlash/> : <FaEye/>}
-            variant="ghost"
-            color="teal.400"
-            aria-label="Toggle Password Visibility"
-          />
-            </InputRightElement>
-
+              onClick={() => setPasswordVisible(!passwordVisible)}
+              icon={passwordVisible ? <FaEyeSlash /> : <FaEye />}
+              variant="ghost"
+              color="teal.400"
+              aria-label="Toggle Password Visibility"
+            />
+          </InputRightElement>
         </InputGroup>
         <Button
           isLoading={loading}
@@ -189,7 +184,11 @@ const lastLogin = localStorage.getItem('lastLogin');
             Register
           </Text>
         </Text>
-        <Text mt={2} fontWeight="bold" color="orange" onClick={()=>router.push('/reset_password')}>Click here if you forgot your Password!</Text>
+        <Text 
+          mt={2} fontWeight="bold" color="orange" onClick={() => router.push('/reset_password')}
+        >
+          Click here if you forgot your Password!
+        </Text>
       </Box>
     </Flex>
   );
