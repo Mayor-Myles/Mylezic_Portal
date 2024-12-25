@@ -25,10 +25,14 @@ const router = useRouter();
   
 const lastLogin = localStorage.getItem('lastLogin');
   const handleInputChange = (e) => {
+
+   //save last login
+    localStorage.setItem('lastLogin',value);
+    
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-localStorage.setItem('lastLogin',formData.phoneNumber);
+
     
   };
 
@@ -123,9 +127,9 @@ localStorage.setItem('lastLogin',formData.phoneNumber);
           </InputLeftElement>
           <Input
             name="username"
-      variant="flushed"     placeholder="Phone number"
+      variant="flushed"     placeholder= "Phone number" 
             onChange={handleInputChange}
-            value={formData.username}
+            value={!lastLogin ? formData.phoneNumber : lastLogin}
             
             
             _placeholder={{ color: 'gray.300' }}

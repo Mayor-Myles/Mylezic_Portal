@@ -231,7 +231,7 @@ const Register = () => {
             <Input
               placeholder="Referral Code (Optional)"
 
-              
+          _placeholder={{ color: 'gray.300' }}    
               value={formData.referral}
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, referral: e.target.value }))
