@@ -14,6 +14,10 @@ import {
 import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { userData, csrfState } from '../states/recoil';
+import { useRecoilState } from 'recoil'
+
+
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({ phoneNumber: '', password: '' });
@@ -21,8 +25,10 @@ const LoginForm = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const toast = useToast();
   const router = useRouter();
-
-  // Set last saved Login phone number on component mount
+const [data, setUserData] = useRecoilState(userData);
+const[csrf,csrfToken] = useRecoilState(csrfToken);
+  
+  // 📐 last saved Login phone number on component mount
   useEffect(() => {
     const lastLogin = localStorage.getItem('lastLogin');
     if (lastLogin) {
@@ -62,6 +68,8 @@ const LoginForm = () => {
       );
 
       if (response.data.status === 'success') {
+        setCsrfToken(response.data.token);
+        setUserData(response.data.userData)
         toast.closeAll();
         toast({
           title: 'Success',

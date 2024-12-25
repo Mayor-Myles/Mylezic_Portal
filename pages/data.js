@@ -324,7 +324,8 @@ if(!plan && !csrf){
               Enter your Phone number
             </Text>
 
-<Input onChange={(e)=>setPhoneNumber(e.target.value)} placeholder="Phone number" type="number"   />
+<Input onChange={(e)=>setPhoneNumber(e.target.value)} placeholder="Phone number" type="number" variant="flushed" _placeholder={{ color: 'gray.300' }}
+  _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}  />
                         
 <Button isLoading={btnLoading}  onClick={submitForm} w="full" colorScheme="teal" mt="1em" size="md">Buy</Button>
 

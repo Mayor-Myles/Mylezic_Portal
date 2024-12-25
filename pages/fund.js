@@ -261,7 +261,8 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
         {fundType == "auto" || fundType=="manual" ? (
   
     <Flex mb="3em" gap="2" align="center" flexFlow="row">
-<Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" />
+<Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" variant="flushed" _placeholder={{ color: 'gray.300' }}
+  _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}/>
 
    <Button isLoading={loading} onClick={fundType=="auto" ? fundMe : notify} colorScheme="teal">{fundType=="manual"?"Notify Us" : "Fund"}</Button>
   </Flex>

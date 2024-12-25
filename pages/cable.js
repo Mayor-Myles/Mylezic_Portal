@@ -48,7 +48,8 @@ function CableTvSubscription() {
           {/* Smart Card Number */}
           <FormControl id="smartCardNumber" isRequired>
             <FormLabel>Smart Card Number</FormLabel>
-            <Input type="text" placeholder="Enter your smart card number" />
+            <Input type="text" placeholder="Enter your smart card number" variant="flushed" _placeholder={{ color: 'gray.300' }}
+              _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }} />
           </FormControl>
 
           {/* Select TV Package */}
@@ -64,7 +65,8 @@ function CableTvSubscription() {
           {/* User Phone Number */}
           <FormControl id="phoneNumber" isRequired>
             <FormLabel>Phone Number</FormLabel>
-            <Input type="tel" placeholder="Enter your phone number" />
+            <Input type="tel" placeholder="Enter your phone number" variant="flushed"  _placeholder={{ color: 'gray.300' }}
+              _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}/>
           </FormControl>
 
           {/* Total Price */}
