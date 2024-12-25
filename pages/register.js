@@ -6,13 +6,13 @@ import {
   Input,
   Text,
   InputGroup,
+  InputLeftElement,
   InputRightElement,
   IconButton,
   useToast,
-  Spinner,
   Link,
 } from '@chakra-ui/react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaPhone, FaKey, FaTag, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import { useRecoilState } from 'recoil';
 import axios from 'axios';
@@ -29,7 +29,7 @@ const Register = () => {
     email: '',
     password: '',
     phoneNumber: '',
-    refferal: '',
+    referral: '',
     csrf: '',
   });
 
@@ -110,15 +110,6 @@ const Register = () => {
       });
   };
 
-  // Render a spinner while waiting for CSRF
-  {/*if (!csrf) {
-    return (
-      <Flex align="center" justify="center" minH="100vh">
-        <Spinner size="xl" color="teal" />
-      </Flex>
-    );
-  }*/}
-
   return (
     <>
       <Head>
@@ -135,13 +126,12 @@ const Register = () => {
         maxW="400px"
         mx="auto"
       >
-<Box textAlign="center" mb="5em">
-        <Text fontFamily="'Poppings', sans-serif" fontSize="3xl" fontWeight="bold" mb={2}>
-          Mylezic
-        </Text>
-        
-      </Box>
-        
+        <Box textAlign="center" mb="3em">
+          <Text fontFamily="'Poppins', sans-serif" fontSize="3xl" fontWeight="bold" mb={2}>
+            Mylezic
+          </Text>
+        </Box>
+
         <Box textAlign="center" mb="4">
           <Text fontSize="sm" fontWeight="bold" color="teal.600">
             Register to explore our rich and fast features.
@@ -154,8 +144,11 @@ const Register = () => {
           </Text>
         </Box>
 
-        <Flex direction="column" w="full" gap="4">
+        <Flex direction="column" w="full" gap="5">
           <InputGroup>
+            <InputLeftElement>
+              <FaUser color="gray" />
+            </InputLeftElement>
             <Input
               placeholder="Full Name"
               value={formData.fullname}
@@ -168,6 +161,9 @@ const Register = () => {
           </InputGroup>
 
           <InputGroup>
+            <InputLeftElement>
+              <FaEnvelope color="gray" />
+            </InputLeftElement>
             <Input
               placeholder="Email Address"
               type="email"
@@ -181,6 +177,9 @@ const Register = () => {
           </InputGroup>
 
           <InputGroup>
+            <InputLeftElement>
+              <FaPhone color="gray" />
+            </InputLeftElement>
             <Input
               placeholder="Phone Number"
               type="tel"
@@ -194,6 +193,9 @@ const Register = () => {
           </InputGroup>
 
           <InputGroup>
+            <InputLeftElement>
+              <FaKey color="gray" />
+            </InputLeftElement>
             <Input
               placeholder="Password"
               type={passwordVisible ? 'text' : 'password'}
@@ -210,16 +212,20 @@ const Register = () => {
                 onClick={toggleVisibility}
                 variant="ghost"
                 aria-label="Toggle Password Visibility"
+                color="teal"
               />
             </InputRightElement>
           </InputGroup>
 
           <InputGroup>
+            <InputLeftElement>
+              <FaTag color="gray" />
+            </InputLeftElement>
             <Input
               placeholder="Referral Code (Optional)"
-              value={formData.refferal}
+              value={formData.referral}
               onChange={(e) =>
-                setFormData((prev) => ({ ...prev, refferal: e.target.value }))
+                setFormData((prev) => ({ ...prev, referral: e.target.value }))
               }
               variant="flushed"
               focusBorderColor="teal.500"
