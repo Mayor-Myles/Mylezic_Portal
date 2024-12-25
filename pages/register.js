@@ -111,13 +111,13 @@ const Register = () => {
   };
 
   // Render a spinner while waiting for CSRF
-  if (!csrf) {
+  {/*if (!csrf) {
     return (
       <Flex align="center" justify="center" minH="100vh">
         <Spinner size="xl" color="teal" />
       </Flex>
     );
-  }
+  }*/}
 
   return (
     <>
