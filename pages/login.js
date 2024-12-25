@@ -105,7 +105,7 @@ const router = useRouter();
         
         textAlign="center"
       >
-        <InputGroup mb={10}>
+        <InputGroup textAlign="center" mb={10}>
           <InputLeftElement pointerEvents="none">
             <FaUser color="grey" />
           </InputLeftElement>
@@ -114,14 +114,14 @@ const router = useRouter();
       variant="flushed"     placeholder="Phone number"
             onChange={handleInputChange}
             value={formData.username}
-            borderBottomm="2px solid "
-            borderColor=""
+            
+            
             _placeholder={{ color: 'gray.300' }}
-            _focus={{ borderBottom: '2px solid teal', boxShadow: 'md' }}
+            _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
         type="number"
             />
         </InputGroup>
-        <InputGroup mb={12}>
+        <InputGroup textAlign="center" mb={12}>
           <InputLeftElement pointerEvents="none">
             <FaLock color="grey" />
           </InputLeftElement>
@@ -132,10 +132,10 @@ const router = useRouter();
             placeholder="Password"
             onChange={handleInputChange}
             value={formData.password}
-            borderr="2px solid"
+        
      variant="flushed"       
             _placeholder={{ color: 'gray.300' }}
-            _focus={{ borderBottomm: '2px solid teal', boxShadow: '0 0 5px teal' }}
+            _focus={{ borderBottomm: '1px solid teal', boxShadow: 'sm' }}
 
             
           />
