@@ -92,7 +92,7 @@ const router = useRouter();
       px={4}
     >
       <Box textAlign="center" mb="5em">
-        <Text fontFamily="'Ubuntu', sans-serif" fontSize="3xl" fontWeight="bold" mb={2}>
+        <Text fontFamily="'Poppings', sans-serif" fontSize="3xl" fontWeight="bold" mb={2}>
           Mylezic
         </Text>
         <Box mt="1em">
@@ -137,7 +137,7 @@ const router = useRouter();
         
      variant="flushed"       
             _placeholder={{ color: 'gray.300' }}
-            _focus={{ borderBottomm: '1px solid teal', boxShadow: 'sm' }}
+            _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
 
             
           />

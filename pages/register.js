@@ -35,14 +35,17 @@ const Register = () => {
 
   const router = useRouter();
 
+  // Update CSRF in formData whenever it changes
   useEffect(() => {
     setFormData((prev) => ({ ...prev, csrf }));
   }, [csrf]);
 
+  // Toggle password visibility
   const toggleVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+  // Handle form submission
   const submitForm = () => {
     if (
       !formData.fullname ||
@@ -107,17 +110,22 @@ const Register = () => {
       });
   };
 
-  {/*if (!csrf) {
+  // Render a spinner while waiting for CSRF
+  if (!csrf) {
     return (
       <Flex align="center" justify="center" minH="100vh">
         <Spinner size="xl" color="teal" />
       </Flex>
     );
-  }*/}
+  }
 
   return (
     <>
-      
+      <Head>
+        <title>Register | Mylezic</title>
+        <meta name="description" content="Register to join Mylezic today." />
+      </Head>
+
       <Flex
         minH="100vh"
         align="center"
@@ -127,9 +135,16 @@ const Register = () => {
         maxW="400px"
         mx="auto"
       >
+<Box textAlign="center" mb="5em">
+        <Text fontFamily="'Poppings', sans-serif" fontSize="3xl" fontWeight="bold" mb={2}>
+          Mylezic
+        </Text>
+        
+      </Box>
+        
         <Box textAlign="center" mb="4">
-          <Text fontSize="2xl" fontWeight="bold" color="teal.600">
-            Register
+          <Text fontSize="sm" fontWeight="bold" color="teal.600">
+            Register to explore our rich and fast features.
           </Text>
           <Text fontSize="sm" color="gray.600">
             Already have an account?{' '}
@@ -147,6 +162,8 @@ const Register = () => {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, fullname: e.target.value }))
               }
+              variant="flushed"
+              focusBorderColor="teal.500"
             />
           </InputGroup>
 
@@ -158,6 +175,8 @@ const Register = () => {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, email: e.target.value }))
               }
+              variant="flushed"
+              focusBorderColor="teal.500"
             />
           </InputGroup>
 
@@ -169,6 +188,8 @@ const Register = () => {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, phoneNumber: e.target.value }))
               }
+              variant="flushed"
+              focusBorderColor="teal.500"
             />
           </InputGroup>
 
@@ -180,6 +201,8 @@ const Register = () => {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, password: e.target.value }))
               }
+              variant="flushed"
+              focusBorderColor="teal.500"
             />
             <InputRightElement>
               <IconButton
@@ -198,6 +221,8 @@ const Register = () => {
               onChange={(e) =>
                 setFormData((prev) => ({ ...prev, refferal: e.target.value }))
               }
+              variant="flushed"
+              focusBorderColor="teal.500"
             />
           </InputGroup>
 
