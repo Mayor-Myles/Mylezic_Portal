@@ -111,13 +111,13 @@ const router = useRouter();
           </InputLeftElement>
           <Input
             name="username"
-      variantt="flushed"     placeholder="Phone number"
+      variant="flushed"     placeholder="Phone number"
             onChange={handleInputChange}
             value={formData.username}
-            border="0 0 2px 0"
+            borderBottomm="2px solid "
             borderColor=""
             _placeholder={{ color: 'gray.300' }}
-            _focus={{ border: '2px solid teal', boxShadow: 'md' }}
+            _focus={{ borderBottom: '2px solid teal', boxShadow: 'md' }}
         type="number"
             />
         </InputGroup>
@@ -132,10 +132,10 @@ const router = useRouter();
             placeholder="Password"
             onChange={handleInputChange}
             value={formData.password}
-            border="0 0 2px 0 "
-     variantt="flushed"       
+            borderr="2px solid"
+     variant="flushed"       
             _placeholder={{ color: 'gray.300' }}
-            _focus={{ border: '2px solid teal', boxShadow: '0 0 5px teal' }}
+            _focus={{ borderBottomm: '2px solid teal', boxShadow: '0 0 5px teal' }}
 
             
           />
@@ -163,7 +163,7 @@ const router = useRouter();
         >
           SIGN IN
         </Button>
-        <Text mt={4}>
+        <Text mt={8}>
           Don’t have an account?{' '}
           <Text
             as="span"
