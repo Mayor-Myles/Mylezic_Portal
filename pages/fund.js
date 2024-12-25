@@ -67,12 +67,12 @@ function getCharge(amount) {
 
   setLoading(true);
 
-  const charge = getCharge(amount);
+  const charge = Math.ceil(getCharge(amount));
 
   FlutterwaveCheckout({
     public_key: pk, // Your Flutterwave public key
     tx_ref: genReference(), // Unique transaction reference
-    amount: amount + charge, // Total amount (original + Flutterwave charge)
+    amount: Number(amount) + Number(charge), // Total amount (original + Flutterwave charge)
     currency: 'NGN', // Nigerian Naira
     //payment_options: 'card,banktransfer,ussd', // Available payment options
     customer: {
@@ -223,11 +223,15 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
   ]
     `}
   </script>
-      
+       
+      <script src="https://checkout.flutterwave.com/v3.js" async></script>
+       
          </Head>
     
-<Script src="https://js.paystack.co/v1/inline.js" />
-   
+{/*<Script src="https://js.paystack.co/v1/inline.js" />*/}
+      
+      
+
       
     <NavbarTop/>
 
