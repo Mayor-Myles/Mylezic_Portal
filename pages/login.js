@@ -6,11 +6,12 @@ import {
   Button,
   InputGroup,
   InputLeftElement,
+  InputRightElement,
   IconButton,
   Text,
   useToast,
 } from '@chakra-ui/react';
-import { FaUser, FaLock } from 'react-icons/fa';
+import { FaUser, FaLock,FaEye,FaEyeSlash } from 'react-icons/fa';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 const LoginForm = () => {
@@ -90,7 +91,7 @@ const router = useRouter();
       direction="column"
       px={4}
     >
-      <Box textAlign="center" mb="6em">
+      <Box textAlign="center" mb="5em">
         <Text fontSize="3xl" fontWeight="bold" mb={2}>
           Mylezic
         </Text>
@@ -104,43 +105,51 @@ const router = useRouter();
         
         textAlign="center"
       >
-        <InputGroup mb={8}>
+        <InputGroup mb={10}>
           <InputLeftElement pointerEvents="none">
             <FaUser color="grey" />
           </InputLeftElement>
           <Input
             name="username"
-      variant="flushed"     placeholder="Phone number"
+      variantt="flushed"     placeholder="Phone number"
             onChange={handleInputChange}
             value={formData.username}
-            border="2px solid"
+            border="0 0 2px 0"
             borderColor=""
             _placeholder={{ color: 'gray.300' }}
             _focus={{ border: '2px solid teal', boxShadow: 'md' }}
-          />
+        type="number"
+            />
         </InputGroup>
-        <InputGroup mb={10}>
+        <InputGroup mb={12}>
           <InputLeftElement pointerEvents="none">
             <FaLock color="grey" />
           </InputLeftElement>
+          
           <Input
             name="password"
             type={passwordVisible ? 'text' : 'password'}
             placeholder="Password"
             onChange={handleInputChange}
             value={formData.password}
-            border="2px solid"
-     variant="flushed"       
+            border="0 0 2px 0 "
+     variantt="flushed"       
             _placeholder={{ color: 'gray.300' }}
             _focus={{ border: '2px solid teal', boxShadow: '0 0 5px teal' }}
+
+            
           />
-          <IconButton
+
+          <InputRightElement>
+            <IconButton
             onClick={() => setPasswordVisible(!passwordVisible)}
-            icon={passwordVisible ? '🙈' : '🙉'}
+            icon={passwordVisible ? <FaEyeSlash/> : <FaEye/>}
             variant="ghost"
             color="teal.400"
             aria-label="Toggle Password Visibility"
           />
+            </InputRightElement>
+
         </InputGroup>
         <Button
           isLoading={loading}
