@@ -92,11 +92,11 @@ const router = useRouter();
       px={4}
     >
       <Box textAlign="center" mb="5em">
-        <Text fontSize="3xl" fontWeight="bold" mb={2}>
+        <Text fontFamily="'Ubuntu', sans-serif" fontSize="3xl" fontWeight="bold" mb={2}>
           Mylezic
         </Text>
         <Box mt="1em">
-          <Text>But cheap data, airtime, and even hire us to build any kind of website for you and more with us!!!</Text></Box>
+          <Text><i>Buy cheap data, airtime, and even hire us to build websites and craft your graphics design!!!</i></Text></Box>
       </Box>
       <Box
         w="full"
