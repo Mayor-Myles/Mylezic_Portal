@@ -21,7 +21,7 @@ const Wallet = () => {
     
       <Box
       bgg="teal.500"
-        bgGradient="linear-gradient(90deg, #2cab99, rgba(91, 192, 165, 1))"
+        bgGradient="linear-gradient(90deg, teal, rgba(91, 192, 165, 1))"
       color="white"
       borderRadius="xl"
       p={5}

@@ -273,10 +273,10 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
         
         <InputLeftElement pointerEvents="none">
 
-          <FaPhoneAlt color="grey" size="md"/>
+          <FaPhoneAlt color="lightgrey" />
         
         </InputLeftElement>
-<Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" variant="flushed" _placeholder={{ color: 'gray.300' }}
+<Input textAlign="center" onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" variant="flushed" _placeholder={{ color: 'gray.300' }}
   _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}/>
 </InputGroup>
       
