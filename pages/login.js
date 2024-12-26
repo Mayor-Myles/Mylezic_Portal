@@ -26,7 +26,7 @@ const LoginForm = () => {
   const toast = useToast();
   const router = useRouter();
 const [data, setUserData] = useRecoilState(userData);
-const[csrf,csrfToken] = useRecoilState(csrfToken);
+const[csrf,csrfToken] = useRecoilState(csrfState);
   
   // 📐 last saved Login phone number on component mount
   useEffect(() => {
@@ -68,7 +68,7 @@ const[csrf,csrfToken] = useRecoilState(csrfToken);
       );
 
       if (response.data.status === 'success') {
-        setCsrfToken(response.data.token);
+        csrfToken(response.data.token);
         setUserData(response.data.userData)
         toast.closeAll();
         toast({
