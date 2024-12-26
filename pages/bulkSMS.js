@@ -322,7 +322,7 @@ const data = {
               _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }} />
           
         
-      <Button onClick={()=>addNumber(inputRef.current.value)} colorScheme="teal">Add</Button>
+      <Button variant="outline" onClick={()=>addNumber(inputRef.current.value)} colorScheme="teal">Add</Button>
 
         
       </Flex>

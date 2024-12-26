@@ -20,11 +20,12 @@ const Wallet = () => {
     <Flex w="full" alignItems="center" flexFlow="column" justify="center" maxW={{sm:'25em', base: '25em', md: '28em', lg: '20em', xl: '25em', '2xl':'30em', }} >
     
       <Box
-      bg="teal.500"
+      bgg="teal.500"
+        bgGradient="linear-gradient(90deg, #578a68, #52956c, #4ca172)"
       color="white"
       borderRadius="xl"
       p={5}
-      shadow="lg"
+      boxShadow="xl"
       
       
       display="flex"

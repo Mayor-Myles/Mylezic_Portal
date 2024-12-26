@@ -270,9 +270,10 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
     <Flex mb="3em" gap="6" align="center" flexFlow="row">
 
       <InputGroup>
+        
         <InputLeftElement pointerEvents="none">
 
-          <IconButton icon={FaPhoneAlt} color="grey" />
+          <FaPhoneAlt color="grey" size="md"/>
         
         </InputLeftElement>
 <Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" variant="flushed" _placeholder={{ color: 'gray.300' }}
