@@ -10,7 +10,7 @@ import {merchantState,userData} from "../states/recoil";
 import Script from "next/script";
 import Head from "next/head";
 import useUpdate from "../components/Update";
-import Advert from "../components/advert";
+import Advert from "../components/adverts";
 
 
 
