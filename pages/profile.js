@@ -166,7 +166,9 @@ if (!hasValue) {
               <FormLabel>Full Name</FormLabel>
               <Input onChange={(e)=>setFullname(e.target.value)}
                 placeholder={user.fullname}
-                border="1px solid teal"
+                variant="flushed"
+                _placeholder={{ color: 'gray.300' }}
+                _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
               />
             </FormControl>
 
@@ -175,7 +177,9 @@ if (!hasValue) {
               <Input
                 type="email"
                 placeholder={user.email}
-                border="1px solid teal"
+                _placeholder={{ color: 'gray.300' }}
+                _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
+                variant="flushed"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -186,7 +190,10 @@ if (!hasValue) {
               <Input
                 type="tel"
                 placeholder={user.phoneNumber}
-                border="1px solid teal"
+                _placeholder={{ color: 'gray.300' }}
+                _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
+
+                variant="flushed"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
@@ -197,7 +204,9 @@ if (!hasValue) {
               <Input onChange={(e)=>setNewPassword(e.target.value)}
                 type="text"
                 placeholder="Enter New password"
-                border="1px solid teal"
+                _placeholder={{ color: 'gray.300' }}
+                _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
+                variant="flushed"
                 
               />
             </FormControl>

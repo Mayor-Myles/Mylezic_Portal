@@ -318,7 +318,7 @@ const data = {
       <Flex gap="1">
 
              
-            <Input ref={inputRef} border="1px solid teal" type="number" placeholder="Phone number" size="md" variant="flushed" _placeholder={{ color: 'gray.300' }}
+            <Input ref={inputRef} type="number" placeholder="Phone number" size="md" variant="flushed" _placeholder={{ color: 'gray.300' }}
               _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }} />
           
         
@@ -339,7 +339,7 @@ const data = {
       {page} page(s) | ₦3 per page | Total cost: <Text color="teal" as="span" fontWeight="bold">₦{totalCost}</Text>
       </Text>
 
-<Input onChange={(e)=>setSender(e.target.value)} type="text" placeholder="Sender Name e.g Foodco" size="md" border="1px solid teal" variant="flushed" _placeholder={{ color: 'gray.300' }}
+<Input onChange={(e)=>setSender(e.target.value)} type="text" placeholder="Sender Name e.g Foodco" size="md" variant="flushed" _placeholder={{ color: 'gray.300' }}
   _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}/>
 
       

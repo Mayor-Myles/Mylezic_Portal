@@ -256,7 +256,8 @@ const toast = useToast();
   <Image alt="network logo" borderRadius="full"  src={`${network}.png`} objectFit="cover" w="20px" h="20px"/>
   </InputLeftElement>
   
-  <Input onChange={(e)=>setPhoneNumber(e.target.value)} type="number" placeholder="Phone number" />
+  <Input onChange={(e)=>setPhoneNumber(e.target.value)} type="number" placeholder="Phone number" variant="flushed" _placeholder={{ color: 'gray.300' }}
+    _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }} />
   
 </InputGroup>
     
@@ -264,7 +265,8 @@ const toast = useToast();
 
   <Box>
   
-    <Input placeholder ="Amount" type="number" w="10em" onChange={(e)=>setAmount(e.target.value)} />
+    <Input placeholder ="Amount" type="number" w="10em" onChange={(e)=>setAmount(e.target.value)} variant="flushed"  _placeholder={{ color: 'gray.300' }}
+      _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}/>
   </Box>
   
   <Box>

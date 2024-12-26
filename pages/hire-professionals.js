@@ -193,6 +193,9 @@ update();
           size="md"
           colorScheme="teal"
           value={phoneNumber}
+          variant="flushed"
+          _placeholder={{ color: 'gray.300' }}
+            _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}
         />
 
         <Select

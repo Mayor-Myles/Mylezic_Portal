@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
-import { Box, Button, Flex, Heading, Text, Image, Stack, useToast ,Select, Input} from "@chakra-ui/react";
-//import { FaFacebook, FaWhatsapp, FaInstagram, FaFacebookMessenger, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { Box, Button, Flex, Heading, Text, Image, Stack, useToast ,Select, Input,InputLeftElement,InputGroup} from "@chakra-ui/react";
+import { FaPhone} from 'react-icons/fa';
 import NavbarTop from "../components/topNavbar";
 import NavbarBottom from "../components/bottomNavbar";
 import Wallet from "../components/wallet";
@@ -10,6 +10,12 @@ import {merchantState,userData} from "../states/recoil";
 import Script from "next/script";
 import Head from "next/head";
 import useUpdate from "../components/Update";
+import Advert from "../components/advert";
+
+
+
+
+
 const Fund = () => {
 
 
@@ -248,6 +254,7 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
 
 <Wallet/>
 
+   <Advert/>
         
         {/*<Select onChange={(e)=>setFundType(e.target.value)} _hover={{border:"1px solid teal"}} size="lg" colorScheme="lightgrey">
       <option>Choose Funding Type</option>
@@ -260,11 +267,20 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
 */}
         {fundType == "auto" || fundType=="manual" ? (
   
-    <Flex mb="3em" gap="2" align="center" flexFlow="row">
+    <Flex mb="3em" gap="6" align="center" flexFlow="row">
+
+      <InputGroup>
+        <InputLeftElement pointerEvents="none">
+
+          <IconButton icon={FaPhone} color="grey" />
+        
+        </InputLeftElement>
 <Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" variant="flushed" _placeholder={{ color: 'gray.300' }}
   _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }}/>
-
+</InputGroup>
+      
    <Button isLoading={loading} onClick={fundType=="auto" ? fundMe : notify} colorScheme="teal">{fundType=="manual"?"Notify Us" : "Fund"}</Button>
+      
   </Flex>
     ) : ""}
       </Flex>

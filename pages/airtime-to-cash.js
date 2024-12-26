@@ -154,7 +154,7 @@ const A2C = () => {
         <Flex w="full" flexFlow="column" gap="3" align="center" justify="center">
           <Text mb="1em" fontWeight="bold">Airtime to cash</Text>
 
-          <Input onChange={(e) => setPhoneNumber(e.target.value)} type="tel" placeholder="Whatsapp number" size="lg" border="1px solid teal" variant="flushed" _placeholder={{ color: 'gray.300' }}
+          <Input onChange={(e) => setPhoneNumber(e.target.value)} type="tel" placeholder="Whatsapp number" size="lg" variant="flushed" _placeholder={{ color: 'gray.300' }}
             _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }} />
 
           <Select onChange={(e) => setNetwork(e.target.value)} border="1px solid teal" size="lg" colorScheme="teal">
@@ -165,10 +165,10 @@ const A2C = () => {
             <option value="9mobile">9MOBILE</option>
           </Select>
 
-          <Input onChange={(e) => setAmount(Number(e.target.value))} type="number" placeholder="Amount to convert (Naira)" size="lg" border="1px solid teal" variant="flushed" _placeholder={{ color: 'gray.300' }}
+          <Input onChange={(e) => setAmount(Number(e.target.value))} type="number" placeholder="Amount to convert (Naira)" size="lg"  variant="flushed" _placeholder={{ color: 'gray.300' }}
             _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }} />
 
-          <Input type="number" size="lg" border="1px solid teal" placeholder={toReceive ? `We will pay you ₦${toReceive}` : "Amount to receive"} variant="flushed" _placeholder={{ color: 'gray.300' }}
+          <Input type="number" size="lg"  placeholder={toReceive ? `We will pay you ₦${toReceive}` : "Amount to receive"} variant="flushed" _placeholder={{ color: 'gray.300' }}
             _focus={{ borderBottom: '1px solid teal', boxShadow: 'sm' }} readOnly />
 
           <Button isLoading={btnLoading} onClick={submitForm} size="md" w="full" colorScheme="teal">Request</Button>

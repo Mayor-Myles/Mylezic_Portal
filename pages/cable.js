@@ -76,7 +76,7 @@ function CableTvSubscription() {
           </HStack>
 
           {/* Submit Button */}
-          <Button colorScheme="teal" size="lg" w="full" type="submit">
+          <Button colorScheme="teal" size="sm" w="full" type="submit">
             Subscribe Now
           </Button>
         </VStack>
