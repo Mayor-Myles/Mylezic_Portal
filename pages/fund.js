@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
-import { Box, Button, Flex, Heading, Text, Image, Stack, useToast ,Select, Input,InputLeftElement,InputGroup} from "@chakra-ui/react";
-import { FaPhone} from 'react-icons/fa';
+import { Box, Button, Flex, Heading, Text, Image, Stack, useToast ,Select, Input,InputLeftElement,InputGroup,IconButton} from "@chakra-ui/react";
+import { FaPhoneAlt} from 'react-icons/fa';
 import NavbarTop from "../components/topNavbar";
 import NavbarBottom from "../components/bottomNavbar";
 import Wallet from "../components/wallet";
@@ -272,7 +272,7 @@ const url = `https://wa.me/${phoneNumber}?text=Hi, I just made a transfer of ₦
       <InputGroup>
         <InputLeftElement pointerEvents="none">
 
-          <IconButton icon={FaPhone} color="grey" />
+          <IconButton icon={FaPhoneAlt} color="grey" />
         
         </InputLeftElement>
 <Input onChange={(e)=>setAmount(e.target.value)} type="number" size="md" placeholder="Enter amount" variant="flushed" _placeholder={{ color: 'gray.300' }}
